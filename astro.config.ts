@@ -13,7 +13,11 @@ import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
 
-import { readingTimeRemarkPlugin, responsiveTablesRehypePlugin, lazyImagesRehypePlugin } from './src/utils/frontmatter';
+import {
+  readingTimeRemarkPlugin,
+  responsiveTablesRehypePlugin,
+  lazyImagesRehypePlugin,
+} from './src/utils/frontmatter';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -22,6 +26,9 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
+  // 👇 add your canonical site URL here
+  site: 'https://taprebook.com',
+
   output: 'static',
 
   integrations: [
@@ -88,3 +95,4 @@ export default defineConfig({
     },
   },
 });
+
