@@ -1,0 +1,106 @@
+---
+// Low-poly “icy” background rendered on a <canvas>, very light animation.
+// Works site-wide when placed once in a layout.
+---
+
+<canvas id="bg-triangles" class="fixed inset-0 -z-10 block w-full h-full"></canvas>
+
+<script type="module" client:load>
+  const c = document.getElementById('bg-triangles');
+  const ctx = c.getContext('2d', { alpha: true });
+
+  const DPR = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+  let raf, W, H;
+
+  // Palette (soft ice blues)
+  const base = [
+    [230, 242, 252], // #E6F2FC
+    [214, 233, 248], // #D6E9F8
+    [196, 224, 245], // #C4E0F5
+    [178, 213, 240], // #B2D5F0
+    [236, 245, 255], // #ECF5FF (almost white)
+  ];
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const mix = (c1, c2, t) => [
+    Math.round(lerp(c1[0], c2[0], t)),
+    Math.round(lerp(c1[1], c2[1], t)),
+    Math.round(lerp(c1[2], c2[2], t)),
+  ];
+
+  function sizeCanvas() {
+    W = Math.floor(window.innerWidth * DPR);
+    H = Math.floor(window.innerHeight * DPR);
+    c.width = W; c.height = H;
+    c.style.width = `${W / DPR}px`;
+    c.style.height = `${H / DPR}px`;
+  }
+
+  function draw(t = 0) {
+    // Clear with transparent so page content controls overall bg tone
+    ctx.clearRect(0, 0, W, H);
+
+    const cell = Math.max(70, Math.min(140, Math.floor(W / 12)));
+    const jitter = cell * 0.18;
+    const rows = Math.ceil(H / cell) + 2;
+    const cols = Math.ceil(W / cell) + 2;
+
+    // Gentle time factor for color shift
+    const tt = t * 0.00008;
+
+    for (let y = -1; y < rows; y++) {
+      for (let x = -1; x < cols; x++) {
+        // Split each cell into two triangles (↘ and ↙)
+        const x0 = x * cell;
+        const y0 = y * cell;
+        const x1 = x0 + cell;
+        const y1 = y0 + cell;
+
+        // slight, stable jitter per cell
+        const seed = (x * 73856093 ^ y * 19349663) >>> 0;
+        const jx = ((seed & 0xffff) / 0xffff - 0.5) * jitter;
+        const jy = (((seed >> 16) & 0xffff) / 0xffff - 0.5) * jitter;
+
+        // color index varies slowly across space + time
+        const v = (Math.sin((x + tt * 40) * 0.6) + Math.cos((y - tt * 40) * 0.55)) * 0.25 + 0.5;
+        const i = Math.floor(v * (base.length - 1));
+        const c1 = base[i];
+        const c2 = base[Math.min(i + 1, base.length - 1)];
+        const col = mix(c1, c2, v - i);
+
+        ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},0.9)`;
+
+        // triangle ↘
+        ctx.beginPath();
+        ctx.moveTo(x0 + jx, y0 + jy);
+        ctx.lineTo(x1 + jx, y0 + jy);
+        ctx.lineTo(x1 + jx, y1 + jy);
+        ctx.closePath();
+        ctx.fill();
+
+        // triangle ↙ (slightly darker)
+        const col2 = mix(col, [160, 190, 220], 0.25);
+        ctx.fillStyle = `rgba(${col2[0]},${col2[1]},${col2[2]},0.9)`;
+        ctx.beginPath();
+        ctx.moveTo(x0 + jx, y0 + jy);
+        ctx.lineTo(x0 + jx, y1 + jy);
+        ctx.lineTo(x1 + jx, y1 + jy);
+        ctx.closePath();
+        ctx.fill();
+      }
+    }
+    raf = requestAnimationFrame(draw);
+  }
+
+  function start() {
+    sizeCanvas();
+    cancelAnimationFrame(raf);
+    draw(performance.now());
+  }
+
+  window.addEventListener('resize', () => {
+    sizeCanvas();
+  }, { passive: true });
+
+  start();
+</script>
