@@ -10,37 +10,16 @@ import Layout from '~/layouts/PageLayout.astro';
     ignoreTitleTemplate: true,
   }}
 >
-  <!-- HERO with rose-inspired lavender/blue gradient (no image) -->
+  <!-- HERO (transparent; lets the canvas background show) -->
   <section class="relative">
-    <!-- Multi-color background inspired by your rose -->
-    <div
-      class="absolute inset-0 -z-10"
-      style="
-        background:
-          radial-gradient(60% 70% at 15% 20%, #EAE7FF 0%, #CBB9FF 30%, transparent 70%),
-          radial-gradient(55% 60% at 85% 15%, #B8D9FF 0%, #8EC5FC 40%, transparent 72%),
-          radial-gradient(50% 55% at 75% 70%, #7ED0F6 0%, #60C7E8 35%, transparent 70%),
-          radial-gradient(65% 65% at 30% 80%, #D0B3FF 0%, #A48CF0 40%, transparent 75%),
-          radial-gradient(100% 100% at 50% 50%, #F4F7FF 0%, #EEF3FF 60%, #EAF2FF 100%);
-        filter: saturate(1.06) brightness(1.02);
-      "
-    ></div>
-    <!-- ultra-subtle grain to avoid banding -->
-    <div class="pointer-events-none absolute inset-0 -z-10 opacity-[0.06] mix-blend-overlay"
-      style="background-image: url('data:image/svg+xml;utf8,\
-<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%27160%27 height=%27160%27>\
-<filter id=%27n%27><feTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%272%27/></filter>\
-<rect width=%27100%%27 height=%27100%%27 filter=%27url(%23n)%27/></svg>');">
-    </div>
-
     <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 grid gap-10 md:grid-cols-2 items-center">
       <div>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight dark:text-white">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">
           AI-powered WhatsApp Solutions
         </h1>
-        <p class="mt-4 text-lg md:text-xl text-slate-700 dark:text-slate-300 max-w-2xl">
-          TapRebook is a suite of WhatsApp modules that automate scheduling, reminders, coordination, and
-          guest/parent messaging—under one brand that grows with you.
+        <p class="mt-4 text-lg md:text-xl text-slate-700/90 dark:text-slate-200/90 max-w-2xl">
+          TapRebook is a suite of WhatsApp modules that automate scheduling, reminders, coordination,
+          and guest/parent messaging—under one brand that grows with you.
         </p>
         <div class="mt-8 flex items-center gap-3">
           <a class="btn btn-primary" href="/modules/">Explore solutions</a>
@@ -48,115 +27,24 @@ import Layout from '~/layouts/PageLayout.astro';
         </div>
       </div>
 
-      <div class="rounded-2xl p-8 bg-white/60 dark:bg-slate-900/40 ring-1 ring-slate-200/60 dark:ring-slate-800/60 backdrop-blur">
-        <p class="text-slate-700 dark:text-slate-200">
-          Designed to be brand-first: clean, fast background generated from your rose palette—no images needed.
+      <!-- Optional soft “glass” card (very light so triangles are visible).
+           If you want it totally transparent, remove bg/blur/ring classes. -->
+      <div class="rounded-2xl p-6 md:p-8 bg-white/35 dark:bg-slate-900/25 ring-1 ring-white/30 dark:ring-slate-800/40 backdrop-blur">
+        <p class="text-slate-800/90 dark:text-slate-100/90">
+          Designed to be brand-first. The icy low-poly backdrop is generated dynamically—no images.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Solutions grid -->
-  <section class="py-10 border-t border-slate-200/60 dark:border-slate-800/60">
+  <!-- Solutions grid (transparent cards) -->
+  <section class="py-10 border-t border-white/20 dark:border-slate-800/60">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold dark:text-white text-center">Solutions</h2>
-      <p class="mt-2 text-center text-slate-600 dark:text-slate-300">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Solutions</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
         Pick the module that fits today. Add others later—same brand, shared data.
       </p>
 
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <a class="card p-5 hover:opacity-90" href="/modules/reception/">
-          <h3 class="font-semibold">Reception</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            AI receptionist for clinics: reminders, self-rescheduling, follow-ups.
-          </p>
-        </a>
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur hover:opacity-90 transition"
 
-        <a class="card p-5 hover:opacity-90" href="/modules/labs/">
-          <h3 class="font-semibold">Labs</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Diagnostics & radiology coordination with prep instructions and nudges.
-          </p>
-        </a>
-
-        <a class="card p-5 hover:opacity-90" href="/modules/pharma/">
-          <h3 class="font-semibold">Pharma</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Refill & chronic-care reminders with smart follow-ups.
-          </p>
-        </a>
-
-        <a class="card p-5 hover:opacity-90" href="/modules/dentallab/">
-          <h3 class="font-semibold">DentalLab</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Dentist ↔ lab case tracker, pickups, approvals, status.
-          </p>
-        </a>
-
-        <a class="card p-5 hover:opacity-90" href="/modules/stay/">
-          <h3 class="font-semibold">Stay</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Homestay/houseboat guest messaging: pre-arrival info & upsells.
-          </p>
-        </a>
-
-        <a class="card p-5 hover:opacity-90" href="/modules/campus/">
-          <h3 class="font-semibold">Campus</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Parent communications: notices, fees, attendance, events.
-          </p>
-        </a>
-
-        <a class="card p-5 hover:opacity-90 sm:col-span-2 lg:col-span-3" href="/modules/queue/">
-          <div class="flex items-baseline justify-between">
-            <h3 class="font-semibold">Queue</h3>
-            <span class="text-xs uppercase tracking-wide text-slate-500">Hospitality</span>
-          </div>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Restaurant waitlist & preorders: live position updates and table-ready alerts.
-          </p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why TapRebook -->
-  <section class="py-12 border-t border-slate-200/60 dark:border-slate-800/60">
-    <div class="max-w-6xl mx-auto px-4 grid gap-6 md:grid-cols-3">
-      <div class="card p-6">
-        <h3 class="font-semibold">One brand, many modules</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          Start with what you need; expand without rebuilding your stack or confusing customers.
-        </p>
-      </div>
-      <div class="card p-6">
-        <h3 class="font-semibold">WhatsApp-first UX</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          No app installs. Conversations drive bookings, reminders, coordination and updates.
-        </p>
-      </div>
-      <div class="card p-6">
-        <h3 class="font-semibold">Measurable outcomes</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          See completions, drop-offs and exceptions; escalate to staff when needed.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-12">
-    <div class="max-w-5xl mx-auto px-4 md:flex items-center justify-between">
-      <div>
-        <h2 class="text-2xl md:text-3xl font-bold dark:text-white">Not sure where to start?</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          We’ll recommend a starting module in 10 minutes.
-        </p>
-      </div>
-      <div class="mt-6 md:mt-0 flex gap-3">
-        <a class="btn btn-primary" href="/modules/">Explore solutions</a>
-        <a class="btn btn-secondary" href="/contact/">Book a demo</a>
-      </div>
-    </div>
-  </section>
-</Layout>
