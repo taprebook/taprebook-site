@@ -79,6 +79,16 @@ const FORM_ENDPOINT = 'https://formspree.io/f/xjkaeavd'; // <-- replace in Step 
     </aside>
   </section>
 
+<script is:inline>
+  // Prefill ?module=reception etc.
+  const params = new URLSearchParams(location.search);
+  const module = params.get('module');
+  if (module) {
+    const sel = document.querySelector('select[name="module"]');
+    if (sel) sel.value = module.charAt(0).toUpperCase() + module.slice(1);
+  }
+</script>
+
   <script is:inline>
     const form = document.getElementById('contactForm');
     const statusEl = document.getElementById('formStatus');
