@@ -1,0 +1,60 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+---
+
+<Layout
+  metadata={{
+    title: 'TapRebook DentalLab — Dentist ↔ lab case tracker',
+    description:
+      'Case handoffs, pickup/drop coordination, photo approvals, and status updates between dentist and lab on WhatsApp.',
+  }}
+>
+  <section class="py-12 md:py-16">
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight dark:text-white">
+      DentalLab: dentist ↔ lab case tracker
+    </h1>
+    <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-3xl">
+      Coordinate impressions, pickups, approvals, and deliveries without phone tag. Everyone sees the same status in
+      WhatsApp—doctor, assistant, and lab.
+    </p>
+    <div class="mt-6 flex gap-3">
+      <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+      <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-slate-200/50 dark:border-slate-800/60">
+    <h2 class="text-2xl font-bold dark:text-white">What it helps with</h2>
+    <ul class="mt-4 grid gap-4 md:grid-cols-2">
+      <li class="card p-5">
+        <h3 class="font-semibold">Pickup & drop logistics</h3>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Automated requests and confirmations for couriers.</p>
+      </li>
+      <li class="card p-5">
+        <h3 class="font-semibold">Photo/scan approvals</h3>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Share case photos; approve or request changes in chat.</p>
+      </li>
+      <li class="card p-5">
+        <h3 class="font-semibold">Status visibility</h3>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Impression received → In fabrication → Ready → Delivered.</p>
+      </li>
+      <li class="card p-5">
+        <h3 class="font-semibold">Exceptions & notes</h3>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Escalate edge cases to staff; keep an audit trail.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="py-12 border-t border-slate-200/50 dark:border-slate-800/60">
+    <div class="md:flex items-center justify-between">
+      <div>
+        <h2 class="text-2xl font-bold dark:text-white">Streamline case handoffs</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Bundle DentalLab with Reception for end-to-end workflows.</p>
+      </div>
+      <div class="mt-6 md:mt-0 flex gap-3">
+        <a class="btn btn-primary" href="/contact/">Book a demo</a>
+        <a class="btn btn-secondary" href="/modules/">See all modules</a>
+      </div>
+    </div>
+  </section>
+</Layout>
