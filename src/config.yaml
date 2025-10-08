@@ -5,7 +5,6 @@ site:
   trailingSlash: false
 
   # Add this only after Google Search Console gives you a value.
-  # Leave blank or delete this line until then.
   googleSiteVerificationId:
 
 # Default SEO metadata
@@ -32,6 +31,38 @@ metadata:
 i18n:
   language: en
   textDirection: ltr
+
+# ⬇️ Header / navigation
+header:
+  # Main nav items
+  nav:
+    - text: Solutions
+      ariaLabel: "TapRebook modules"
+      links:
+        - text: Reception
+          href: /modules/reception/
+        - text: Labs
+          href: /modules/labs/
+        - text: Pharma
+          href: /modules/pharma/
+        - text: DentalLab
+          href: /modules/dentallab/
+        - text: Stay
+          href: /modules/stay/
+        - text: Campus
+          href: /modules/campus/
+        - text: Queue
+          href: /modules/queue/
+    - text: Pricing
+      href: /pricing/
+    - text: About
+      href: /about/
+    - text: Contact
+      href: /contact/
+  # Primary call-to-action button in the header
+  cta:
+    label: "Book a demo"
+    href: /contact/
 
 apps:
   blog:
@@ -73,3 +104,17 @@ analytics:
 ui:
   theme: 'system' # "system" | "light" | "dark" | "light:only" | "dark:only"
 
+# ⬇️ Simple footer (edit later as you like)
+footer:
+  message: "© {{2025}} TapRebook. All rights reserved."
+  links:
+    - text: Pricing
+      href: /pricing/
+    - text: Contact
+      href: /contact/
+  contact:
+    address: "CCR-3 Padamughal, Kakkanad, Kerala 682030"
+    email: "hello@taprebook.com"
+  socials:
+    - name: WhatsApp
+      href: "https://wa.me/91XXXXXXXXXX"
