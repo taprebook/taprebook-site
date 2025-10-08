@@ -5,14 +5,49 @@ import Footer from '~/components/widgets/Footer.astro';
 import { headerData, footerData } from '~/navigation';
 import type { MetaData } from '~/types';
 
+// NEW: animated background
 import TrianglifyBg from '~/components/backgrounds/TrianglifyBg.astro';
 
-export interface Props { metadata?: MetaData; }
+export interface Props { metadata?: MetaData }
 const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
   <TrianglifyBg />
+
+  <style is:global>
+    /* Make the whole app transparent so the canvas shows through */
+    html, body { background: transparent !important; }
+    main { background: transparent !important; }
+
+    /* AstroWind sections/widgets often set their own bg colors/gradients. Neutralize them. */
+    [data-aw-section],
+    section,
+    .aw-section,
+    .prose,
+    .bg-base-100,
+    .bg-base-200,
+    .bg-white,
+    .bg-slate-50,
+    .bg-slate-100,
+    .bg-gradient,
+    .gradient,
+    .hero,
+    .hero:before,
+    .hero:after {
+      background: transparent !important;
+      background-image: none !important;
+    }
+
+    /* Optional: soften page feel a bit on top of triangles */
+    .card, .rounded-xl, .rounded-2xl {
+      backdrop-filter: blur(2px);
+      background-color: rgba(255,255,255,0.55);
+    }
+  </style>
+
+  <!-- Remove the announcement bar entirely -->
+  <!-- (No Announcement slot at all) -->
 
   <slot name="header">
     <Header {...headerData} isSticky />
@@ -26,5 +61,6 @@ const { metadata } = Astro.props;
     <Footer {...footerData} />
   </slot>
 </Layout>
+
 
 
