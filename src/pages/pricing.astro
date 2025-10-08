@@ -1,244 +1,101 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import Prices from '~/components/widgets/Pricing.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-
-const metadata = {
-  title: 'Pricing',
-};
 ---
 
-<Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+<Layout
+  metadata={{
+    title: 'TapRebook Pricing',
+    description:
+      'Start with Reception and add modules as you grow. Simple monthly plans with WhatsApp-first workflows.',
+  }}
+>
+  <section class="py-12 md:py-16">
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight dark:text-white">Pricing</h1>
+    <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-3xl">
+      Start small and scale. Reception comes first; add Labs, Pharma, DentalLab, Stay, Campus, or Queue anytime.
+    </p>
+  </section>
 
-  <HeroText
-    tagline="Pricing"
-    title="Stellar Pricing for Every Journey"
-    subtitle="Choose the perfect plan that aligns with your cosmic goals."
-  />
+  <section class="grid gap-6 md:grid-cols-3">
+    <!-- Starter -->
+    <div class="card p-6 flex flex-col">
+      <h3 class="text-xl font-bold dark:text-white">Starter</h3>
+      <p class="mt-2 text-slate-600 dark:text-slate-300">Single location • WhatsApp Reception</p>
+      <div class="mt-4 text-4xl font-extrabold">₹4,900<span class="text-base font-normal"> /mo</span></div>
+      <ul class="mt-4 space-y-2 text-slate-600 dark:text-slate-300">
+        <li>AI Reception (reminders & rescheduling)</li>
+        <li>Basic templates & reports</li>
+        <li>Email support</li>
+      </ul>
+      <a class="btn btn-primary mt-6" href="/contact/">Get started</a>
+    </div>
 
-  <!-- Pricing Widget ******************* -->
+    <!-- Growth -->
+    <div class="card p-6 ring-2 ring-blue-500 dark:ring-blue-400 flex flex-col">
+      <div class="text-xs uppercase tracking-wide text-blue-600 dark:text-blue-300 font-semibold">Most popular</div>
+      <h3 class="text-xl font-bold dark:text-white mt-1">Growth</h3>
+      <p class="mt-2 text-slate-600 dark:text-slate-300">Multi-user • Add 1 extra module</p>
+      <div class="mt-4 text-4xl font-extrabold">₹9,900<span class="text-base font-normal"> /mo</span></div>
+      <ul class="mt-4 space-y-2 text-slate-600 dark:text-slate-300">
+        <li>Everything in Starter</li>
+        <li>Choose one: Labs / Pharma / DentalLab / Stay / Campus / Queue</li>
+        <li>Advanced templates & audit trail</li>
+        <li>Priority support</li>
+      </ul>
+      <a class="btn btn-primary mt-6" href="/contact/">Talk to us</a>
+    </div>
 
-  <Prices
-    title="Our prices"
-    subtitle="Only pay for what you need"
-    prices={[
-      {
-        title: 'basic',
-        subtitle: 'Optimal choice for personal use',
-        price: 29,
-        period: 'per month',
-        items: [
-          {
-            description: 'Etiam in libero, et volutpat',
-          },
-          {
-            description: 'Aenean ac nunc dolor tristique',
-          },
-          {
-            description: 'Cras scelerisque accumsan lib',
-          },
-          {
-            description: 'In hac habitasse',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
-        },
-      },
-      {
-        title: 'standard',
-        subtitle: 'Optimal choice for small teams',
-        price: 69,
-        period: 'Per Month',
-        items: [
-          {
-            description: 'Proin vel laoreet',
-          },
-          {
-            description: 'Ut efficitur habitasse egestas',
-          },
-          {
-            description: 'Volutpat hac curabitur',
-          },
-          {
-            description: 'Pellentesque blandit ut nibh',
-          },
-          {
-            description: 'Donec fringilla sem',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
-        },
-        hasRibbon: true,
-        ribbonTitle: 'popular',
-      },
-      {
-        title: 'premium',
-        subtitle: 'Optimal choice for companies',
-        price: 199,
-        period: 'Per Month',
-        items: [
-          {
-            description: 'Curabitur suscipit risus',
-          },
-          {
-            description: 'Aliquam habitasse malesuada',
-          },
-          {
-            description: 'Suspendisse sit amet blandit',
-          },
-          {
-            description: 'Suspendisse auctor blandit dui',
-          },
-        ],
-        callToAction: {
-          target: '_blank',
-          text: 'Get started',
-          href: '#',
-        },
-      },
-    ]}
-  />
+    <!-- Scale -->
+    <div class="card p-6 flex flex-col">
+      <h3 class="text-xl font-bold dark:text-white">Scale</h3>
+      <p class="mt-2 text-slate-600 dark:text-slate-300">Multi-location • Multiple modules</p>
+      <div class="mt-4 text-4xl font-extrabold">Custom</div>
+      <ul class="mt-4 space-y-2 text-slate-600 dark:text-slate-300">
+        <li>All modules as needed</li>
+        <li>Optional integrations & SLAs</li>
+        <li>Onboarding & training</li>
+      </ul>
+      <a class="btn btn-secondary mt-6" href="/contact/">Request quote</a>
+    </div>
+  </section>
 
-  <!-- Features3 Widget ************** -->
+  <section class="py-12 border-t border-slate-200/50 dark:border-slate-800/60">
+    <h2 class="text-2xl font-bold dark:text-white">FAQs</h2>
+    <div class="mt-4 grid gap-6 md:grid-cols-2">
+      <div>
+        <h3 class="font-semibold">What’s included in Reception?</h3>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">
+          Automated reminders, self-rescheduling, confirmations, late-arrival handling, and follow-ups.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold">Can I switch plans later?</h3>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Yes, upgrade/downgrade anytime—your data stays.</p>
+      </div>
+      <div>
+        <h3 class="font-semibold">How is WhatsApp billed?</h3>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">
+          WhatsApp conversation fees are separate (Meta pricing). We’ll help you set it up.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold">Do you support multiple locations?</h3>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Yes—use the Scale plan or contact us for a custom quote.</p>
+      </div>
+    </div>
+  </section>
 
-  <Features3
-    title="Price-related features"
-    subtitle="Discover the advantages of choosing our plans"
-    columns={2}
-    items={[
-      {
-        title: 'Tiered Pricing Plans',
-        description: 'Choose from a range of pricing plans designed to accommodate different budgets and requirements.',
-        icon: 'tabler:stairs',
-      },
-      {
-        title: 'Transparent Pricing',
-        description: 'Clearly displayed pricing details for each plan, with no hidden costs or unexpected charges.',
-        icon: 'tabler:flip-vertical',
-      },
-      {
-        title: 'Secure Payment Methods',
-        description: 'Secure payment gateways to protect your financial information during transactions.',
-        icon: 'tabler:shield-lock',
-      },
-      {
-        title: 'Instant Access',
-        description: `Immediate access to your chosen plan's features and templates upon subscription.`,
-        icon: 'tabler:accessible',
-      },
-      {
-        title: 'Upgrade Value',
-        description: 'Upgrade to higher-tier plans to unlock more features and benefits for an enhanced experience.',
-        icon: 'tabler:chevrons-up',
-      },
-      {
-        title: '24H support',
-        description: 'Questions answered via live chat, email or phone, every calendar day.',
-        icon: 'tabler:headset',
-      },
-    ]}
-    classes={{ container: 'max-w-5xl' }}
-  />
-
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="A guided journey from plans to creativity"
-    tagline="simplified process"
-    isReversed={true}
-    items={[
-      {
-        title: 'Explore plans',
-        icon: 'tabler:number-1',
-      },
-      {
-        title: 'Select a plan',
-        icon: 'tabler:number-2',
-      },
-      {
-        title: 'Sign Up / Log In',
-        icon: 'tabler:number-3',
-      },
-      {
-        title: 'Review order',
-        icon: 'tabler:number-4',
-      },
-      {
-        title: 'Enter payment details',
-        icon: 'tabler:number-5',
-      },
-      {
-        title: 'Confirmation',
-        icon: 'tabler:number-6',
-      },
-      {
-        title: 'Download and start using the template(s)',
-        icon: 'tabler:number-7',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1536816579748-4ecb3f03d72a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Pricing FAQs"
-    subtitle="Choosing the right plan is important, and we're here to answer your questions. If you have queries about our pricing options, you're in the right place."
-    columns={1}
-    items={[
-      {
-        title: 'Do the plans come with customer support?',
-        description:
-          'Absolutely, all plans include access to our dedicated customer support to assist you with any queries or concerns.',
-      },
-      {
-        title: 'Is there a trial period for the different plans?',
-        description:
-          "Unfortunately, we don't offer trial periods for the plans. However, you can check out our demo section to preview the quality of our templates.",
-      },
-      {
-        title: 'Can I switch between plans?',
-        description:
-          'Certainly! You can easily upgrade or downgrade your plan, at any time, to find the one that best suits your evolving requirements.',
-      },
-      {
-        title: 'What payment methods do you accept?',
-        description:
-          'We accept major credit cards and online payment methods to ensure a convenient and secure transaction process.',
-      },
-      {
-        title: 'Are there any hidden fees beyond the displayed cost?',
-        description:
-          'No, the subscription cost covers all the features and templates listed under each plan. There are no hidden fees or extra charges.',
-      },
-    ]}
-  />
-
-  <!-- CallToAction Widget *********** -->
-
-  <CallToAction
-    title="Ready to boost your projects?"
-    subtitle="Join our community of satisfied customers who have transformed their work with our templates."
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get started now',
-        href: '/',
-      },
-    ]}
-  />
+  <section class="py-12">
+    <div class="md:flex items-center justify-between">
+      <div>
+        <h2 class="text-2xl font-bold dark:text-white">Ready to begin?</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">We’ll recommend a plan in 10 minutes.</p>
+      </div>
+      <div class="mt-6 md:mt-0 flex gap-3">
+        <a class="btn btn-primary" href="/contact/">Book a demo</a>
+        <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+      </div>
+    </div>
+  </section>
 </Layout>
+
