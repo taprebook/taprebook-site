@@ -1,5 +1,11 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+
+const heroImage = {
+  // Replace this with any illustration/photo you prefer
+  src: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80',
+  alt: 'Abstract AI network illustration'
+};
 ---
 
 <Layout
@@ -10,23 +16,44 @@ import Layout from '~/layouts/PageLayout.astro';
     ignoreTitleTemplate: true,
   }}
 >
-  <!-- Hero: Parent company message -->
-  <section class="py-16 md:py-24 text-center">
-    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight dark:text-white">
-      AI-powered WhatsApp Solutions
-    </h1>
-    <p class="mt-4 text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-      TapRebook is a suite of WhatsApp modules that automate scheduling, reminders, coordination and guest/parent
-      messaging—under one brand that grows with you.
-    </p>
-    <div class="mt-8 flex items-center justify-center gap-3">
-      <a class="btn btn-primary" href="/modules/">Explore solutions</a>
-      <a class="btn btn-secondary" href="/contact/">Book a demo</a>
+  <!-- HERO with lavender/blue background and image -->
+  <section class="relative">
+    <!-- soft lavender / blue gradient background just for the hero -->
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-indigo-50 via-violet-50 to-sky-50 dark:from-indigo-900/20 dark:via-violet-900/20 dark:to-sky-900/10"></div>
+
+    <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 grid gap-10 md:grid-cols-2 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight dark:text-white">
+          AI-powered WhatsApp Solutions
+        </h1>
+        <p class="mt-4 text-lg md:text-xl text-slate-700 dark:text-slate-300 max-w-2xl">
+          TapRebook is a suite of WhatsApp modules that automate scheduling, reminders, coordination, and guest/parent
+          messaging—under one brand that grows with you.
+        </p>
+        <div class="mt-8 flex items-center gap-3">
+          <a class="btn btn-primary" href="/modules/">Explore solutions</a>
+          <a class="btn btn-secondary" href="/contact/">Book a demo</a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="rounded-2xl overflow-hidden shadow-lg ring-1 ring-slate-200/70 dark:ring-slate-800/60">
+          <img
+            src={heroImage.src}
+            alt={heroImage.alt}
+            class="w-full h-[280px] md:h-[420px] object-cover"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+        <!-- subtle decorative blur glow -->
+        <div class="pointer-events-none absolute -inset-6 -z-10 blur-3xl opacity-50 bg-gradient-to-tr from-indigo-300 via-violet-300 to-sky-300 dark:from-indigo-600/40 dark:via-violet-600/40 dark:to-sky-600/40"></div>
+      </div>
     </div>
   </section>
 
   <!-- Solutions grid: quick paths into each module -->
-  <section class="py-8 border-t border-slate-200/60 dark:border-slate-800/60">
+  <section class="py-10 border-t border-slate-200/60 dark:border-slate-800/60">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl md:text-3xl font-bold dark:text-white text-center">Solutions</h2>
       <p class="mt-2 text-center text-slate-600 dark:text-slate-300">
@@ -36,75 +63,4 @@ import Layout from '~/layouts/PageLayout.astro';
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <a class="card p-5 hover:opacity-90" href="/modules/reception/">
           <h3 class="font-semibold">Reception</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            AI receptionist for clinics: reminders, self-rescheduling, follow-ups.
-          </p>
-        </a>
 
-        <a class="card p-5 hover:opacity-90" href="/modules/labs/">
-          <h3 class="font-semibold">Labs</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Diagnostics & radiology coordination with prep instructions and nudges.
-          </p>
-        </a>
-
-        <a class="card p-5 hover:opacity-90" href="/modules/pharma/">
-          <h3 class="font-semibold">Pharma</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Refill & chronic-care reminders with smart follow-ups.
-          </p>
-        </a>
-
-        <a class="card p-5 hover:opacity-90" href="/modules/dentallab/">
-          <h3 class="font-semibold">DentalLab</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Dentist ↔ lab case tracker, pickups, approvals, status.
-          </p>
-        </a>
-
-        <a class="card p-5 hover:opacity-90" href="/modules/stay/">
-          <h3 class="font-semibold">Stay</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Homestay/houseboat guest messaging: pre-arrival info & upsells.
-          </p>
-        </a>
-
-        <a class="card p-5 hover:opacity-90" href="/modules/campus/">
-          <h3 class="font-semibold">Campus</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Parent communications: notices, fees, attendance, events.
-          </p>
-        </a>
-
-        <a class="card p-5 hover:opacity-90 sm:col-span-2 lg:col-span-3" href="/modules/queue/">
-          <div class="flex items-baseline justify-between">
-            <h3 class="font-semibold">Queue</h3>
-            <span class="text-xs uppercase tracking-wide text-slate-500">Hospitality</span>
-          </div>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Restaurant waitlist & preorders: live position updates and table-ready alerts.
-          </p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why TapRebook: generic parent value props -->
-  <section class="py-12 border-t border-slate-200/60 dark:border-slate-800/60">
-    <div class="max-w-6xl mx-auto px-4 grid gap-6 md:grid-cols-3">
-      <div class="card p-6">
-        <h3 class="font-semibold">One brand, many modules</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          Start with what you need; expand without re-building your stack or confusing customers.
-        </p>
-      </div>
-      <div class="card p-6">
-        <h3 class="font-semibold">WhatsApp-first UX</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          No app installs. Conversations drive bookings, reminders, coordination and updates.
-        </p>
-      </div>
-      <div class="card p-6">
-        <h3 class="font-semibold">Measurable outcomes</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          See completions, drop-offs and exceptions; escalate to staf
