@@ -2,37 +2,19 @@
 import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
-// import Announcement from '~/components/widgets/Announcement.astro'; // removed
-
 import { headerData, footerData } from '~/navigation';
 import type { MetaData } from '~/types';
 
-export interface Props {
-  metadata?: MetaData;
-}
+import TrianglifyBg from '~/components/backgrounds/TrianglifyBg.astro';
 
+export interface Props { metadata?: MetaData; }
 const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
-  <!-- Site-wide geometric background (two-color diamond grid) -->
-  <div class="fixed inset-0 -z-50 pointer-events-none">
-    <div class="absolute inset-0 taprebook-geo-bg"></div>
-    <!-- super-subtle grain to avoid banding on large screens -->
-    <div
-      class="absolute inset-0 opacity-[0.05] mix-blend-overlay"
-      style="background-image: url('data:image/svg+xml;utf8,\
-<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%27160%27 height=%27160%27>\
-<filter id=%27n%27><feTurbulence type=%27fractalNoise%27 baseFrequency=%270.9%27 numOctaves=%272%27/></filter>\
-<rect width=%27100%%27 height=%27100%%27 filter=%27url(%23n)%27/></svg>');"
-    ></div>
-  </div>
-
-  <!-- Removed the announcement slot -->
-  <!-- <slot name="announcement"><Announcement /></slot> -->
+  <TrianglifyBg />
 
   <slot name="header">
-    <!-- Removed showRssFeed/showToggleTheme to hide RSS & theme switch -->
     <Header {...headerData} isSticky />
   </slot>
 
@@ -43,29 +25,6 @@ const { metadata } = Astro.props;
   <slot name="footer">
     <Footer {...footerData} />
   </slot>
-
-  <style is:global>
-    /* Two-color geometric background (diamond / diagonal check) */
-    .taprebook-geo-bg {
-      /* ===== tweak these three to taste ===== */
-      --c1: #B7E5F4;   /* baby blue */
-      --c2: #D6EED9;   /* mint */
-      --tile: 64px;    /* diamond tile size */
-
-      /* diamond tessellation using conic gradients */
-      background:
-        conic-gradient(from 45deg at 25% 25%,
-          var(--c1) 0 90deg, var(--c2) 0 180deg, var(--c1) 0 270deg, var(--c2) 0)
-          0 0 / var(--tile) var(--tile),
-        conic-gradient(from 45deg at 75% 75%,
-          var(--c1) 0 90deg, var(--c2) 0 180deg, var(--c1) 0 270deg, var(--c2) 0)
-          0 0 / var(--tile) var(--tile);
-
-      filter: saturate(1.02) brightness(1.01);
-    }
-
-    /* Light fallback (if anything overflows) */
-    body { background-color: #EEF7F4; }
-  </style>
 </Layout>
+
 
