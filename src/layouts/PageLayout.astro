@@ -6,29 +6,22 @@ import Announcement from '~/components/widgets/Announcement.astro';
 import { headerData, footerData } from '~/navigation';
 import type { MetaData } from '~/types';
 
-import BgTriangles from '~/components/BgTriangles.astro';
-
-export interface Props {
-  metadata?: MetaData;
-}
-
+import BgCrystal from '~/components/BgCrystal.astro'; // ⬅️ use this
+export interface Props { metadata?: MetaData; }
 const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
-  <!-- site-wide background -->
-  <BgTriangles />
+  <BgCrystal /> <!-- ⬅️ site-wide, behind everything -->
 
   <slot name="announcement">
     <Announcement />
   </slot>
 
   <slot name="header">
-    <!-- keep header; it can be slightly opaque, triangles will show beneath the hero anyway -->
     <Header {...headerData} isSticky showRssFeed={false} showToggleTheme />
   </slot>
 
-  <!-- Make main a stacking context so content appears over the canvas -->
   <main class="relative z-0">
     <slot />
   </main>
@@ -37,7 +30,3 @@ const { metadata } = Astro.props;
     <Footer {...footerData} />
   </slot>
 </Layout>
-
-
-
-
