@@ -17,6 +17,9 @@ import { ClientRouter } from 'astro:transitions';
 
 import type { MetaData as MetaDataType } from '~/types';
 
+// NEW: animated background
+import TrianglifyBg from '~/components/backgrounds/TrianglifyBg.astro';
+
 export interface Props {
   metadata?: MetaDataType;
 }
@@ -38,11 +41,39 @@ const { language, textDirection } = I18N;
 
     <!-- Comment the line below to disable View Transitions -->
     <ClientRouter fallback="swap" />
+
+    <!-- GLOBAL OVERRIDES: make the site transparent so the canvas shows -->
+    <style is:global>
+      html, body, main { background: transparent !important; }
+
+      /* Kill theme gradients/solids that were causing the lavender band */
+      [class*="bg-"],
+      [class*="from-"], [class*="via-"], [class*="to-"],
+      .bg-white, .bg-slate-50, .bg-slate-100,
+      .bg-base-100, .bg-base-200,
+      .bg-gradient, .gradient,
+      .prose, .hero, .hero:before, .hero:after,
+      section, [data-aw-section], .aw-section {
+        background: transparent !important;
+        background-image: none !important;
+      }
+
+      /* Optional soft “glass” for cards on top of triangles */
+      .card, .rounded-xl, .rounded-2xl {
+        background-color: rgba(255, 255, 255, 0.55);
+        backdrop-filter: blur(2px);
+      }
+    </style>
   </head>
 
-  <body class="antialiased text-default bg-page tracking-tight">
+  <!-- IMPORTANT: remove bg-page so it doesn't paint a solid behind the canvas -->
+  <body class="antialiased text-default tracking-tight">
+    <!-- Mount animated background behind everything -->
+    <TrianglifyBg />
+
     <slot />
 
     <BasicScripts />
   </body>
 </html>
+
