@@ -14,6 +14,7 @@ export const headerData = {
         { text: 'Queue', href: '/modules/queue/' },
       ],
     },
+    { text: 'Modules', href: '/modules/' },
     { text: 'Pricing', href: '/pricing/' },
     { text: 'About', href: '/about/' },
     { text: 'Contact', href: '/contact/' },
@@ -28,8 +29,11 @@ export const footerData = {
     {
       title: 'TapRebook',
       links: [
+        { text: 'Modules', href: '/modules/' },
         { text: 'Pricing', href: '/pricing/' },
         { text: 'Contact', href: '/contact/' },
+        { text: 'Privacy', href: '/privacy/' },
+        { text: 'Terms', href: '/terms/' },
       ],
     },
     {
@@ -46,8 +50,7 @@ export const footerData = {
     },
   ],
   socialLinks: [
-    { ariaLabel: 'WhatsApp', icon: 'tabler:brand-whatsapp', href: 'https://wa.me/91XXXXXXXXXX' },
+    { ariaLabel: 'WhatsApp', icon: 'tabler:brand-whatsapp', href: 'https://wa.me/919539231117' },
   ],
-  footNote: '© ' + new Date().getFullYear() + ' TapRebook. All rights reserved.',
+  footNote: `© ${new Date().getFullYear()} TapRebook. All rights reserved.`,
 };
-
