@@ -1,5 +1,5 @@
 ---
-/* Trianglify background loaded from CDN to avoid lockfile issues */
+/* Low-poly “icy triangles” background – CDN load (no npm needed) */
 ---
 
 <style>
@@ -14,7 +14,7 @@
 <script>
   if (typeof window !== 'undefined') {
     (async () => {
-      // ESM build on jsDelivr (works well in browsers)
+      // Load Trianglify ESM straight from CDN
       const mod = await import('https://cdn.jsdelivr.net/npm/trianglify@4.1.1/dist/trianglify.esm.js');
       const trianglify = mod.default || mod;
 
@@ -24,28 +24,23 @@
 
       function sizeCanvas() {
         const dpr = window.devicePixelRatio || 1;
-        canvas.width = Math.floor(window.innerWidth * dpr);
+        canvas.width  = Math.floor(window.innerWidth  * dpr);
         canvas.height = Math.floor(window.innerHeight * dpr);
-        canvas.style.width = '100%';
-        canvas.style.height = '100%';
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       }
 
-      let hue = 205;
-      let raf;
-
+      let hue = 205; // cool blue family
       function palette() {
         return Array.from({ length: 6 }, (_, i) => `hsl(${(hue + i * 5) % 360} 45% ${92 - i * 8}%)`);
       }
 
       function render() {
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-
+        const w = window.innerWidth;
+        const h = window.innerHeight;
         const pattern = trianglify({
-          width,
-          height,
-          cellSize: Math.max(80, Math.min(140, Math.floor(width / 12))),
+          width: w,
+          height: h,
+          cellSize: Math.max(80, Math.min(140, Math.floor(w / 12))),
           variance: 0.55,
           xColors: palette(),
           yColors: 'match',
@@ -53,16 +48,16 @@
           strokeOpacity: 0.08,
           strokeWidth: 1,
         });
-
         pattern.toCanvas(canvas);
       }
 
-      function animate() { hue = (hue + 0.02) % 360; render(); raf = requestAnimationFrame(animate); }
+      let raf;
+      function tick() { hue = (hue + 0.02) % 360; render(); raf = requestAnimationFrame(tick); }
       function onResize() { sizeCanvas(); render(); }
 
       sizeCanvas();
       render();
-      raf = requestAnimationFrame(animate);
+      raf = requestAnimationFrame(tick);
       window.addEventListener('resize', onResize);
 
       addEventListener('astro:before-preload', () => {
@@ -72,4 +67,5 @@
     })();
   }
 </script>
+
 
