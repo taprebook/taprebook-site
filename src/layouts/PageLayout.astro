@@ -1,32 +1,25 @@
 ---
+import GlassTriBg from '~/components/visuals/GlassTriBg.astro';
 import Layout from '~/layouts/Layout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Footer from '~/components/widgets/Footer.astro';
 import Announcement from '~/components/widgets/Announcement.astro';
 import { headerData, footerData } from '~/navigation';
 import type { MetaData } from '~/types';
-
-import BgCrystal from '~/components/BgCrystal.astro'; // ⬅️ use this
-export interface Props { metadata?: MetaData; }
+export interface Props { metadata?: MetaData }
 const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
-  <BgCrystal /> <!-- ⬅️ site-wide, behind everything -->
+  <GlassTriBg primary="#0E5BAF" secondary="#7EC3F2" />
 
-  <slot name="announcement">
-    <Announcement />
-  </slot>
-
+  <slot name="announcement"><Announcement /></slot>
   <slot name="header">
-    <Header {...headerData} isSticky showRssFeed={false} showToggleTheme />
+    <Header {...headerData} isSticky showRssFeed showToggleTheme />
   </slot>
 
-  <main class="relative z-0">
-    <slot />
-  </main>
+  <main><slot /></main>
 
-  <slot name="footer">
-    <Footer {...footerData} />
-  </slot>
+  <slot name="footer"><Footer {...footerData} /></slot>
 </Layout>
+
