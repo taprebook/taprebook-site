@@ -1,0 +1,144 @@
+---
+/**
+ * GlassTriBg: layered translucent low-poly background
+ * - Very close to the provided reference image
+ * - Overlapping polygons with soft blur + gentle motion
+ * - No external deps. Works in AstroWind.
+ *
+ * Props (optional):
+ *   primary = '#0E5BAF'  // deep brand blue (top)
+ *   secondary = '#7EC3F2'// light brand blue (mid)
+ */
+const primary   = Astro.props.primary   ?? '#0E5BAF';
+const secondary = Astro.props.secondary ?? '#7EC3F2';
+---
+
+<style>
+  .bg-root {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+  /* subtle bottom fade to white like the reference */
+  .fade-bottom {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+      rgba(255,255,255,0) 30%,
+      rgba(255,255,255,0.9) 80%,
+      #fff 100%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .fade-bottom {
+      background: linear-gradient(to bottom,
+        rgba(0,0,0,0) 35%,
+        rgba(0,0,0,0.55) 85%,
+        rgba(0,0,0,0.85) 100%);
+    }
+  }
+
+  /* Motion: extremely gentle so it feels alive but not distracting */
+  .layer {
+    transform-origin: 50% 0%;
+    animation: drift 28s linear infinite;
+    will-change: transform;
+  }
+  .layer:nth-child(2){ animation-duration: 36s; animation-direction: reverse; }
+  .layer:nth-child(3){ animation-duration: 44s; }
+  .layer:nth-child(4){ animation-duration: 52s; animation-direction: reverse; }
+  .layer:nth-child(5){ animation-duration: 60s; }
+
+  @keyframes drift {
+    0%   { transform: translateY(0px)   translateX(0px)   rotate(0deg)   scale(1.00); }
+    50%  { transform: translateY(-18px) translateX(10px)  rotate(0.4deg) scale(1.01); }
+    100% { transform: translateY(0px)   translateX(0px)   rotate(0deg)   scale(1.00); }
+  }
+</style>
+
+<div class="bg-root">
+  <!-- Responsive SVG covers viewport; we draw multiple translucent groups -->
+  <svg id="glass-bg" width="100%" height="100%" preserveAspectRatio="none"
+       viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+    <!-- soft top vignette -->
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"  stop-color={primary} stop-opacity="0.55"/>
+        <stop offset="25%" stop-color={secondary} stop-opacity="0.20"/>
+        <stop offset="55%" stop-color="#ffffff" stop-opacity="0.05"/>
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+      </linearGradient>
+
+      <!-- subtle blur to mimic the washed glass look -->
+      <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+        <feGaussianBlur stdDeviation="1.8" />
+      </filter>
+
+      <!-- a translucent fill that lerps between primary->secondary->white -->
+      <linearGradient id="polyfill" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%"   stop-color={primary}   stop-opacity="0.10"/>
+        <stop offset="55%"  stop-color={secondary} stop-opacity="0.08"/>
+        <stop offset="100%" stop-color="#ffffff"   stop-opacity="0.06"/>
+      </linearGradient>
+    </defs>
+
+    <!-- sky wash -->
+    <rect x="0" y="0" width="1440" height="900" fill="url(#sky)"/>
+
+    <!-- Five translucent layers of triangles; overlap = “stacked glass” look -->
+    <g class="layer" filter="url(#soft)" opacity="0.9">
+      <!-- top-right cluster -->
+      <polygon fill="url(#polyfill)" points="900,0 1160,110 940,240"/>
+      <polygon fill="url(#polyfill)" points="1160,110 1320,10 1270,260"/>
+      <polygon fill="url(#polyfill)" points="940,240 1180,320 990,420"/>
+      <polygon fill="url(#polyfill)" points="1180,320 1320,260 1260,470"/>
+    </g>
+
+    <g class="layer" filter="url(#soft)" opacity="0.85">
+      <!-- mid band -->
+      <polygon fill="url(#polyfill)" points="240,260 520,210 420,360"/>
+      <polygon fill="url(#polyfill)" points="520,210 760,290 560,380"/>
+      <polygon fill="url(#polyfill)" points="760,290 980,340 820,470"/>
+      <polygon fill="url(#polyfill)" points="560,380 740,480 520,520"/>
+    </g>
+
+    <g class="layer" filter="url(#soft)" opacity="0.80">
+      <!-- left cluster -->
+      <polygon fill="url(#polyfill)" points="40,120 220,60 160,260"/>
+      <polygon fill="url(#polyfill)" points="160,260 320,120 300,340"/>
+      <polygon fill="url(#polyfill)" points="300,340 480,260 420,420"/>
+    </g>
+
+    <g class="layer" filter="url(#soft)" opacity="0.75">
+      <!-- lower middle -->
+      <polygon fill="url(#polyfill)" points="380,520 640,480 520,620"/>
+      <polygon fill="url(#polyfill)" points="640,480 880,560 720,660"/>
+      <polygon fill="url(#polyfill)" points="880,560 1080,640 920,740"/>
+    </g>
+
+    <g class="layer" filter="url(#soft)" opacity="0.70">
+      <!-- far right lower -->
+      <polygon fill="url(#polyfill)" points="1120,520 1320,460 1240,640"/>
+      <polygon fill="url(#polyfill)" points="1240,640 1420,520 1400,760"/>
+    </g>
+  </svg>
+
+  <div class="fade-bottom"></div>
+</div>
+
+<script>
+  // Optional: react to resize (keeps detail density consistent on ultrawide)
+  const svg = document.getElementById('glass-bg');
+  const updateViewBox = () => {
+    const w = Math.max(960, window.innerWidth);
+    const h = Math.max(720, window.innerHeight);
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+  };
+  updateViewBox();
+  addEventListener('resize', updateViewBox);
+  // HMR cleanup for dev
+  if (import.meta?.hot){
+    import.meta.hot.dispose(() => removeEventListener('resize', updateViewBox));
+  }
+</script>
