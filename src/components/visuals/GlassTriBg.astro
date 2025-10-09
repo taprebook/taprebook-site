@@ -158,3 +158,24 @@ const density   = Number(Astro.props.density ?? 1.0);
   function populate(){
     LAYERS.forEach((cfg, i) => {
       const g = document.getElementById(cfg.id);
+      g.replaceChildren(); // clear
+      makeLayer(g, cfg.count, cfg.area, (i+1)*42.7);
+    });
+  }
+
+  // Maintain density across sizes & fix any edge issues
+  function updateViewBox(){
+    const w = Math.max(960, window.innerWidth);
+    const h = Math.max(720, window.innerHeight);
+    svg.setAttribute('viewBox', `0 0 ${BASE_W} ${BASE_H}`);
+  }
+
+  populate();
+  updateViewBox();
+  addEventListener('resize', updateViewBox);
+
+  if (import.meta?.hot){
+    import.meta.hot.dispose(() => removeEventListener('resize', updateViewBox));
+  }
+</script>
+
