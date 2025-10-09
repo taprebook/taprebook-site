@@ -1,16 +1,19 @@
 ---
 /**
- * GlassTriBg: layered translucent low-poly background
- * - Very close to the provided reference image
- * - Overlapping polygons with soft blur + gentle motion
- * - No external deps. Works in AstroWind.
+ * GlassTriBg v2 — layered translucent low-poly background (dynamic)
+ * - Fixes right-edge gap via overscan + slice scaling
+ * - More visible motion (still tasteful)
+ * - Sharper look: lighter blur, most layers unblurred
+ * - Many more triangles (procedurally generated)
  *
- * Props (optional):
- *   primary = '#0E5BAF'  // deep brand blue (top)
- *   secondary = '#7EC3F2'// light brand blue (mid)
+ * Optional props:
+ *   primary   : string = '#0E5BAF'
+ *   secondary : string = '#7EC3F2'
+ *   density   : number = 1.0   // 0.6 (lighter) ... 1.4 (denser)
  */
 const primary   = Astro.props.primary   ?? '#0E5BAF';
 const secondary = Astro.props.secondary ?? '#7EC3F2';
+const density   = Number(Astro.props.density ?? 1.0);
 ---
 
 <style>
@@ -19,126 +22,139 @@ const secondary = Astro.props.secondary ?? '#7EC3F2';
     inset: 0;
     z-index: -1;
     pointer-events: none;
+    overflow: hidden; /* prevent any subpixel edges from peeking through */
   }
-  /* subtle bottom fade to white like the reference */
+  .wrap {
+    position: absolute;
+    inset: -2%;               /* overscan to avoid edges */
+    transform: scale(1.04);   /* tiny bleed to cover */
+  }
+
+  /* Bottom fade like the reference */
   .fade-bottom {
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom,
-      rgba(255,255,255,0) 30%,
-      rgba(255,255,255,0.9) 80%,
+      rgba(255,255,255,0) 28%,
+      rgba(255,255,255,0.88) 78%,
       #fff 100%);
   }
-
   @media (prefers-color-scheme: dark) {
     .fade-bottom {
       background: linear-gradient(to bottom,
-        rgba(0,0,0,0) 35%,
-        rgba(0,0,0,0.55) 85%,
+        rgba(0,0,0,0) 32%,
+        rgba(0,0,0,0.55) 84%,
         rgba(0,0,0,0.85) 100%);
     }
   }
 
-  /* Motion: extremely gentle so it feels alive but not distracting */
+  /* Motion: clearer but still gentle */
   .layer {
     transform-origin: 50% 0%;
-    animation: drift 28s linear infinite;
+    animation: drift 32s ease-in-out infinite;
     will-change: transform;
   }
-  .layer:nth-child(2){ animation-duration: 36s; animation-direction: reverse; }
-  .layer:nth-child(3){ animation-duration: 44s; }
-  .layer:nth-child(4){ animation-duration: 52s; animation-direction: reverse; }
-  .layer:nth-child(5){ animation-duration: 60s; }
+  /* Parallax: different speeds & directions */
+  .layer.l2 { animation-duration: 38s; animation-direction: reverse; }
+  .layer.l3 { animation-duration: 44s; }
+  .layer.l4 { animation-duration: 52s; animation-direction: reverse; }
+  .layer.l5 { animation-duration: 60s; }
 
   @keyframes drift {
-    0%   { transform: translateY(0px)   translateX(0px)   rotate(0deg)   scale(1.00); }
-    50%  { transform: translateY(-18px) translateX(10px)  rotate(0.4deg) scale(1.01); }
-    100% { transform: translateY(0px)   translateX(0px)   rotate(0deg)   scale(1.00); }
+    0%   { transform: translateY(0px)     translateX(0px)    rotate(0deg)    scale(1.00); }
+    50%  { transform: translateY(-28px)   translateX(14px)   rotate(0.6deg)  scale(1.01); }
+    100% { transform: translateY(0px)     translateX(0px)    rotate(0deg)    scale(1.00); }
   }
 </style>
 
 <div class="bg-root">
-  <!-- Responsive SVG covers viewport; we draw multiple translucent groups -->
-  <svg id="glass-bg" width="100%" height="100%" preserveAspectRatio="none"
-       viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
-    <!-- soft top vignette -->
-    <defs>
-      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%"  stop-color={primary} stop-opacity="0.55"/>
-        <stop offset="25%" stop-color={secondary} stop-opacity="0.20"/>
-        <stop offset="55%" stop-color="#ffffff" stop-opacity="0.05"/>
-        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
-      </linearGradient>
+  <div class="wrap">
+    <svg id="glass-bg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"
+      viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
 
-      <!-- subtle blur to mimic the washed glass look -->
-      <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
-        <feGaussianBlur stdDeviation="1.8" />
-      </filter>
+      <defs>
+        <!-- Top wash -->
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"  stop-color={primary}   stop-opacity="0.55"/>
+          <stop offset="28%" stop-color={secondary} stop-opacity="0.22"/>
+          <stop offset="58%" stop-color="#ffffff"   stop-opacity="0.06"/>
+          <stop offset="100%" stop-color="#ffffff"  stop-opacity="0"/>
+        </linearGradient>
 
-      <!-- a translucent fill that lerps between primary->secondary->white -->
-      <linearGradient id="polyfill" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%"   stop-color={primary}   stop-opacity="0.10"/>
-        <stop offset="55%"  stop-color={secondary} stop-opacity="0.08"/>
-        <stop offset="100%" stop-color="#ffffff"   stop-opacity="0.06"/>
-      </linearGradient>
-    </defs>
+        <!-- Lighter blur than before; only used on a couple layers -->
+        <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
+          <feGaussianBlur stdDeviation="0.8" />
+        </filter>
 
-    <!-- sky wash -->
-    <rect x="0" y="0" width="1440" height="900" fill="url(#sky)"/>
+        <!-- Translucent ramp used for polygons -->
+        <linearGradient id="polyfill" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%"   stop-color={primary}   stop-opacity="0.10"/>
+          <stop offset="55%"  stop-color={secondary} stop-opacity="0.08"/>
+          <stop offset="100%" stop-color="#ffffff"   stop-opacity="0.06"/>
+        </linearGradient>
+      </defs>
 
-    <!-- Five translucent layers of triangles; overlap = “stacked glass” look -->
-    <g class="layer" filter="url(#soft)" opacity="0.9">
-      <!-- top-right cluster -->
-      <polygon fill="url(#polyfill)" points="900,0 1160,110 940,240"/>
-      <polygon fill="url(#polyfill)" points="1160,110 1320,10 1270,260"/>
-      <polygon fill="url(#polyfill)" points="940,240 1180,320 990,420"/>
-      <polygon fill="url(#polyfill)" points="1180,320 1320,260 1260,470"/>
-    </g>
-
-    <g class="layer" filter="url(#soft)" opacity="0.85">
-      <!-- mid band -->
-      <polygon fill="url(#polyfill)" points="240,260 520,210 420,360"/>
-      <polygon fill="url(#polyfill)" points="520,210 760,290 560,380"/>
-      <polygon fill="url(#polyfill)" points="760,290 980,340 820,470"/>
-      <polygon fill="url(#polyfill)" points="560,380 740,480 520,520"/>
-    </g>
-
-    <g class="layer" filter="url(#soft)" opacity="0.80">
-      <!-- left cluster -->
-      <polygon fill="url(#polyfill)" points="40,120 220,60 160,260"/>
-      <polygon fill="url(#polyfill)" points="160,260 320,120 300,340"/>
-      <polygon fill="url(#polyfill)" points="300,340 480,260 420,420"/>
-    </g>
-
-    <g class="layer" filter="url(#soft)" opacity="0.75">
-      <!-- lower middle -->
-      <polygon fill="url(#polyfill)" points="380,520 640,480 520,620"/>
-      <polygon fill="url(#polyfill)" points="640,480 880,560 720,660"/>
-      <polygon fill="url(#polyfill)" points="880,560 1080,640 920,740"/>
-    </g>
-
-    <g class="layer" filter="url(#soft)" opacity="0.70">
-      <!-- far right lower -->
-      <polygon fill="url(#polyfill)" points="1120,520 1320,460 1240,640"/>
-      <polygon fill="url(#polyfill)" points="1240,640 1420,520 1400,760"/>
-    </g>
-  </svg>
+      <!-- sky wash -->
+      <rect x="0" y="0" width="1440" height="900" fill="url(#sky)"/>
+      <!-- Layers populated by script -->
+      <g id="L1" class="layer l1"></g>
+      <g id="L2" class="layer l2" filter="url(#soft)"></g>
+      <g id="L3" class="layer l3"></g>
+      <g id="L4" class="layer l4" filter="url(#soft)"></g>
+      <g id="L5" class="layer l5"></g>
+    </svg>
+  </div>
 
   <div class="fade-bottom"></div>
 </div>
 
 <script>
-  // Optional: react to resize (keeps detail density consistent on ultrawide)
   const svg = document.getElementById('glass-bg');
-  const updateViewBox = () => {
-    const w = Math.max(960, window.innerWidth);
-    const h = Math.max(720, window.innerHeight);
-    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
-  };
-  updateViewBox();
-  addEventListener('resize', updateViewBox);
-  // HMR cleanup for dev
-  if (import.meta?.hot){
-    import.meta.hot.dispose(() => removeEventListener('resize', updateViewBox));
+
+  // --- Config you can tweak quickly
+  const BASE_W = 1440, BASE_H = 900;
+  const DENSITY = Math.max(0.5, Math.min(1.6, Number(<?= density ?>))); // clamp
+  const LAYERS = [
+    { id: 'L1', count: Math.round(14 * DENSITY),  amp: 0.0,  area: [0, 0, 1, 0.42] },
+    { id: 'L2', count: Math.round(18 * DENSITY),  amp: 0.0,  area: [0, 0.12, 1, 0.55] },
+    { id: 'L3', count: Math.round(20 * DENSITY),  amp: 0.0,  area: [0, 0.22, 1, 0.75] },
+    { id: 'L4', count: Math.round(18 * DENSITY),  amp: 0.0,  area: [0.15, 0.38, 0.85, 0.95] },
+    { id: 'L5', count: Math.round(16 * DENSITY),  amp: 0.0,  area: [0.05, 0.52, 0.95, 1.05] },
+  ];
+  // areas: [x0, y0, x1, y1] in relative coords to spread clusters top→bottom
+
+  function rand(seed){ let t = Math.sin(seed) * 10000; return t - Math.floor(t); }
+  function choice(a, r){ return a[Math.floor(r * a.length)]; }
+
+  // Build one triangle around a center with small jitter
+  function tri(cx, cy, size, r1, r2){
+    const a1 = r1 * Math.PI * 2, a2 = (r1+0.33) * Math.PI * 2, a3 = (r1+0.67) * Math.PI * 2;
+    const j = 0.35 + r2*0.25;
+    const p1 = [cx + Math.cos(a1)*size, cy + Math.sin(a1)*size*j];
+    const p2 = [cx + Math.cos(a2)*size*j, cy + Math.sin(a2)*size];
+    const p3 = [cx + Math.cos(a3)*size, cy + Math.sin(a3)*size];
+    return `${p1[0].toFixed(1)},${p1[1].toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)} ${p3[0].toFixed(1)},${p3[1].toFixed(1)}`;
   }
-</script>
+
+  function makeLayer(g, count, area, seed){
+    const [rx0, ry0, rx1, ry1] = area;
+    const x0 = rx0 * BASE_W, y0 = ry0 * BASE_H;
+    const x1 = rx1 * BASE_W, y1 = ry1 * BASE_H;
+    let s = seed;
+    for (let i=0;i<count;i++){
+      s += 1.2345;
+      const r1 = rand(s), r2 = rand(s*1.7), r3 = rand(s*2.3);
+      const cx = x0 + r1*(x1-x0);
+      const cy = y0 + r2*(y1-y0);
+      const size = 80 + r3*220; // triangle size range
+      const poly = document.createElementNS('http://www.w3.org/2000/svg','polygon');
+      poly.setAttribute('fill','url(#polyfill)');
+      poly.setAttribute('points', tri(cx, cy, size, r1, r2));
+      poly.setAttribute('opacity', (0.28 + rand(s*3.1)*0.22).toFixed(2));
+      g.appendChild(poly);
+    }
+  }
+
+  function populate(){
+    LAYERS.forEach((cfg, i) => {
+      const g = document.getElementById(cfg.id);
