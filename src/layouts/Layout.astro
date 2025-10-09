@@ -12,18 +12,13 @@ import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
 
-// View Transitions (leave enabled unless you want to disable them)
+// View Transitions (OK to keep)
 import { ClientRouter } from 'astro:transitions';
 
 import type { MetaData as MetaDataType } from '~/types';
 
-//  ✅ Our dynamic background
+// ✅ Dynamic background
 import GlassTriBg from '~/components/visuals/GlassTriBg.astro';
-...
-<body class="antialiased text-default tracking-tight">
-  <GlassTriBg primary="#0E5BAF" secondary="#7EC3F2" density={1.35} />
-  <slot />
-</body>
 
 export interface Props {
   metadata?: MetaDataType;
@@ -47,19 +42,20 @@ const { language, textDirection } = I18N;
     <!-- View Transitions -->
     <ClientRouter fallback="swap" />
 
-    <!-- Keep the page surface transparent so the background shows through -->
+    <!-- Keep page surface transparent so background is visible -->
     <style is:global>
       html, body { background: transparent !important; }
     </style>
   </head>
 
   <body class="antialiased text-default tracking-tight">
-    <!-- Dynamic low-poly background, behind everything -->
+    <!-- Dynamic low-poly background behind everything -->
     <GlassTriBg primary="#0E5BAF" secondary="#7EC3F2" density={1.35} />
 
-    <!-- Your page content renders here -->
+    <!-- Page content -->
     <slot />
 
     <BasicScripts />
   </body>
 </html>
+
