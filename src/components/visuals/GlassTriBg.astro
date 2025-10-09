@@ -110,28 +110,28 @@ const L5 = makeLayer(22, [0.05, 0.50, 0.95, 1.05], seed * 5.5);
     }
   }
 
-  /* CALMER motion: translate only (no rotate/scale), very small distance */
-  .layer {
-    animation: drift 60s ease-in-out infinite;
-    will-change: transform;
-    transform: translate3d(0,0,0);
-    backface-visibility: hidden;
-  }
-  .l2 { animation-duration: 72s; animation-direction: reverse; }
-  .l3 { animation-duration: 80s; }
-  .l4 { animation-duration: 92s; animation-direction: reverse; }
-  .l5 { animation-duration: 104s; }
+/* Motion: a touch faster than before, still smooth */
+.layer {
+  animation: drift 42s ease-in-out infinite;   /* was 60s */
+  will-change: transform;
+  transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+}
+.l2 { animation-duration: 48s; animation-direction: reverse; }  /* was 72s */
+.l3 { animation-duration: 54s; }                                /* was 80s */
+.l4 { animation-duration: 60s; animation-direction: reverse; }  /* was 92s */
+.l5 { animation-duration: 68s; }                                /* was 104s */
 
-  @keyframes drift {
-    0%   { transform: translate3d(0px, 0px, 0); }
-    50%  { transform: translate3d(8px, -12px, 0); }  /* tiny, smooth */
-    100% { transform: translate3d(0px, 0px, 0); }
-  }
+@keyframes drift {
+  0%   { transform: translate3d(0px, 0px, 0); }
+  50%  { transform: translate3d(12px, -18px, 0); }  /* was 8px, -12px */
+  100% { transform: translate3d(0px, 0px, 0); }
+}
 
-  /* Respect users who prefer less motion */
-  @media (prefers-reduced-motion: reduce) {
-    .layer { animation: none; }
-  }
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .layer { animation: none; }
+}
 </style>
 
 <div class="bg-root">
