@@ -108,31 +108,29 @@ const density   = Number(Astro.props.density ?? 1.0);
   <div class="fade-bottom"></div>
 </div>
 
-<script>
+<script is:inline>
   const svg = document.getElementById('glass-bg');
 
-  // --- Config you can tweak quickly
+  // Props injected from Astro frontmatter (server → client)
+  const DENSITY = Math.max(0.5, Math.min(1.6, Number({density})));
   const BASE_W = 1440, BASE_H = 900;
-  const DENSITY = Math.max(0.5, Math.min(1.6, Number(<?= density ?>))); // clamp
+
   const LAYERS = [
-    { id: 'L1', count: Math.round(14 * DENSITY),  amp: 0.0,  area: [0, 0, 1, 0.42] },
-    { id: 'L2', count: Math.round(18 * DENSITY),  amp: 0.0,  area: [0, 0.12, 1, 0.55] },
-    { id: 'L3', count: Math.round(20 * DENSITY),  amp: 0.0,  area: [0, 0.22, 1, 0.75] },
-    { id: 'L4', count: Math.round(18 * DENSITY),  amp: 0.0,  area: [0.15, 0.38, 0.85, 0.95] },
-    { id: 'L5', count: Math.round(16 * DENSITY),  amp: 0.0,  area: [0.05, 0.52, 0.95, 1.05] },
+    { id: 'L1', count: Math.round(14 * DENSITY),  area: [0, 0, 1, 0.42] },
+    { id: 'L2', count: Math.round(18 * DENSITY),  area: [0, 0.12, 1, 0.55] },
+    { id: 'L3', count: Math.round(20 * DENSITY),  area: [0, 0.22, 1, 0.75] },
+    { id: 'L4', count: Math.round(18 * DENSITY),  area: [0.15, 0.38, 0.85, 0.95] },
+    { id: 'L5', count: Math.round(16 * DENSITY),  area: [0.05, 0.52, 0.95, 1.05] },
   ];
-  // areas: [x0, y0, x1, y1] in relative coords to spread clusters top→bottom
 
   function rand(seed){ let t = Math.sin(seed) * 10000; return t - Math.floor(t); }
-  function choice(a, r){ return a[Math.floor(r * a.length)]; }
 
-  // Build one triangle around a center with small jitter
   function tri(cx, cy, size, r1, r2){
     const a1 = r1 * Math.PI * 2, a2 = (r1+0.33) * Math.PI * 2, a3 = (r1+0.67) * Math.PI * 2;
     const j = 0.35 + r2*0.25;
-    const p1 = [cx + Math.cos(a1)*size, cy + Math.sin(a1)*size*j];
-    const p2 = [cx + Math.cos(a2)*size*j, cy + Math.sin(a2)*size];
-    const p3 = [cx + Math.cos(a3)*size, cy + Math.sin(a3)*size];
+    const p1 = [cx + Math.cos(a1)*size,     cy + Math.sin(a1)*size*j];
+    const p2 = [cx + Math.cos(a2)*size*j,   cy + Math.sin(a2)*size];
+    const p3 = [cx + Math.cos(a3)*size,     cy + Math.sin(a3)*size];
     return `${p1[0].toFixed(1)},${p1[1].toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)} ${p3[0].toFixed(1)},${p3[1].toFixed(1)}`;
   }
 
@@ -146,7 +144,7 @@ const density   = Number(Astro.props.density ?? 1.0);
       const r1 = rand(s), r2 = rand(s*1.7), r3 = rand(s*2.3);
       const cx = x0 + r1*(x1-x0);
       const cy = y0 + r2*(y1-y0);
-      const size = 80 + r3*220; // triangle size range
+      const size = 80 + r3*220;
       const poly = document.createElementNS('http://www.w3.org/2000/svg','polygon');
       poly.setAttribute('fill','url(#polyfill)');
       poly.setAttribute('points', tri(cx, cy, size, r1, r2));
@@ -158,12 +156,11 @@ const density   = Number(Astro.props.density ?? 1.0);
   function populate(){
     LAYERS.forEach((cfg, i) => {
       const g = document.getElementById(cfg.id);
-      g.replaceChildren(); // clear
+      g.replaceChildren();
       makeLayer(g, cfg.count, cfg.area, (i+1)*42.7);
     });
   }
 
-  // Maintain density across sizes & fix any edge issues
   function updateViewBox(){
     const w = Math.max(960, window.innerWidth);
     const h = Math.max(720, window.innerHeight);
@@ -178,4 +175,3 @@ const density   = Number(Astro.props.density ?? 1.0);
     import.meta.hot.dispose(() => removeEventListener('resize', updateViewBox));
   }
 </script>
-
