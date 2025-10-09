@@ -23,46 +23,94 @@ import Layout from '~/layouts/PageLayout.astro';
     </div>
   </section>
 
-  <!-- Mission -->
+  <!-- Our mission and story -->
   <section class="py-10">
-    <div class="max-w-5xl mx-auto px-4 grid gap-8 md:grid-cols-[1fr_auto] items-start">
-      <div>
-        <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">Our mission and story</h2>
-        <p class="mt-3 text-slate-700/95 dark:text-slate-300/95 leading-relaxed">
-          TapRebook helps teams run consistent, efficient operations on WhatsApp—so bookings,
-          reminders, and coordination happen with less effort and more predictability.
-        </p>
-        <p class="mt-3 text-slate-700/95 dark:text-slate-300/95 leading-relaxed">
-          We build simple building blocks that standardize routine interactions, reduce admin time,
-          and improve throughput—whether you’re a clinic, lab, hospitality brand, campus, or beyond.
-        </p>
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">
+        Our mission and story
+      </h2>
+
+      <!-- STANDARD VERSION (≈150 words) -->
+      <p class="mt-3 text-slate-700/95 dark:text-slate-300/95 leading-relaxed">
+        TapRebook was founded to make business communication effortless with practical AI. We started
+        with one belief: teams shouldn’t need new apps or heavy processes to deliver meaningful
+        interactions.
+      </p>
+      <p class="mt-3 text-slate-700/95 dark:text-slate-300/95 leading-relaxed">
+        We chose WhatsApp because it’s the most familiar channel for customers and staff alike. Our
+        modules standardize routine touchpoints—bookings, reminders, and coordination—so conversations
+        run the same way every time, with less admin and fewer mistakes.
+      </p>
+      <p class="mt-3 text-slate-700/95 dark:text-slate-300/95 leading-relaxed">
+        The result is measurable efficiency: clearer updates, faster completions, and capacity gains
+        without extra headcount. We keep the building blocks simple, adaptable, and brand-first—so you
+        can start small, expand as needed, and maintain a consistent experience across every location.
+      </p>
+
+      <!-- Signature (replace src, or remove this block if not needed) -->
+      <div class="mt-6">
+        <img
+          src="/images/signature.png"            <!-- replace with your signature -->
+          alt="Founder signature"
+          class="h-10 w-auto opacity-80"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
-      <!-- Signature / visual spacer (optional) -->
-      <div class="hidden md:block w-28 h-20 rounded-xl bg-white/60 dark:bg-slate-800/40 ring-1 ring-white/40 dark:ring-slate-800/50"></div>
     </div>
   </section>
 
-  <!-- Three pillars -->
-  <section class="py-8">
+  <!-- Three images with pillars -->
+  <section class="py-10">
     <div class="max-w-6xl mx-auto px-4 grid gap-6 md:grid-cols-3">
-      <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/30 dark:bg-slate-900/20 backdrop-blur">
-        <h3 class="font-semibold">Driven by purpose.</h3>
-        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
-          We focus on outcomes—less back-and-forth, faster completions, better experiences.
-        </p>
-      </div>
-      <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/30 dark:bg-slate-900/20 backdrop-blur">
-        <h3 class="font-semibold">Expert team.</h3>
-        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
-          Messaging, workflow, and data expertise—shipped as simple modules.
-        </p>
-      </div>
-      <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/30 dark:bg-slate-900/20 backdrop-blur">
-        <h3 class="font-semibold">Real impact.</h3>
-        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
-          Measurable efficiency gains and consistent service, branch to branch.
-        </p>
-      </div>
+      <!-- Card 1 -->
+      <figure class="rounded-2xl overflow-hidden ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/40 dark:bg-slate-900/25 backdrop-blur">
+        <img
+          src="/images/about-purpose.jpg"        <!-- replace -->
+          alt="Purpose-led planning"
+          class="w-full h-52 object-cover"
+          width="1200" height="675" loading="lazy" decoding="async"
+        />
+        <figcaption class="p-6">
+          <h3 class="font-semibold">Driven by purpose.</h3>
+          <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+            We design for real outcomes—clearer interactions and less admin.
+          </p>
+        </figcaption>
+      </figure>
+
+      <!-- Card 2 -->
+      <figure class="rounded-2xl overflow-hidden ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/40 dark:bg-slate-900/25 backdrop-blur">
+        <img
+          src="/images/about-team.jpg"           <!-- replace -->
+          alt="Team collaboration"
+          class="w-full h-52 object-cover"
+          width="1200" height="675" loading="lazy" decoding="async"
+        />
+        <figcaption class="p-6">
+          <h3 class="font-semibold">Expert team.</h3>
+          <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+            Our team blends AI engineering with service-ops experience to ship what works.
+          </p>
+        </figcaption>
+      </figure>
+
+      <!-- Card 3 -->
+      <figure class="rounded-2xl overflow-hidden ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/40 dark:bg-slate-900/25 backdrop-blur">
+        <img
+          src="/images/about-impact.jpg"         <!-- replace -->
+          alt="Real-world results"
+          class="w-full h-52 object-cover"
+          width="1200" height="675" loading="lazy" decoding="async"
+        />
+        <figcaption class="p-6">
+          <h3 class="font-semibold">Real impact.</h3>
+          <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+            Our platform delivers measurable productivity and engagement gains for modern teams.
+          </p>
+        </figcaption>
+      </figure>
     </div>
   </section>
 </Layout>
+
