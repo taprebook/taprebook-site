@@ -1,15 +1,6 @@
 ---
 /**
  * GlassTriBg (SSR version, no JS)
- * - Renders layered translucent triangles server-side
- * - Subtle parallax via CSS animations (still “dynamic”)
- * - No client <script>, so it can’t be blocked by CSP or hydration
- *
- * Props:
- *   primary?: string   // top blue (default #0E5BAF)
- *   secondary?: string // mid blue (default #7EC3F2)
- *   density?: number   // 0.5–1.6 (more = more triangles). Default 1.35
- *   seed?: number      // change to shuffle the pattern (default 42)
  */
 interface Props {
   primary?: string;
@@ -53,7 +44,7 @@ function makeLayer(countBase: number, area: Area, s: number) {
   const x1 = rx1 * BASE_W, y1 = ry1 * BASE_H;
   const count = Math.round(countBase * D);
 
-  return Array.from({ length: count }, (_, i) => {
+  return Array.from({ length: count }, () => {
     const r1 = rnd(), r2 = rnd(), r3 = rnd();
     const cx = x0 + r1 * (x1 - x0);
     const cy = y0 + r2 * (y1 - y0);
@@ -85,15 +76,14 @@ const L5 = makeLayer(22, [0.05, 0.50, 0.95, 1.05], seed * 5.5);
   .wrap {
     position: absolute;
     inset: -1.5%;
-    transform: translateZ(0) scale(1.02); /* tiniest bleed; creates its own GPU layer */
+    transform: translateZ(0) scale(1.02); /* tiniest bleed */
     will-change: transform;
   }
 
-<style>
+  /* Softer bottom vignette */
   .fade-bottom {
     position: absolute;
     inset: 0;
-    /* lighter, starts later, ends sooner */
     background: linear-gradient(
       to bottom,
       rgba(0,0,0,0) 50%,
@@ -101,7 +91,6 @@ const L5 = makeLayer(22, [0.05, 0.50, 0.95, 1.05], seed * 5.5);
       rgba(0,0,0,0.32) 100%
     );
   }
-
   @media (prefers-color-scheme: dark) {
     .fade-bottom {
       background: linear-gradient(
@@ -113,28 +102,33 @@ const L5 = makeLayer(22, [0.05, 0.50, 0.95, 1.05], seed * 5.5);
     }
   }
 
-/* Motion: a touch faster than before, still smooth */
-.layer {
-  animation: drift 5s ease-in-out infinite;   /* was 60s */
-  will-change: transform;
-  transform: translate3d(0,0,0);
-  backface-visibility: hidden;
-}
-.l2 { animation-duration: 48s; animation-direction: reverse; }  /* was 72s */
-.l3 { animation-duration: 54s; }                                /* was 80s */
-.l4 { animation-duration: 60s; animation-direction: reverse; }  /* was 92s */
-.l5 { animation-duration: 68s; }                                /* was 104s */
+  /* ========= Multi-layer motion (parallax) ========= */
+  .layer {
+    animation-name: drift;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    will-change: transform;
+    transform: translate3d(0,0,0);
+    backface-visibility: hidden;
+  }
 
-@keyframes drift {
-  0%   { transform: translate3d(0px, 0px, 0); }
-  50%  { transform: translate3d(12px, -18px, 0); }  /* was 8px, -12px */
-  100% { transform: translate3d(0px, 0px, 0); }
-}
+  /* Per-layer distances + durations (L1 = closest, L5 = farthest) */
+  #L1 { --dx: 16px; --dy: -22px; animation-duration: 38s; }
+  #L2 { --dx: 13px; --dy: -18px; animation-duration: 42s; animation-direction: reverse; }
+  #L3 { --dx: 10px; --dy: -14px; animation-duration: 48s; }
+  #L4 { --dx:  8px; --dy: -11px; animation-duration: 54s; animation-direction: reverse; }
+  #L5 { --dx:  6px; --dy:  -8px; animation-duration: 60s; }
 
-/* Respect reduced-motion */
-@media (prefers-reduced-motion: reduce) {
-  .layer { animation: none; }
-}
+  @keyframes drift {
+    0%   { transform: translate3d(0, 0, 0); }
+    50%  { transform: translate(var(--dx, 10px), var(--dy, -12px)); }
+    100% { transform: translate3d(0, 0, 0); }
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .layer { animation: none !important; }
+  }
 </style>
 
 <div class="bg-root">
@@ -166,19 +160,19 @@ const L5 = makeLayer(22, [0.05, 0.50, 0.95, 1.05], seed * 5.5);
       <rect x="0" y="0" width={BASE_W} height={BASE_H} fill="url(#sky)" />
 
       <!-- five animated layers -->
-      <g class="layer l1">
+      <g id="L1" class="layer">
         {L1.map((p) => <polygon fill="url(#polyfill)" points={p.points} opacity={p.opacity} stroke="rgba(255,255,255,0.08)" stroke-width="0.5" />)}
       </g>
-      <g class="layer l2">
+      <g id="L2" class="layer">
         {L2.map((p) => <polygon fill="url(#polyfill)" points={p.points} opacity={p.opacity} stroke="rgba(255,255,255,0.08)" stroke-width="0.5" />)}
       </g>
-      <g class="layer l3">
+      <g id="L3" class="layer">
         {L3.map((p) => <polygon fill="url(#polyfill)" points={p.points} opacity={p.opacity} stroke="rgba(255,255,255,0.08)" stroke-width="0.5" />)}
       </g>
-      <g class="layer l4">
+      <g id="L4" class="layer">
         {L4.map((p) => <polygon fill="url(#polyfill)" points={p.points} opacity={p.opacity} stroke="rgba(255,255,255,0.08)" stroke-width="0.5" />)}
       </g>
-      <g class="layer l5">
+      <g id="L5" class="layer">
         {L5.map((p) => <polygon fill="url(#polyfill)" points={p.points} opacity={p.opacity} stroke="rgba(255,255,255,0.08)" stroke-width="0.5" />)}
       </g>
     </svg>
@@ -186,4 +180,5 @@ const L5 = makeLayer(22, [0.05, 0.50, 0.95, 1.05], seed * 5.5);
 
   <div class="fade-bottom"></div>
 </div>
+
 
