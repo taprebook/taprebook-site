@@ -1,25 +1,77 @@
 ---
 /**
- * GlassTriBg — layered translucent low-poly background (dynamic)
- * - Very close to the provided “icy triangles” reference
- * - Overscans to avoid edge gaps; subtle parallax motion
- * - No external deps
+ * GlassTriBg (SSR version, no JS)
+ * - Renders layered translucent triangles server-side
+ * - Subtle parallax via CSS animations (still “dynamic”)
+ * - No client <script>, so it can’t be blocked by CSP or hydration
  *
  * Props:
- *   primary?: string   // top blue
- *   secondary?: string // mid blue
+ *   primary?: string   // top blue (default #0E5BAF)
+ *   secondary?: string // mid blue (default #7EC3F2)
  *   density?: number   // 0.5–1.6 (more = more triangles). Default 1.35
+ *   seed?: number      // change to shuffle the pattern (default 42)
  */
 interface Props {
   primary?: string;
   secondary?: string;
   density?: number;
+  seed?: number;
 }
 const {
   primary = '#0E5BAF',
   secondary = '#7EC3F2',
   density = 1.35,
+  seed = 42,
 } = Astro.props as Props;
+
+const BASE_W = 1440, BASE_H = 900;
+const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v));
+const D = clamp(density, 0.5, 1.6);
+
+// Simple deterministic RNG
+function prng(s: number) {
+  let x = Math.sin(s) * 10000;
+  return () => {
+    x = Math.sin(x) * 10000;
+    return x - Math.floor(x);
+  };
+}
+function triPoints(cx: number, cy: number, size: number, r1: number, r2: number) {
+  const a1 = r1 * Math.PI * 2, a2 = (r1 + 0.33) * Math.PI * 2, a3 = (r1 + 0.67) * Math.PI * 2;
+  const j = 0.35 + r2 * 0.25; // asymmetry for “glass” feel
+  const p1 = [cx + Math.cos(a1) * size,      cy + Math.sin(a1) * size * j];
+  const p2 = [cx + Math.cos(a2) * size * j,  cy + Math.sin(a2) * size];
+  const p3 = [cx + Math.cos(a3) * size,      cy + Math.sin(a3) * size];
+  return `${p1[0].toFixed(1)},${p1[1].toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)} ${p3[0].toFixed(1)},${p3[1].toFixed(1)}`;
+}
+
+type Area = [number, number, number, number]; // [x0,y0,x1,y1] relative (0..1)
+function makeLayer(countBase: number, area: Area, s: number) {
+  const rnd = prng(s);
+  const [rx0, ry0, rx1, ry1] = area;
+  const x0 = rx0 * BASE_W, y0 = ry0 * BASE_H;
+  const x1 = rx1 * BASE_W, y1 = ry1 * BASE_H;
+  const count = Math.round(countBase * D);
+
+  return Array.from({ length: count }, (_, i) => {
+    const r1 = rnd(), r2 = rnd(), r3 = rnd();
+    const cx = x0 + r1 * (x1 - x0);
+    const cy = y0 + r2 * (y1 - y0);
+    const size = 70 + r3 * 190;
+    const opacity = (0.36 + rnd() * 0.28).toFixed(2); // 0.36–0.64
+    return {
+      points: triPoints(cx, cy, size, r1, r2),
+      opacity,
+    };
+  });
+}
+
+// Define five bands like the reference image
+const L1 = makeLayer(18, [0.00, 0.00, 1.00, 0.42], seed * 1.1);
+const L2 = makeLayer(24, [0.00, 0.10, 1.00, 0.55], seed * 2.2);
+const L3 = makeLayer(26, [0.00, 0.22, 1.00, 0.75], seed * 3.3);
+const L4 = makeLayer(24, [0.10, 0.36, 0.90, 0.95], seed * 4.4);
+const L5 = makeLayer(22, [0.05, 0.50, 0.95, 1.05], seed * 5.5);
 ---
 
 <style>
@@ -28,15 +80,14 @@ const {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    overflow: hidden;             /* prevent subpixel edges */
+    overflow: hidden;
   }
   .wrap {
     position: absolute;
-    inset: -2%;                   /* overscan to avoid right/left gaps */
-    transform: scale(1.04);       /* tiny bleed */
+    inset: -2%;
+    transform: scale(1.04); /* bleed to avoid edge gaps */
   }
 
-  /* Bottom fade, like the reference */
   .fade-bottom {
     position: absolute;
     inset: 0;
@@ -58,32 +109,26 @@ const {
     }
   }
 
-  /* Motion: visible but tasteful */
-  .layer {
-    transform-origin: 50% 0%;
-    animation: drift 32s ease-in-out infinite;
-    will-change: transform;
-  }
+  /* Motion without JS */
+  .layer { animation: drift 32s ease-in-out infinite; transform-origin: 50% 0%; }
   .l2 { animation-duration: 38s; animation-direction: reverse; }
   .l3 { animation-duration: 44s; }
   .l4 { animation-duration: 52s; animation-direction: reverse; }
   .l5 { animation-duration: 60s; }
 
   @keyframes drift {
-    0%   { transform: translateY(0px)    translateX(0px)   rotate(0deg)   scale(1.00); }
-    50%  { transform: translateY(-28px)  translateX(14px)  rotate(0.6deg) scale(1.01); }
-    100% { transform: translateY(0px)    translateX(0px)   rotate(0deg)   scale(1.00); }
+    0%   { transform: translateY(0px)   translateX(0px)   rotate(0deg)   scale(1.00); }
+    50%  { transform: translateY(-28px) translateX(14px)  rotate(0.6deg) scale(1.01); }
+    100% { transform: translateY(0px)   translateX(0px)   rotate(0deg)   scale(1.00); }
   }
 </style>
 
 <div class="bg-root">
   <div class="wrap">
     <svg
-      id="glass-bg"
       width="100%" height="100%"
+      viewBox={`0 0 ${BASE_W} ${BASE_H}`}
       preserveAspectRatio="xMidYMid slice"
-      viewBox="0 0 1440 900"
-      data-density={density}
       xmlns="http://www.w3.org/2000/svg">
 
       <defs>
@@ -95,12 +140,7 @@ const {
           <stop offset="100%" stop-color="#ffffff"  stop-opacity="0"/>
         </linearGradient>
 
-        <!-- Light blur (only used on two layers) -->
-        <filter id="soft" x="-10%" y="-10%" width="120%" height="120%">
-          <feGaussianBlur stdDeviation="0.8" />
-        </filter>
-
-        <!-- Triangles fill ramp (slightly higher contrast so shapes read) -->
+        <!-- Slightly higher contrast so triangles read -->
         <linearGradient id="polyfill" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%"   stop-color={primary}   stop-opacity="0.18"/>
           <stop offset="55%"  stop-color={secondary} stop-opacity="0.14"/>
@@ -108,94 +148,28 @@ const {
         </linearGradient>
       </defs>
 
-      <!-- sky wash -->
-      <rect x="0" y="0" width="1440" height="900" fill="url(#sky)"/>
+      <!-- background wash -->
+      <rect x="0" y="0" width={BASE_W} height={BASE_H} fill="url(#sky)" />
 
-      <!-- Layers populated by script -->
-      <g id="L1" class="layer l1"></g>
-      <g id="L2" class="layer l2" filter="url(#soft)"></g>
-      <g id="L3" class="layer l3"></g>
-      <g id="L4" class="layer l4" filter="url(#soft)"></g>
-      <g id="L5" class="layer l5"></g>
+      <!-- five animated layers -->
+      <g class="layer l1">
+        {L1.map((p) => <polygon fill="url(#polyfill)" points={p.points} opacity={p.opacity} stroke="rgba(255,255,255,0.08)" stroke-width="0.5" />)}
+      </g>
+      <g class="layer l2">
+        {L2.map((p) => <polygon fill="url(#polyfill)" points={p.points} opacity={p.opacity} stroke="rgba(255,255,255,0.08)" stroke-width="0.5" />)}
+      </g>
+      <g class="layer l3">
+        {L3.map((p) => <polygon fill="url(#polyfill)" points={p.points} opacity={p.opacity} stroke="rgba(255,255,255,0.08)" stroke-width="0.5" />)}
+      </g>
+      <g class="layer l4">
+        {L4.map((p) => <polygon fill="url(#polyfill)" points={p.points} opacity={p.opacity} stroke="rgba(255,255,255,0.08)" stroke-width="0.5" />)}
+      </g>
+      <g class="layer l5">
+        {L5.map((p) => <polygon fill="url(#polyfill)" points={p.points} opacity={p.opacity} stroke="rgba(255,255,255,0.08)" stroke-width="0.5" />)}
+      </g>
     </svg>
   </div>
 
   <div class="fade-bottom"></div>
 </div>
 
-<script is:inline>
-  const svg = document.getElementById('glass-bg');
-
-  // Density from data-attr (safer across SSR/hydration)
-  const clamp = (v,min,max)=>Math.max(min,Math.min(max,v));
-  const DENSITY = clamp(parseFloat(svg.dataset.density || '1'), 0.5, 1.6);
-
-  const BASE_W = 1440, BASE_H = 900;
-
-  // More pieces; spread from top-right toward center/bottom like the reference
-  const LAYERS = [
-    { id: 'L1', count: Math.round(18 * DENSITY), area: [0.00, 0.00, 1.00, 0.42] },
-    { id: 'L2', count: Math.round(24 * DENSITY), area: [0.00, 0.10, 1.00, 0.55] },
-    { id: 'L3', count: Math.round(26 * DENSITY), area: [0.00, 0.22, 1.00, 0.75] },
-    { id: 'L4', count: Math.round(24 * DENSITY), area: [0.10, 0.36, 0.90, 0.95] },
-    { id: 'L5', count: Math.round(22 * DENSITY), area: [0.05, 0.50, 0.95, 1.05] },
-  ];
-
-  function rand(seed){ let t = Math.sin(seed) * 10000; return t - Math.floor(t); }
-
-  function tri(cx, cy, size, r1, r2){
-    const a1 = r1 * Math.PI * 2, a2 = (r1+0.33) * Math.PI * 2, a3 = (r1+0.67) * Math.PI * 2;
-    const j = 0.35 + r2*0.25; // slight asymmetry like layered glass
-    const p1 = [cx + Math.cos(a1)*size,     cy + Math.sin(a1)*size*j];
-    const p2 = [cx + Math.cos(a2)*size*j,   cy + Math.sin(a2)*size];
-    const p3 = [cx + Math.cos(a3)*size,     cy + Math.sin(a3)*size];
-    return `${p1[0].toFixed(1)},${p1[1].toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)} ${p3[0].toFixed(1)},${p3[1].toFixed(1)}`;
-  }
-
-  function makeLayer(g, count, area, seed){
-    const [rx0, ry0, rx1, ry1] = area;
-    const x0 = rx0 * BASE_W, y0 = ry0 * BASE_H;
-    const x1 = rx1 * BASE_W, y1 = ry1 * BASE_H;
-    let s = seed;
-    for (let i=0;i<count;i++){
-      s += 1.2345;
-      const r1 = rand(s), r2 = rand(s*1.7), r3 = rand(s*2.3);
-      const cx = x0 + r1*(x1-x0);
-      const cy = y0 + r2*(y1-y0);
-      const size = 70 + r3*190; // a bit smaller for more pieces
-      const poly = document.createElementNS('http://www.w3.org/2000/svg','polygon');
-      poly.setAttribute('fill','url(#polyfill)');
-      poly.setAttribute('points', tri(cx, cy, size, r1, r2));
-
-      // Make triangles read clearly
-      const op = 0.36 + rand(s*3.1)*0.28;      // 0.36–0.64
-      poly.setAttribute('opacity', op.toFixed(2));
-      poly.setAttribute('stroke', 'rgba(255,255,255,0.08)');
-      poly.setAttribute('stroke-width', '0.5');
-
-      g.appendChild(poly);
-    }
-  }
-
-  function populate(){
-    LAYERS.forEach((cfg, i) => {
-      const g = document.getElementById(cfg.id);
-      if (!g) return;
-      g.replaceChildren();
-      makeLayer(g, cfg.count, cfg.area, (i+1)*42.7);
-    });
-  }
-
-  function updateViewBox(){
-    svg.setAttribute('viewBox', `0 0 ${BASE_W} ${BASE_H}`);
-  }
-
-  populate();
-  updateViewBox();
-  addEventListener('resize', updateViewBox);
-
-  // HMR cleanup (dev only)
-  if (import.meta?.hot){
-    import.meta.hot.dispose(() => removeEventListener('resize', updateViewBox));
-  }
-</script>
