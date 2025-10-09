@@ -12,13 +12,13 @@ import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
 
-// Comment the line below to disable View Transitions
+// View Transitions (leave enabled unless you want to disable them)
 import { ClientRouter } from 'astro:transitions';
 
 import type { MetaData as MetaDataType } from '~/types';
 
-// NEW: animated background
-import TrianglifyBg from '~/components/backgrounds/TrianglifyBg.astro';
+//  ✅ Our dynamic background
+import GlassTriBg from '~/components/visuals/GlassTriBg.astro';
 
 export interface Props {
   metadata?: MetaDataType;
@@ -39,41 +39,22 @@ const { language, textDirection } = I18N;
     <SiteVerification />
     <Analytics />
 
-    <!-- Comment the line below to disable View Transitions -->
+    <!-- View Transitions -->
     <ClientRouter fallback="swap" />
 
-    <!-- GLOBAL OVERRIDES: make the site transparent so the canvas shows -->
+    <!-- Keep the page surface transparent so the background shows through -->
     <style is:global>
-      html, body, main { background: transparent !important; }
-
-      /* Kill theme gradients/solids that were causing the lavender band */
-      [class*="bg-"],
-      [class*="from-"], [class*="via-"], [class*="to-"],
-      .bg-white, .bg-slate-50, .bg-slate-100,
-      .bg-base-100, .bg-base-200,
-      .bg-gradient, .gradient,
-      .prose, .hero, .hero:before, .hero:after,
-      section, [data-aw-section], .aw-section {
-        background: transparent !important;
-        background-image: none !important;
-      }
-
-      /* Optional soft “glass” for cards on top of triangles */
-      .card, .rounded-xl, .rounded-2xl {
-        background-color: rgba(255, 255, 255, 0.55);
-        backdrop-filter: blur(2px);
-      }
+      html, body { background: transparent !important; }
     </style>
   </head>
 
-  <!-- IMPORTANT: remove bg-page so it doesn't paint a solid behind the canvas -->
   <body class="antialiased text-default tracking-tight">
-    <!-- Mount animated background behind everything -->
-    <TrianglifyBg />
+    <!-- Dynamic low-poly background, behind everything -->
+    <GlassTriBg primary="#0E5BAF" secondary="#7EC3F2" density={1.35} />
 
+    <!-- Your page content renders here -->
     <slot />
 
     <BasicScripts />
   </body>
 </html>
-
