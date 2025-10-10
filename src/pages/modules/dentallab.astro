@@ -4,56 +4,368 @@ import Layout from '~/layouts/PageLayout.astro';
 
 <Layout
   metadata={{
-    title: 'TapRebook DentalLab — Dentist ↔ lab case tracker',
+    title: 'TapRebook DentalLab — Dentist ↔ lab case tracker on WhatsApp',
     description:
-      'Case handoffs, pickup/drop coordination, photo approvals, and status updates between dentist and lab on WhatsApp.',
+      'Coordinate pickups, approvals, and deliveries without phone tag. Live case status for dentists, assistants, and labs—right inside WhatsApp.',
   }}
 >
-  <section class="py-12 md:py-16">
-    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight dark:text-white">
-      DentalLab: dentist ↔ lab case tracker
-    </h1>
-    <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-3xl">
-      Coordinate impressions, pickups, approvals, and deliveries without phone tag. Everyone sees the same status in
-      WhatsApp—doctor, assistant, and lab.
-    </p>
-    <div class="mt-6 flex gap-3">
-      <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
-      <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+  <!-- HERO -->
+  <section class="relative">
+    <div class="max-w-7xl mx-auto px-4 pt-16 pb-10 grid gap-8 lg:grid-cols-[1.2fr_.8fr] items-center">
+      <div>
+        <!-- Bigger chip -->
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 backdrop-blur px-3.5 py-1.5
+                 text-sm md:text-base font-semibold text-slate-800/90 shadow-sm">
+          WhatsApp case tracking for dental labs
+        </span>
+
+        <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">
+          Fewer back-and-forths. Faster turnarounds. Clear status for everyone.
+        </h1>
+
+        <ul class="mt-4 space-y-2 text-slate-700/90 dark:text-slate-300/90">
+          <li>• Courier pickups & drops with one-tap confirmations</li>
+          <li>• Photo/scan approvals and change requests in chat</li>
+          <li>• Live status: Received → In fabrication → QC → Ready → Delivered</li>
+          <li>• <strong>24/7 availability</strong> — instant replies even outside business hours</li>
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+          <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+        </div>
+      </div>
+
+      <!-- Right: Hero visual placeholder (replace with real image when ready) -->
+      <div class="rounded-2xl overflow-hidden bg-white/55 dark:bg-slate-900/25 ring-1 ring-white/40 dark:ring-slate-800/40 shadow-lg backdrop-blur-sm">
+        <div class="aspect-video grid place-items-center text-slate-600/90 dark:text-slate-400/90">
+          DentalLab hero visual (coming soon)
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="py-10 border-t border-slate-200/50 dark:border-slate-800/60">
-    <h2 class="text-2xl font-bold dark:text-white">What it helps with</h2>
-    <ul class="mt-4 grid gap-4 md:grid-cols-2">
-      <li class="card p-5">
-        <h3 class="font-semibold">Pickup & drop logistics</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Automated requests and confirmations for couriers.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Photo/scan approvals</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Share case photos; approve or request changes in chat.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Status visibility</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Impression received → In fabrication → Ready → Delivered.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Exceptions & notes</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Escalate edge cases to staff; keep an audit trail.</p>
-      </li>
-    </ul>
+  <!-- KPIs -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4 grid gap-4 sm:grid-cols-4">
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 25–40%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Coordination messages</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↑ 1.3–1.6×</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">On-time pickups</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 10–20%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Remake rate*</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">&lt; 1s</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Median first response</div>
+      </div>
+    </div>
+    <p class="mt-2 text-center text-xs text-slate-600/80 dark:text-slate-400/80">*With photo/scan approvals & standardized instructions in chat.</p>
   </section>
 
-  <section class="py-12 border-t border-slate-200/50 dark:border-slate-800/60">
-    <div class="md:flex items-center justify-between">
+  <!-- Trust bar (placeholder logos) -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="text-center text-sm text-slate-600/90 dark:text-slate-400/90">Trusted by early adopters and pilot dental labs</p>
+      <div class="mt-3 grid grid-cols-3 sm:grid-cols-6 gap-6 items-center opacity-80">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <svg viewBox="0 0 200 40" class="h-8 mx-auto" aria-hidden="true">
+            <rect width="200" height="40" rx="6" fill="rgba(255,255,255,0.6)"></rect>
+            <text x="100" y="26" text-anchor="middle" font-size="16" fill="rgb(71,85,105)">Lab Logo</text>
+          </svg>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">What you get</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Standardized WhatsApp workflows that keep cases moving and expectations clear.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Pickup & drop logistics</h3>
+          <p class="mt-1 text-sm">One-tap pickup requests, courier confirmations, and delivery windows.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Photo/scan approvals</h3>
+          <p class="mt-1 text-sm">Share prep photos or scans; Approve or Request changes in chat.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Case status tracking</h3>
+          <p class="mt-1 text-sm">Received → In fabrication → QC → Ready → Delivered (with timestamps).</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Shade & materials</h3>
+          <p class="mt-1 text-sm">Structured prompts to capture shade, materials, and special instructions.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Exceptions & remakes</h3>
+          <p class="mt-1 text-sm">Quick escalation path; remake loop with audit trail and photo notes.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Reports & tags</h3>
+          <p class="mt-1 text-sm">Interakt tags → Sheets/CRM; SLA & remake KPIs in one place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it integrates -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">How it integrates</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-4">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">WhatsApp Cloud API</h3>
+          <p class="mt-1 text-sm">Template approval and reliable delivery.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Interakt</h3>
+          <p class="mt-1 text-sm">Tags, routing, opt-ins, and audit trails.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Courier / delivery</h3>
+          <p class="mt-1 text-sm">Pickup windows, delivery status, and proof of delivery.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Sheets / CRM</h3>
+          <p class="mt-1 text-sm">Case SLAs, remake rate, and turnaround dashboards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flows in detail (DentalLab-specific) -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Flows in detail</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Exactly how DentalLab coordinates each case, end to end.
+      </p>
+
+      <!-- 1) Pickup requests -->
+      <details class="group mt-6 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">1) Pickup &amp; drop coordination</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> Fewer missed pickups; predictable delivery windows.</p>
+          <p><strong>When it fires:</strong> Dentist taps “Request pickup” or schedules a daily window.</p>
+          <p><strong>Experience:</strong> One-tap confirm; address/map link; courier ETA & proof of pickup.</p>
+          <p><strong>Tags:</strong> <em>pickup_req</em>, <em>pickup_ok</em>, <em>dropped_off</em>, <em>delivered</em>.</p>
+        </div>
+      </details>
+
+      <!-- 2) Intake & checklist -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">2) Intake checklist (shade, materials, due date)</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Prompt for case type, shade, materials, contacts, due date, and notes—no missing fields.</p>
+          <p>Tags: <em>case_open</em>, <em>intake_ok</em>, <em>due_set</em>.</p>
+        </div>
+      </details>
+
+      <!-- 3) Photo/scan approvals -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">3) Photo/scan approvals &amp; change requests</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Send photos/scans; dentist taps <em>Approve</em> or <em>Request changes</em> with quick notes.</p>
+          <p>Tags: <em>qa_sent</em>, <em>approved</em>, <em>changes_req</em>, <em>changes_done</em>.</p>
+        </div>
+      </details>
+
+      <!-- 4) Status & due-date management -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">4) Live status &amp; due-date updates</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Automatic status pings with timestamps; negotiate due-date changes in chat when needed.</p>
+          <p>Tags: <em>in_fab</em>, <em>qc</em>, <em>ready</em>, <em>due_moved</em>.</p>
+        </div>
+      </details>
+
+      <!-- 5) Delivery & proof -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">5) Delivery &amp; proof of delivery</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Share out-for-delivery, arrival window, and POD photo/signature; mark case closed.</p>
+          <p>Tags: <em>ofd</em>, <em>arriving</em>, <em>pod</em>, <em>case_closed</em>.</p>
+        </div>
+      </details>
+
+      <!-- 6) Remakes / exceptions -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">6) Remakes &amp; exceptions with audit trail</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Open a remake with photos and reason codes; track steps until delivery of the corrected case.</p>
+          <p>Tags: <em>remake_open</em>, <em>remake_in_fab</em>, <em>remake_ready</em>, <em>remake_delivered</em>.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-12 border-t border-white/20 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Pricing</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Simple plans by lab size. Start with DentalLab—add other modules as you grow.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Single lab -->
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+          <h3 class="font-semibold">Single lab</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Independent dental lab</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Pickup & drop coordination</li>
+            <li>• Photo/scan approvals</li>
+            <li>• Case status & timestamps</li>
+            <li>• Basic reports & Interakt tags → Sheet</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Talk to us</a>
+          </div>
+        </div>
+
+        <!-- Multi-lab -->
+        <div class="rounded-2xl p-6 ring-2 ring-blue-300/40 dark:ring-blue-300/30 bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-lg">
+          <h3 class="font-semibold">Multi-lab</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">2–10 locations</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Everything in Single</li>
+            <li>• Route by location & courier windows</li>
+            <li>• SLA & remake dashboards</li>
+            <li>• Slot-bank for pickups/deliveries</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Contact sales</a>
+          </div>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+          <h3 class="font-semibold">Enterprise</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Networks & DSOs</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Custom</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Everything in Multi-lab</li>
+            <li>• Courier & storage integrations</li>
+            <li>• Template governance & SSO</li>
+            <li>• Multi-location analytics & SLAs</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Request quote</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Risk reducer -->
+      <p class="mt-4 text-center text-xs text-slate-700/85 dark:text-slate-300/85">
+        Cancel anytime. No engineering required.
+      </p>
+
+      <p class="mt-2 text-center text-xs text-slate-600/80 dark:text-slate-400/80">
+        Pricing varies by message volume, locations, and integrations. We’ll share an exact quote after a short scoping call.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">FAQs</h2>
+
+      <details class="group mt-6 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Can assistants use WhatsApp too?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Yes—add dentist and assistant numbers so both see the same case thread and updates.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Do you capture shade/materials reliably?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          We prompt for required fields (shade guide, material, due date) and store them as structured tags.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">How do remakes work?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Open a remake with photos, reason codes, and timestamps. Track it as a separate loop until delivered.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Is case data secure?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Data stays in approved systems (WhatsApp/Interakt, your Sheets/CRM, courier systems). Role-based access and audit trails.
+        </div>
+      </details>
+    </div>
+
+    <!-- FAQPage JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Can assistants use WhatsApp too?","acceptedAnswer":{"@type":"Answer","text":"Yes—add dentist and assistant numbers so both see the same case thread and updates."}},
+        {"@type":"Question","name":"Do you capture shade/materials reliably?","acceptedAnswer":{"@type":"Answer","text":"We prompt for required fields (shade guide, material, due date) and store them as structured tags."}},
+        {"@type":"Question","name":"How do remakes work?","acceptedAnswer":{"@type":"Answer","text":"Open a remake with photos, reason codes, and timestamps. Track it as a separate loop until delivered."}},
+        {"@type":"Question","name":"Is case data secure?","acceptedAnswer":{"@type":"Answer","text":"Data stays in approved systems (WhatsApp/Interakt, your Sheets/CRM, courier systems). Role-based access and audit trails."}}
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12">
+    <div class="max-w-5xl mx-auto px-4 md:flex items-center justify-between">
       <div>
-        <h2 class="text-2xl font-bold dark:text-white">Streamline case handoffs</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Bundle DentalLab with Reception for end-to-end workflows.</p>
+        <h2 class="text-2xl md:text-3xl font-bold">Ready to streamline case handoffs?</h2>
+        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+          Start with DentalLab. Add Reception, Labs, or Pharma when you’re ready.
+        </p>
       </div>
       <div class="mt-6 md:mt-0 flex gap-3">
-        <a class="btn btn-primary" href="/contact/">Book a demo</a>
-        <a class="btn btn-secondary" href="/modules/">See all modules</a>
+        <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+        <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
       </div>
     </div>
   </section>
