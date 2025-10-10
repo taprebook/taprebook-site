@@ -6,56 +6,57 @@ import { I18N } from 'astrowind:config';
 import CommonMeta from '~/components/common/CommonMeta.astro';
 import Favicons from '~/components/Favicons.astro';
 import CustomStyles from '~/components/CustomStyles.astro';
-// import ApplyColorMode from '~/components/common/ApplyColorMode.astro'; // ❌ remove
+// REMOVE: import ApplyColorMode from '~/components/common/ApplyColorMode.astro';
 import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
 import BasicScripts from '~/components/common/BasicScripts.astro';
-
-// View Transitions (OK to keep)
 import { ClientRouter } from 'astro:transitions';
-
 import type { MetaData as MetaDataType } from '~/types';
 
-// ⚠️ Do NOT import GlassTriBg here if PageLayout.astro already renders it
-// import GlassTriBg from '~/components/visuals/GlassTriBg.astro';
+// Background (keep)
+import GlassTriBg from '~/components/visuals/GlassTriBg.astro';
 
-export interface Props {
-  metadata?: MetaDataType;
-}
-
+export interface Props { metadata?: MetaDataType }
 const { metadata = {} } = Astro.props;
 const { language, textDirection } = I18N;
 ---
 
 <!doctype html>
-<html lang={language} dir={textDirection} class="2xl:text-[20px]">
+<html lang={language} dir={textDirection} class="light 2xl:text-[20px]">
   <head>
     <CommonMeta />
     <Favicons />
     <CustomStyles />
-    <!-- <ApplyColorMode />  ❌ removed -->
+    <!-- REMOVED ApplyColorMode -->
     <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
-
-    <!-- View Transitions -->
     <ClientRouter fallback="swap" />
 
-    <!-- Force LIGHT MODE site-wide -->
     <style is:global>
-      /* Tell the browser we are light-only (affects form controls/scrollbars) */
-      html { color-scheme: light; }
-
-      /* Keep page surface transparent so your dynamic background (mounted in PageLayout) shows */
+      /* Force the whole site into light mode */
+      :root { color-scheme: light; }
       html, body { background: transparent !important; }
+      /* Make “default” text dark everywhere */
+      body, .text-default, main, article, section, .prose {
+        color: #0f172a !important; /* slate-900 */
+      }
+      /* Common elements inside prose */
+      .prose :where(p, li, strong, em, a, h1, h2, h3, h4, h5, h6) {
+        color: #0f172a !important;
+      }
+      /* Kill any dark: variants that might slip through */
+      [class*="dark:"] { color: inherit; background-color: inherit; }
     </style>
   </head>
 
-  <body class="antialiased text-default tracking-tight">
-    <!-- Dynamic background is mounted in PageLayout.astro (avoid duplicating it here). -->
+  <body class="antialiased tracking-tight">
+    <GlassTriBg primary="#0B4A8D" secondary="#69B2E8" density={1.35} />
+
     <slot />
 
     <BasicScripts />
   </body>
 </html>
+
