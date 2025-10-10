@@ -4,57 +4,393 @@ import Layout from '~/layouts/PageLayout.astro';
 
 <Layout
   metadata={{
-    title: 'TapRebook Labs — Diagnostics & radiology coordination',
+    title: 'TapRebook Labs — Diagnostics & radiology coordination on WhatsApp',
     description:
-      'Prep instructions, appointment nudges, results notifications, and smooth coordination between clinic and lab.',
+      'Reduce no-shows and prep errors with WhatsApp flows for fasting/contrast instructions, confirmations, rescheduling, scan-day check-ins, and results notifications.',
   }}
 >
-  <section class="py-12 md:py-16">
-    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight dark:text-white">
-      Labs: diagnostics & radiology coordination
-    </h1>
-    <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-3xl">
-      Send prep instructions, reduce no-shows with nudges, and keep patients updated on samples, scans, and results—
-      all on WhatsApp.
-    </p>
-    <div class="mt-6 flex gap-3">
-      <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
-      <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+  <!-- HERO -->
+  <section class="relative">
+    <div class="max-w-7xl mx-auto px-4 pt-16 pb-10 grid gap-8 lg:grid-cols-[1.2fr_.8fr] items-center">
+      <div>
+        <!-- Bigger chip -->
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 backdrop-blur px-3.5 py-1.5
+                 text-sm md:text-base font-semibold text-slate-800/90 shadow-sm">
+          WhatsApp coordination for diagnostics & radiology
+        </span>
+
+        <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">
+          Fewer prep errors. Fewer no-shows. Faster turnarounds.
+        </h1>
+
+        <ul class="mt-4 space-y-2 text-slate-700/90 dark:text-slate-300/90">
+          <li>• Clear fasting/contrast instructions with auto nudges</li>
+          <li>• One-tap confirmations, rescheduling, and multi-site routing</li>
+          <li>• Scan-day check-ins and status: sample/scan, QA, report ready</li>
+          <li>• <strong>24/7 availability</strong> — instant replies even outside business hours</li>
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+          <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+        </div>
+      </div>
+
+      <!-- Right: Hero image (replace when you have one; safe placeholder for now) -->
+      <div class="rounded-2xl overflow-hidden bg-white/55 dark:bg-slate-900/25 ring-1 ring-white/40 dark:ring-slate-800/40 shadow-lg backdrop-blur-sm">
+        <div class="aspect-video grid place-items-center text-slate-600/90 dark:text-slate-400/90">
+          Labs hero visual (coming soon)
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="py-10 border-t border-slate-200/50 dark:border-slate-800/60">
-    <h2 class="text-2xl font-bold dark:text-white">What it helps with</h2>
-    <ul class="mt-4 grid gap-4 md:grid-cols-2">
-      <li class="card p-5">
-        <h3 class="font-semibold">Prep & instructions</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Automated fasting/contrast guidance and reminders.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Status updates</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Sample collected, scan complete, report ready—no calls needed.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Rescheduling</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Self-serve rescheduling for patients who can’t make it.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Escalation</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Hand off to staff for edge cases or clarifications.</p>
-      </li>
-    </ul>
+  <!-- KPIs -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4 grid gap-4 sm:grid-cols-4">
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 20–35%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">No-shows</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 25–50%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Prep errors (fasting/contrast)</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↑ 1.5–2×</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Self-serve changes</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">&lt; 1s</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Median first response</div>
+      </div>
+    </div>
   </section>
 
-  <section class="py-12 border-t border-slate-200/50 dark:border-slate-800/60">
-    <div class="md:flex items-center justify-between">
+  <!-- Trust bar (placeholder logos) -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="text-center text-sm text-slate-600/90 dark:text-slate-400/90">Trusted by early adopters and pilot diagnostics centers</p>
+      <div class="mt-3 grid grid-cols-3 sm:grid-cols-6 gap-6 items-center opacity-80">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <svg viewBox="0 0 200 40" class="h-8 mx-auto" aria-hidden="true">
+            <rect width="200" height="40" rx="6" fill="rgba(255,255,255,0.6)"></rect>
+            <text x="100" y="26" text-anchor="middle" font-size="16" fill="rgb(71,85,105)">Lab Logo</text>
+          </svg>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">What you get</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Standardized WhatsApp flows that keep patients prepared and slots utilized.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Prep instructions</h3>
+          <p class="mt-1 text-sm">Fasting/contrast rules with bilingual copies and time-based nudges.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Confirmations &amp; reminders</h3>
+          <p class="mt-1 text-sm">One-tap Confirm / Reschedule / Directions. EN + Malayalam.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Multi-site routing</h3>
+          <p class="mt-1 text-sm">Offer nearest/available centers; keep capacity balanced.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Scan-day check-ins</h3>
+          <p class="mt-1 text-sm">Arrival, queue status, and late-running notices without phone calls.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Results notifications</h3>
+          <p class="mt-1 text-sm">Secure link or pickup notice when QA completes.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Reports &amp; tags</h3>
+          <p class="mt-1 text-sm">Interakt tags → Sheets/CRM; track prep issues and TAT.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo video (placeholder safe) -->
+  <section class="py-10 border-t border-white/20 dark:border-slate-800/60">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">See it in action (60s)</h2>
+      <div class="mt-6 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur overflow-hidden">
+        <div class="aspect-video grid place-items-center text-slate-600/90 dark:text-slate-400/90">
+          Labs demo video coming soon
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it integrates -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">How it integrates</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-4">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">WhatsApp Cloud API</h3>
+          <p class="mt-1 text-sm">Template approval and reliable delivery.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Interakt</h3>
+          <p class="mt-1 text-sm">Tags, routing, opt-in management for patient journeys.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">LIS / RIS / PACS</h3>
+          <p class="mt-1 text-sm">Status pings, secure report links, QA completion.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Sheets / CRM</h3>
+          <p class="mt-1 text-sm">Prep compliance, TAT, and conversion KPIs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flows in detail (labs-specific) -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Flows in detail</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">Exactly how Labs coordinates every touchpoint.</p>
+
+      <!-- 1) Prep instructions & eligibility checks -->
+      <details class="group mt-6 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">1) Prep instructions &amp; eligibility checks</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> Patients arrive prepared; scans are not canceled for fasting/contrast mistakes.</p>
+          <p><strong>When it fires:</strong> Immediately after booking, with nudges at T-24h and T-3h.</p>
+          <p><strong>Patient experience:</strong> Bilingual checklist (food, water, meds, attire) + “Got it” button. For contrast studies, show allergy/creatinine disclaimers.</p>
+          <p><strong>Ops:</strong> Tag <em>prep_ack</em>; flag risk answers for staff; log exceptions.</p>
+          <p><strong>KPIs:</strong> Prep acknowledgment rate; cancellations due to prep ↓.</p>
+        </div>
+      </details>
+
+      <!-- 2) Confirmations & reminders (labs) -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">2) Confirmations &amp; reminders (labs)</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>One-tap Confirm / Reschedule / Directions with numeric date/time. Multi-site choices if needed.</p>
+          <p>Tags: <em>confirmed</em>, <em>reminded_d-1</em>, <em>reminded_d0</em>, <em>site_choice</em>.</p>
+        </div>
+      </details>
+
+      <!-- 3) Scan-day check-ins -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">3) Scan-day check-ins &amp; queue</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>“I’ve arrived” button, late notices, and grace routing. Optional turn estimate to reduce calls.</p>
+          <p>Tags: <em>arrived</em>, <em>late</em>, <em>in_queue</em>.</p>
+        </div>
+      </details>
+
+      <!-- 4) Results notifications -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">4) Results ready (secure link / pickup)</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Notify when QA completes; share secure link or pickup instructions. Gentle reminder after 48h if unopened.</p>
+          <p>Tags: <em>result_ready</em>, <em>result_opened</em>, <em>pickup_notified</em>.</p>
+        </div>
+      </details>
+
+      <!-- 5) Critical/abnormal escalation -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">5) Critical/abnormal escalation</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Route to staff/doctor with an audit trail; never disclose specifics in chat—just prompt a call-back.</p>
+          <p>Tags: <em>critical_flag</em>, <em>callback_done</em>.</p>
+        </div>
+      </details>
+
+      <!-- 6) Rescheduling & location routing -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">6) Rescheduling &amp; location routing</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Offer slots by morning/afternoon/evening; support moving to an alternate center if closer or earlier.</p>
+          <p>Tags: <em>rescheduled</em>, <em>site_switched</em>.</p>
+        </div>
+      </details>
+
+      <!-- 7) Clinic handoff -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">7) Clinic / referring-doctor handoff</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Send “report ready” to the clinic contact with secure access notes. Keep a simple audit trail.</p>
+          <p>Tags: <em>clinic_notified</em>, <em>clinic_viewed</em>.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Pricing (similar structure; labs specifics) -->
+  <section id="pricing" class="py-12 border-t border-white/20 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Pricing</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Simple plans by center size. Start with Labs—add other modules as you grow.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Single center -->
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+          <h3 class="font-semibold">Single center</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Standalone diagnostics/radiology</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Prep instructions + reminders (EN + Malayalam)</li>
+            <li>• Confirmations, rescheduling, scan-day check-ins</li>
+            <li>• Results notifications (secure link / pickup)</li>
+            <li>• Basic reports &amp; Interakt tags → Sheet</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Talk to us</a>
+          </div>
+        </div>
+
+        <!-- Multi-center -->
+        <div class="rounded-2xl p-6 ring-2 ring-blue-300/40 dark:ring-blue-300/30 bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-lg">
+          <h3 class="font-semibold">Multi-center</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">2–10 centers</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Everything in Single</li>
+            <li>• Multi-site routing &amp; capacity balancing</li>
+            <li>• Slot-bank for manual rescheduling</li>
+            <li>• KPI dashboard (prep, TAT, utilization)</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Contact sales</a>
+          </div>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+          <h3 class="font-semibold">Enterprise</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Hospital groups &amp; networks</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Custom</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Everything in Multi-center</li>
+            <li>• LIS/RIS/PACS integrations &amp; SSO</li>
+            <li>• Template governance &amp; audit trails</li>
+            <li>• Multi-location analytics &amp; SLAs</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Request quote</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Risk reducer -->
+      <p class="mt-4 text-center text-xs text-slate-700/85 dark:text-slate-300/85">
+        Cancel anytime. No engineering required.
+      </p>
+
+      <p class="mt-2 text-center text-xs text-slate-600/80 dark:text-slate-400/80">
+        Pricing varies by message volume, centers, and integrations. We’ll share an exact quote after a short scoping call.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">FAQs</h2>
+
+      <details class="group mt-6 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Do you support fasting/contrast instructions in two languages?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Yes—English + Malayalam, with numeric dates/times and simple checklists.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Can you notify when reports are ready?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Yes—when QA completes, we send a secure link or pickup notice. We can also notify the referring clinic.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">How does multi-site routing work?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          We can offer the nearest/earliest center and tag the choice, helping balance capacity across locations.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Is patient data secure?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Data stays in approved systems (WhatsApp/Interakt, your LIS/RIS/PACS, Sheets/CRM). Role-based access and audit trails.
+        </div>
+      </details>
+    </div>
+
+    <!-- FAQPage JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Do you support fasting/contrast instructions in two languages?","acceptedAnswer":{"@type":"Answer","text":"Yes—English + Malayalam, with numeric dates/times and simple checklists."}},
+        {"@type":"Question","name":"Can you notify when reports are ready?","acceptedAnswer":{"@type":"Answer","text":"Yes—when QA completes, we send a secure link or pickup notice. We can also notify the referring clinic."}},
+        {"@type":"Question","name":"How does multi-site routing work?","acceptedAnswer":{"@type":"Answer","text":"We can offer the nearest/earliest center and tag the choice to balance capacity across locations."}},
+        {"@type":"Question","name":"Is patient data secure?","acceptedAnswer":{"@type":"Answer","text":"Data stays in approved systems (WhatsApp/Interakt, your LIS/RIS/PACS, Sheets/CRM). Role-based access and audit trails."}}
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12">
+    <div class="max-w-5xl mx-auto px-4 md:flex items-center justify-between">
       <div>
-        <h2 class="text-2xl font-bold dark:text-white">Coordinate lab visits without phone tag</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Start with Labs or bundle with Reception.</p>
+        <h2 class="text-2xl md:text-3xl font-bold">Ready to keep patients prepared and slots full?</h2>
+        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+          Start with Labs. Add Reception, Pharma, and more when you’re ready.
+        </p>
       </div>
       <div class="mt-6 md:mt-0 flex gap-3">
-        <a class="btn btn-primary" href="/contact/">Book a demo</a>
-        <a class="btn btn-secondary" href="/modules/">See all modules</a>
+        <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+        <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
       </div>
     </div>
   </section>
 </Layout>
+
