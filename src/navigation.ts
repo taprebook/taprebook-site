@@ -24,20 +24,20 @@ export const headerData = {
 };
 
 // (Footer can stay as-is unless you want to remove Modules/Pricing there too)
+// src/navigation.ts
+
 export const footerData = {
   columns: [
     {
       title: 'TapRebook',
       links: [
-        { text: 'Modules', href: '/modules/' },
-        { text: 'Pricing', href: '/pricing/' },
         { text: 'Contact', href: '/contact/' },
-        { text: 'Privacy', href: '/privacy/' },
-        { text: 'Terms', href: '/terms/' },
+        { text: 'About', href: '/about/' },
+        { text: 'Modules', href: '/modules/' }, // keep or remove as you prefer
       ],
     },
     {
-      title: 'Modules',
+      title: 'Solutions',
       links: [
         { text: 'Reception', href: '/modules/reception/' },
         { text: 'Labs', href: '/modules/labs/' },
@@ -48,9 +48,20 @@ export const footerData = {
         { text: 'Queue', href: '/modules/queue/' },
       ],
     },
+    {
+      title: 'Legal',
+      links: [
+        { text: 'Privacy Policy', href: '/privacy/' },
+        { text: 'Terms of Service', href: '/terms/' },
+        { text: 'Application & Data Security', href: '/security/' },
+        // { text: 'Subprocessors', href: '/subprocessors/' }, // optional later
+        // { text: 'Cookie Policy', href: '/cookies/' },       // optional later
+      ],
+    },
   ],
   socialLinks: [
     { ariaLabel: 'WhatsApp', icon: 'tabler:brand-whatsapp', href: 'https://wa.me/919539231117' },
   ],
   footNote: `© ${new Date().getFullYear()} TapRebook. All rights reserved.`,
 };
+
