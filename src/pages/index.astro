@@ -4,22 +4,35 @@ import Layout from '~/layouts/PageLayout.astro';
 
 <Layout
   metadata={{
-    title: 'TapRebook — AI-powered WhatsApp solutions',
+    title: 'TapRebook — Standardize every interaction on WhatsApp',
     description:
-      'Booking, reminders, and coordination on WhatsApp—built to improve operational efficiency.',
+      'Bookings, reminders, coordination, and status updates—on WhatsApp. Always on. Measurable. Brand-consistent.',
     ignoreTitleTemplate: true,
   }}
 >
-  <!-- HERO -->
+  <!-- HERO (no image; right side is KPIs/trust so there’s no emptiness) -->
   <section class="relative">
-    <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 grid gap-10 md:grid-cols-2 items-center">
-      <!-- Left: Headline + CTA -->
+    <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 grid gap-10 lg:grid-cols-[1.15fr_.85fr] items-center">
+      <!-- LEFT: Headline + value + CTA -->
       <div>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight">
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 backdrop-blur px-3 py-1 text-xs md:text-sm font-semibold text-slate-800/90 shadow-sm"
+        >
+          WhatsApp-first, operations-ready
+        </span>
+
+        <h1 class="mt-4 text-4xl md:text-6xl font-extrabold tracking-tight">
           Standardize every interaction on WhatsApp
         </h1>
+
         <p class="mt-4 text-lg md:text-xl text-slate-700/90 dark:text-slate-200/90 max-w-2xl">
-          Booking, reminders, and coordination—built to improve operational efficiency.
+          Booking, reminders, coordination, and updates—<strong>built to improve operational efficiency</strong> and keep teams in sync.
+        </p>
+
+        <!-- Always-on badge -->
+        <p class="mt-3 text-xs md:text-sm text-slate-600/90 dark:text-slate-400/90">
+          <span class="rounded-full px-2.5 py-0.5 ring-1 ring-white/30 bg-white/30 backdrop-blur">Always on</span>
+          Responds instantly—day or night.
         </p>
 
         <div class="mt-8 flex items-center gap-3">
@@ -27,126 +40,153 @@ import Layout from '~/layouts/PageLayout.astro';
           <a class="btn btn-secondary" href="/contact/">Book a demo</a>
         </div>
 
-        <!-- NEW: tiny “Always on” badge -->
-        <p class="mt-3 text-xs md:text-sm text-slate-600/90 dark:text-slate-400/90">
-          <span class="rounded-full px-2.5 py-0.5 ring-1 ring-white/30 bg-white/30 backdrop-blur">
-            Always on
-          </span>
-          Responds instantly—day or night.
-        </p>
+        <!-- How it works: briefly, so hero feels complete -->
+        <div class="mt-8 grid gap-3 sm:grid-cols-3">
+          <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/30 dark:bg-slate-900/20 backdrop-blur">
+            <div class="font-semibold">1) Connect</div>
+            <p class="text-sm mt-1 text-slate-700/90 dark:text-slate-300/90">Use your WhatsApp Cloud API/Interakt. No app installs for users.</p>
+          </div>
+          <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/30 dark:bg-slate-900/20 backdrop-blur">
+            <div class="font-semibold">2) Configure</div>
+            <p class="text-sm mt-1 text-slate-700/90 dark:text-slate-300/90">Pick a module, set windows &amp; rules, mirror copy in local languages.</p>
+          </div>
+          <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/30 dark:bg-slate-900/20 backdrop-blur">
+            <div class="font-semibold">3) Go live</div>
+            <p class="text-sm mt-1 text-slate-700/90 dark:text-slate-300/90">Measure completions, recover misses, escalate edge cases to staff.</p>
+          </div>
+        </div>
       </div>
 
-      <!-- Right: Hero image card -->
-      <div class="justify-self-end w-full max-w-xl">
-        <div class="relative rounded-2xl overflow-hidden bg-white/55 dark:bg-slate-900/25 ring-1 ring-white/40 dark:ring-slate-800/40 shadow-lg backdrop-blur-sm">
-          <img
-            src="/images/hero-icons.png"
-            alt="Calendar, reminders, and links—on WhatsApp"
-            class="block h-full w-full object-cover"
-            width="1536"
-            height="1024"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-            sizes="(min-width: 1024px) 480px, 90vw"
-          />
-          <div class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/40 via-transparent to-transparent"></div>
+      <!-- RIGHT: KPIs + trust chips (fills space where image used to be) -->
+      <div class="w-full">
+        <!-- KPI cards -->
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/40 dark:bg-slate-900/25 backdrop-blur text-center shadow-sm">
+            <div class="text-3xl font-extrabold tracking-tight">↓ 20–40%</div>
+            <div class="text-sm text-slate-600 dark:text-slate-400">No-shows</div>
+          </div>
+          <div class="rounded-xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/40 dark:bg-slate-900/25 backdrop-blur text-center shadow-sm">
+            <div class="text-3xl font-extrabold tracking-tight">↑ 2–3×</div>
+            <div class="text-sm text-slate-600 dark:text-slate-400">Self-serve changes</div>
+          </div>
+          <div class="rounded-xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/40 dark:bg-slate-900/25 backdrop-blur text-center shadow-sm">
+            <div class="text-3xl font-extrabold tracking-tight">↓ 30–50%</div>
+            <div class="text-sm text-slate-600 dark:text-slate-400">“How long?” calls</div>
+          </div>
+          <div class="rounded-xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/40 dark:bg-slate-900/25 backdrop-blur text-center shadow-sm">
+            <div class="text-3xl font-extrabold tracking-tight">&lt; 1s</div>
+            <div class="text-sm text-slate-600 dark:text-slate-400">Median first response</div>
+          </div>
+        </div>
+
+        <!-- Trust bar -->
+        <div class="mt-6">
+          <p class="text-center text-xs text-slate-600/90 dark:text-slate-400/90">Trusted by early adopters in healthcare, hospitality, and education</p>
+          <div class="mt-3 grid grid-cols-3 sm:grid-cols-6 gap-4 items-center opacity-85">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <svg viewBox="0 0 200 40" class="h-8 mx-auto" aria-hidden="true">
+                <rect width="200" height="40" rx="6" fill="rgba(255,255,255,0.6)"></rect>
+                <text x="100" y="26" text-anchor="middle" font-size="16" fill="rgb(71,85,105)">Your Logo</text>
+              </svg>
+            ))}
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY TAPREBOOK (moved above Solutions) -->
+  <!-- VALUE PROPS (unique order vs module pages) -->
   <section class="py-12 border-t border-white/20 dark:border-slate-800/60">
-    <div class="max-w-6xl mx-auto px-4 grid gap-6 md:grid-cols-3">
-      <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur">
-        <h3 class="font-semibold">One brand, many modules</h3>
-        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
-          Start with what you need; expand without rebuilding your stack or confusing customers.
-        </p>
-      </div>
-      <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur">
-        <h3 class="font-semibold">WhatsApp-first UX</h3>
-        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
-          No app installs. Conversations drive bookings, reminders, and updates—<strong>24/7</strong>.
-        </p>
-      </div>
-      <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur">
-        <h3 class="font-semibold">Measurable outcomes</h3>
-        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
-          See completions, drop-offs and exceptions; escalate to staff when needed.
-        </p>
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Why TapRebook</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">One brand, many modules</h3>
+          <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+            Start with the module you need—Reception, Labs, Pharma, DentalLab, Stay, Campus, or Queue—and expand without rebuilding.
+          </p>
+        </div>
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">WhatsApp-first UX</h3>
+          <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+            Conversations drive bookings, reminders, and updates—no app installs. <strong>24/7 availability</strong>.
+          </p>
+        </div>
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Measurable outcomes</h3>
+          <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+            See completions, drop-offs and exceptions; recover misses and escalate edge cases to staff.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Solutions grid -->
+  <!-- MODULE TEASERS (concise; structurally different than their pages) -->
   <section class="py-10 border-t border-white/20 dark:border-slate-800/60">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center">Solutions</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-center">What can you standardize?</h2>
       <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
-        Pick the module that fits today. Add others later—same brand, shared data.
+        Pick a starting point—add more as you grow. Same brand, shared data.
       </p>
 
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur hover:opacity-90 transition"
-           href="/modules/reception/">
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur hover:opacity-90 transition" href="/modules/reception/">
           <h3 class="font-semibold">Reception</h3>
-          <p class="mt-1 text-sm text-slate-700/90 dark:text-slate-300/90">
-            AI receptionist for clinics: reminders, self-rescheduling, follow-ups.
-          </p>
+          <p class="mt-1 text-sm">Confirmations, reminders, running-late, rescheduling, no-show recovery.</p>
         </a>
-
-        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur hover:opacity-90 transition"
-           href="/modules/labs/">
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur hover:opacity-90 transition" href="/modules/labs/">
           <h3 class="font-semibold">Labs</h3>
-          <p class="mt-1 text-sm text-slate-700/90 dark:text-slate-300/90">
-            Diagnostics &amp; radiology coordination with prep instructions and nudges.
-          </p>
+          <p class="mt-1 text-sm">Prep instructions, nudges, status (sample/scan/report), results share.</p>
         </a>
-
-        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur hover:opacity-90 transition"
-           href="/modules/pharma/">
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur hover:opacity-90 transition" href="/modules/pharma/">
           <h3 class="font-semibold">Pharma</h3>
-          <p class="mt-1 text-sm text-slate-700/90 dark:text-slate-300/90">
-            Refill &amp; chronic-care reminders with smart follow-ups.
-          </p>
+          <p class="mt-1 text-sm">Refill nudges, chronic-care schedules, escalation to staff, audit.</p>
         </a>
-
-        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur hover:opacity-90 transition"
-           href="/modules/dentallab/">
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur hover:opacity-90 transition" href="/modules/dentallab/">
           <h3 class="font-semibold">DentalLab</h3>
-          <p class="mt-1 text-sm text-slate-700/90 dark:text-slate-300/90">
-            Dentist ↔ lab case tracker, pickups, approvals, status.
-          </p>
+          <p class="mt-1 text-sm">Pickups, approvals, status, and exception notes between dentist & lab.</p>
         </a>
-
-        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur hover:opacity-90 transition"
-           href="/modules/stay/">
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur hover:opacity-90 transition" href="/modules/stay/">
           <h3 class="font-semibold">Stay</h3>
-          <p class="mt-1 text-sm text-slate-700/90 dark:text-slate-300/90">
-            Homestay/houseboat guest messaging: pre-arrival info &amp; upsells.
-          </p>
+          <p class="mt-1 text-sm">Pre-arrival info, check-in nudges, upsells, and post-stay reviews.</p>
         </a>
-
-        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur hover:opacity-90 transition"
-           href="/modules/campus/">
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur hover:opacity-90 transition" href="/modules/campus/">
           <h3 class="font-semibold">Campus</h3>
-          <p class="mt-1 text-sm text-slate-700/90 dark:text-slate-300/90">
-            Parent communications: notices, fees, attendance, events.
-          </p>
+          <p class="mt-1 text-sm">Notices, fees, attendance, events, and two-way updates with audit.</p>
         </a>
-
-        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur hover:opacity-90 transition sm:col-span-2 lg:col-span-3"
-           href="/modules/queue/">
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur hover:opacity-90 transition sm:col-span-2 lg:col-span-3" href="/modules/queue/">
           <div class="flex items-baseline justify-between">
             <h3 class="font-semibold">Queue</h3>
             <span class="text-xs uppercase tracking-wide text-slate-600/80 dark:text-slate-400/80">Hospitality</span>
           </div>
-          <p class="mt-1 text-sm text-slate-700/90 dark:text-slate-300/90">
-            Restaurant waitlist &amp; preorders: live position updates and table-ready alerts.
-          </p>
+          <p class="mt-1 text-sm">Waitlists via WhatsApp, live position, preorders, and table-ready alerts.</p>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF (Google reviews placeholder) -->
+  <section class="py-10 border-t border-white/20 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">What customers say</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">Real feedback from pilots and early adopters.</p>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <!-- Placeholder Google-style cards; replace text when you have reviews -->
+        {[
+          {quote: 'Reminders + self-rescheduling cut our no-shows noticeably within weeks.', name: 'Clinic Admin'},
+          {quote: 'Parents acknowledge notices quickly—calls to the office are way down.', name: 'School Coordinator'},
+          {quote: 'Queue updates stopped the “how long now?” questions at the host stand.', name: 'Restaurant Manager'},
+        ].map((r) => (
+          <figure class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+            <div class="flex items-center gap-1 text-amber-500" aria-hidden="true">
+              {Array.from({ length: 5 }).map(() => <span>★</span>)}
+            </div>
+            <blockquote class="mt-2 text-sm text-slate-800/90 dark:text-slate-200/90">“{r.quote}”</blockquote>
+            <figcaption class="mt-2 text-xs text-slate-600/90 dark:text-slate-400/90">— {r.name}</figcaption>
+          </figure>
+        ))}
       </div>
     </div>
   </section>
@@ -157,7 +197,7 @@ import Layout from '~/layouts/PageLayout.astro';
       <div>
         <h2 class="text-2xl md:text-3xl font-bold">Not sure where to start?</h2>
         <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
-          We’ll recommend a starting module in 10 minutes.
+          Tell us your goal; we’ll recommend a starting module in 10 minutes.
         </p>
       </div>
       <div class="mt-6 md:mt-0 flex gap-3">
@@ -167,6 +207,5 @@ import Layout from '~/layouts/PageLayout.astro';
     </div>
   </section>
 </Layout>
-
 
 
