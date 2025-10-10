@@ -6,38 +6,44 @@ import Footer from '~/components/widgets/Footer.astro';
 import Announcement from '~/components/widgets/Announcement.astro';
 import { headerData, footerData } from '~/navigation';
 import type { MetaData } from '~/types';
+
 export interface Props { metadata?: MetaData }
 const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
-  <!-- Force light mode on every page render, including client-side transitions -->
+  <!-- Force LIGHT mode on every page render, including client-side transitions -->
   <script>
     (() => {
       try {
         const html = document.documentElement;
         html.classList.remove('dark');
-        html.classList.add('light');                      // Tailwind defaults will use light
+        html.classList.add('light');
         html.setAttribute('data-aw-theme', 'light');
-        localStorage.setItem('aw-theme', 'light');        // Astrowind
-        localStorage.setItem('theme', 'light');           // any other theme key
+        localStorage.setItem('aw-theme', 'light'); // Astrowind key
+        localStorage.setItem('theme', 'light');    // common fallback key
       } catch {}
     })();
   </script>
 
-  <!-- Dynamic background -->
+  <!-- Dynamic background behind everything -->
   <GlassTriBg primary="#0B4A8F" secondary="#6AB3EA" density={1.4} />
 
+  <!-- Top notice (optional) -->
   <slot name="announcement"><Announcement /></slot>
+
+  <!-- Header (theme toggle hidden, RSS hidden) -->
   <slot name="header">
-    <!-- keep the toggle hidden -->
     <Header {...headerData} showRssFeed={false} showToggleTheme={false} />
   </slot>
 
+  <!-- Page content -->
   <main><slot /></main>
 
+  <!-- Footer (force light theme styling) -->
   <slot name="footer"><Footer {...footerData} theme="light" /></slot>
 </Layout>
+
 
 
 
