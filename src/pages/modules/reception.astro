@@ -20,9 +20,9 @@ import Layout from '~/layouts/PageLayout.astro';
           Fewer no-shows. Less phone tag. Faster completions.
         </h1>
         <ul class="mt-4 space-y-2 text-slate-700/90 dark:text-slate-300/90">
-          <li>• Confirmations & reminders with one-tap actions</li>
+          <li>• Confirmations &amp; reminders with one-tap actions</li>
           <li>• Running-late handling with grace rules</li>
-          <li>• Self-serve rescheduling & no-show recovery</li>
+          <li>• Self-serve rescheduling &amp; no-show recovery</li>
         </ul>
 
         <div class="mt-6 flex gap-3">
@@ -66,7 +66,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
-          <h3 class="font-semibold">Confirmations & reminders</h3>
+          <h3 class="font-semibold">Confirmations &amp; reminders</h3>
           <p class="mt-1 text-sm">One-tap Confirm / Reschedule / Cancel / Directions. EN + Malayalam.</p>
         </div>
         <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
@@ -86,7 +86,7 @@ import Layout from '~/layouts/PageLayout.astro';
           <p class="mt-1 text-sm">Gentle Google review prompts—no incentives.</p>
         </div>
         <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
-          <h3 class="font-semibold">Reports & tags</h3>
+          <h3 class="font-semibold">Reports &amp; tags</h3>
           <p class="mt-1 text-sm">Interakt tags → Sheets/CRM; outcomes you can act on.</p>
         </div>
       </div>
@@ -102,7 +102,7 @@ import Layout from '~/layouts/PageLayout.astro';
       <!-- 1) Confirmations & reminders -->
       <details class="group mt-6 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
         <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
-          <span class="font-semibold">1) Appointment confirmations & reminders (EN/MAL)</span>
+          <span class="font-semibold">1) Appointment confirmations &amp; reminders (EN/MAL)</span>
           <span class="text-sm text-slate-500 group-open:hidden">Show</span>
           <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
         </summary>
@@ -111,8 +111,8 @@ import Layout from '~/layouts/PageLayout.astro';
           <p><strong>When it fires:</strong> Confirmation immediately after booking; reminders D-1 and D-0 (e.g., T-3h). AU format: <em>Mon 14 Jul 2025, 1:00 pm</em>.</p>
           <p><strong>Patient experience:</strong> WhatsApp with buttons: Confirm / Reschedule / Cancel / Directions. Bilingual (English first, Malayalam mirror); numeric date/time.</p>
           <p><strong>Clinic ops:</strong> Interakt tags (confirmed, reminded_d-1, reminded_d0) update Sheet/CRM. Optional staff alert on Cancel.</p>
-          <p><strong>Setup inputs:</strong> Booking source; clinic address & Maps link; reminder windows & grace rules.</p>
-          <p><strong>KPIs:</strong> Delivery & read; confirm/reschedule clicks; kept appts ↑; late arrivals ↓.</p>
+          <p><strong>Setup inputs:</strong> Booking source; clinic address &amp; Maps link; reminder windows &amp; grace rules.</p>
+          <p><strong>KPIs:</strong> Delivery &amp; read; confirm/reschedule clicks; kept appts ↑; late arrivals ↓.</p>
           <p><strong>Compliance:</strong> Utility; links only to Maps/Calendar/Booking.</p>
         </div>
       </details>
@@ -163,8 +163,8 @@ import Layout from '~/layouts/PageLayout.astro';
         <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
           <p><strong>Outcome:</strong> Convert missed appointments into rebooks quickly.</p>
           <p><strong>When it fires:</strong> Bot/staff marks No-show; trigger within 15–60 minutes (or day-end).</p>
-          <p><strong>Patient experience:</strong> “We missed you—choose a new time: {{slot A}} / {{slot B}} or See more times.” One-tap confirm.</p>
-          <p><strong>Clinic ops:</strong> On rebook → tag <em>rebooked</em> & send Reschedule Confirmation. Optional alert for high-value services.</p>
+          <p><strong>Patient experience:</strong> “We missed you—choose a new time: &#123;slot A&#125; / &#123;slot B&#125; or See more times.” One-tap confirm.</p>
+          <p><strong>Clinic ops:</strong> On rebook → tag <em>rebooked</em> &amp; send Reschedule Confirmation. Optional alert for high-value services.</p>
           <p><strong>Setup inputs:</strong> Rules for “next best” slots; whether to hold or just suggest.</p>
           <p><strong>KPIs:</strong> Rebooks captured; 72h recovery rate; fill of lost chair-time.</p>
           <p><strong>Compliance:</strong> Utility if tied to missed slot; keep wording operational.</p>
@@ -219,7 +219,7 @@ import Layout from '~/layouts/PageLayout.astro';
           <p><strong>When it fires:</strong> 24–72 hours after sharing a plan/estimate (e.g., RCT, crowns, aligners).</p>
           <p><strong>Patient experience:</strong> “Any questions? Want a 5-min call?” Buttons: Call me / Share slots / Later.</p>
           <p><strong>Clinic ops:</strong> Route “Call me” to front desk; log outcomes. If “Share slots,” propose 2–3 times in chat and confirm.</p>
-          <p><strong>Setup inputs:</strong> Which treatments get follow-ups; after how many hours; who handles quick calls & SLA.</p>
+          <p><strong>Setup inputs:</strong> Which treatments get follow-ups; after how many hours; who handles quick calls &amp; SLA.</p>
           <p><strong>KPIs:</strong> Acceptance rate; time from estimate → booking; common objections captured.</p>
           <p><strong>Compliance:</strong> Usually Utility if tied to a requested plan; keep it supportive, not promotional.</p>
         </div>
@@ -242,10 +242,10 @@ import Layout from '~/layouts/PageLayout.astro';
           <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Single provider / small clinic</p>
           <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
           <ul class="mt-4 space-y-2 text-sm">
-            <li>• Confirmations & reminders (EN + Malayalam)</li>
-            <li>• Running-late triage & self-serve rescheduling</li>
-            <li>• No-show recovery & post-visit reviews (opt-in)</li>
-            <li>• Basic reports & Interakt tags → Sheet</li>
+            <li>• Confirmations &amp; reminders (EN + Malayalam)</li>
+            <li>• Running-late triage &amp; self-serve rescheduling</li>
+            <li>• No-show recovery &amp; post-visit reviews (opt-in)</li>
+            <li>• Basic reports &amp; Interakt tags → Sheet</li>
           </ul>
           <div class="mt-6 flex gap-2">
             <a class="btn btn-primary w-full" href="/contact/">Talk to us</a>
@@ -271,13 +271,13 @@ import Layout from '~/layouts/PageLayout.astro';
         <!-- Multi-site / Enterprise -->
         <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
           <h3 class="font-semibold">Multi-site</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Groups & enterprises</p>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Groups &amp; enterprises</p>
           <div class="mt-4 text-3xl font-extrabold tracking-tight">Custom</div>
           <ul class="mt-4 space-y-2 text-sm">
             <li>• Everything in Clinic</li>
-            <li>• Brand & template governance</li>
-            <li>• CRM/Sheet integrations & SSO</li>
-            <li>• Multi-location analytics & SLAs</li>
+            <li>• Brand &amp; template governance</li>
+            <li>• CRM/Sheet integrations &amp; SSO</li>
+            <li>• Multi-location analytics &amp; SLAs</li>
           </ul>
           <div class="mt-6 flex gap-2">
             <a class="btn btn-primary w-full" href="/contact/">Request quote</a>
@@ -307,4 +307,5 @@ import Layout from '~/layouts/PageLayout.astro';
     </div>
   </section>
 </Layout>
+
 
