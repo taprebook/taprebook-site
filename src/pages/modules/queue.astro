@@ -9,52 +9,350 @@ import Layout from '~/layouts/PageLayout.astro';
       'Reduce walk-aways with WhatsApp waitlist links, live position updates, preorders, and table-ready alerts.',
   }}
 >
-  <section class="py-12 md:py-16">
-    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight dark:text-white">
-      Queue: waitlist & preorders on WhatsApp
-    </h1>
-    <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-3xl">
-      Guests join the waitlist from a QR or link, get live position updates, and can preorder popular items—so turns are
-      faster and fewer people walk away.
-    </p>
-    <div class="mt-6 flex gap-3">
-      <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
-      <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+  <!-- HERO -->
+  <section class="relative">
+    <div class="max-w-7xl mx-auto px-4 pt-16 pb-10 grid gap-8 lg:grid-cols-[1.2fr_.8fr] items-center">
+      <div>
+        <!-- Bigger chip -->
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 backdrop-blur px-3.5 py-1.5
+                 text-sm md:text-base font-semibold text-slate-800/90 shadow-sm">
+          WhatsApp waitlist & preorders for restaurants
+        </span>
+
+        <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">
+          Fewer walk-aways. Faster turns. Happier hosts and guests.
+        </h1>
+
+        <ul class="mt-4 space-y-2 text-slate-700/90 dark:text-slate-300/90">
+          <li>• Join the queue via QR/link—no app install, just WhatsApp</li>
+          <li>• Live position updates and <em>table-ready</em> alerts</li>
+          <li>• Optional preorders so the kitchen can prep bestsellers</li>
+          <li>• Escalate edge cases to host—notes, special requests, party size changes</li>
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+          <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+        </div>
+      </div>
+
+      <!-- Right: Hero visual placeholder -->
+      <div class="rounded-2xl overflow-hidden bg-white/55 dark:bg-slate-900/25 ring-1 ring-white/40 dark:ring-slate-800/40 shadow-lg backdrop-blur-sm">
+        <div class="aspect-video grid place-items-center text-slate-600/90 dark:text-slate-400/90">
+          Queue hero visual (coming soon)
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="py-10 border-t border-slate-200/50 dark:border-slate-800/60">
-    <h2 class="text-2xl font-bold dark:text-white">What it helps with</h2>
-    <ul class="mt-4 grid gap-4 md:grid-cols-2">
-      <li class="card p-5">
-        <h3 class="font-semibold">Join from anywhere</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">QR or link—no app install, just WhatsApp.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Live position updates</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Reduce desk calls with automatic status messages.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Preorders</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Guests can select bestsellers so the kitchen can prep.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Alerts & handoffs</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Table-ready pings and quick escalation to staff when needed.</p>
-      </li>
-    </ul>
+  <!-- KPIs -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4 grid gap-4 sm:grid-cols-4">
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 25–45%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Walk-aways</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↑ 10–20%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Table turns/hr</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↑ 15–30%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Preorder uptake</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 40–60%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">“How long now?” calls</div>
+      </div>
+    </div>
   </section>
 
-  <section class="py-12 border-t border-slate-200/50 dark:border-slate-800/60">
-    <div class="md:flex items-center justify-between">
+  <!-- Trust bar (placeholder logos) -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="text-center text-sm text-slate-600/90 dark:text-slate-400/90">Trusted by early adopters and pilot hospitality partners</p>
+      <div class="mt-3 grid grid-cols-3 sm:grid-cols-6 gap-6 items-center opacity-80">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <svg viewBox="0 0 200 40" class="h-8 mx-auto" aria-hidden="true">
+            <rect width="200" height="40" rx="6" fill="rgba(255,255,255,0.6)"></rect>
+            <text x="100" y="26" text-anchor="middle" font-size="16" fill="rgb(71,85,105)">Queue Logo</text>
+          </svg>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">What you get</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        A WhatsApp-first waitlist that reduces lobby crowding and keeps guests informed.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Join from anywhere</h3>
+          <p class="mt-1 text-sm">QR on signage or a short link—guests join in WhatsApp.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Live position updates</h3>
+          <p class="mt-1 text-sm">Auto status: position, ETA windows, “you’re almost up.”</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Preorders (optional)</h3>
+          <p class="mt-1 text-sm">Offer bestsellers; kitchen starts light prep to speed service.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Table-ready alerts</h3>
+          <p class="mt-1 text-sm">One-tap “on the way”; hold windows & grace rules included.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Handoff to host</h3>
+          <p class="mt-1 text-sm">Edge cases (party change, accessibility, birthdays) routed to staff.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Reports & audit</h3>
+          <p class="mt-1 text-sm">Queue time, walk-aways, seat-time, preorder uptake; tags to Sheet/CRM.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it integrates -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">How it integrates</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-4">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">WhatsApp Cloud API</h3>
+          <p class="mt-1 text-sm">Template approvals and reliable delivery.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Interakt</h3>
+          <p class="mt-1 text-sm">Tags, routing, opt-ins, and audit trails.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">POS / KDS</h3>
+          <p class="mt-1 text-sm">Optional preorder sync to POS or kitchen display system.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Maps & links</h3>
+          <p class="mt-1 text-sm">Location, menu PDF, and waitlist QR/short links.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flows in detail (Queue-specific) -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Flows in detail</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Exactly how Queue manages each step from join → seat.
+      </p>
+
+      <!-- 1) Join & capture -->
+      <details class="group mt-6 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">1) Join &amp; capture</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> Guests join from QR or link; host gets party size, name, notes.</p>
+          <p><strong>When it fires:</strong> On join; optional capacity checks throttle peak times.</p>
+          <p><strong>Tags:</strong> <em>queue_join</em>, <em>party_n</em>, <em>notes</em>.</p>
+        </div>
+      </details>
+
+      <!-- 2) Live updates -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">2) Live position updates</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Automated ETA windows and “you’re almost up” nudge; reduces host stand questions.</p>
+          <p>Tags: <em>eta_set</em>, <em>eta_update</em>, <em>near_ready</em>.</p>
+        </div>
+      </details>
+
+      <!-- 3) Preorders -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">3) Preorders (optional)</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Guests pick a few bestsellers; kitchen preps low-risk items to speed service.</p>
+          <p>Tags: <em>preorder_offer</em>, <em>preorder_ok</em>, <em>preorder_skip</em>.</p>
+        </div>
+      </details>
+
+      <!-- 4) Table-ready and grace -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">4) Table-ready &amp; grace rules</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>“Your table is ready” → guest taps <em>On the way</em>; hold for N minutes, then auto-advance or requeue.</p>
+          <p>Tags: <em>table_ready</em>, <em>on_way</em>, <em>grace_expired</em>.</p>
+        </div>
+      </details>
+
+      <!-- 5) Exceptions & handoff -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">5) Exceptions &amp; handoff to host</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Party size change, accessibility, birthdays: routed to host with context.</p>
+          <p>Tags: <em>host_handoff</em>, <em>note_flag</em>, <em>resolved</em>.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-12 border-t border-white/20 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Pricing</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Simple plans by venue size. Start with Queue—add other modules as you grow.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Small venue -->
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+          <h3 class="font-semibold">Small</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Cafés & small bistros</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Waitlist via QR/link</li>
+            <li>• Live position updates & alerts</li>
+            <li>• Basic reports & Interakt tags → Sheet</li>
+            <li>• Optional preorders</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Talk to us</a>
+          </div>
+        </div>
+
+        <!-- Standard -->
+        <div class="rounded-2xl p-6 ring-2 ring-blue-300/40 dark:ring-blue-300/30 bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-lg">
+          <h3 class="font-semibold">Standard</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Casual & family dining</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Everything in Small</li>
+            <li>• Preorder sync to POS/KDS (where available)</li>
+            <li>• Grace rules & auto-advance</li>
+            <li>• KPI dashboard (walk-aways, seat-time, turns)</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Contact sales</a>
+          </div>
+        </div>
+
+        <!-- High-volume -->
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+          <h3 class="font-semibold">High-volume</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Food halls & large venues</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Custom</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Everything in Standard</li>
+            <li>• Role-based access & template governance</li>
+            <li>• Multi-location analytics & SLAs</li>
+            <li>• Custom integrations & SSO</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Request quote</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Risk reducer -->
+      <p class="mt-4 text-center text-xs text-slate-700/85 dark:text-slate-300/85">
+        Cancel anytime. No engineering required.
+      </p>
+
+      <p class="mt-2 text-center text-xs text-slate-600/80 dark:text-slate-400/80">
+        Pricing varies by message volume, covers, and integrations. We’ll share an exact quote after a short scoping call.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">FAQs</h2>
+
+    <details class="group mt-6 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+      <summary class="cursor-pointer list-none p-5 font-semibold">Can guests join without speaking to the host?</summary>
+      <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+        Yes—QR or short link opens WhatsApp; we capture party size and notes, then update position and ETA automatically.
+      </div>
+    </details>
+
+    <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+      <summary class="cursor-pointer list-none p-5 font-semibold">How do preorders work?</summary>
+      <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+        We offer a curated set of items; guests pick in chat. Where supported, items sync to your POS/KDS to help the kitchen prep.
+      </div>
+    </details>
+
+    <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+      <summary class="cursor-pointer list-none p-5 font-semibold">What if guests don’t show after the alert?</summary>
+      <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+        Grace rules hold the table for N minutes; after that we auto-advance or requeue and notify the next party.
+      </div>
+    </details>
+
+    <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+      <summary class="cursor-pointer list-none p-5 font-semibold">Do you integrate with our POS?</summary>
+      <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+        We can sync preorders to supported POS/KDS systems or export to Sheet/CSV for kitchen prep lists.
+      </div>
+    </details>
+    </div>
+
+    <!-- FAQPage JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Can guests join without speaking to the host?","acceptedAnswer":{"@type":"Answer","text":"Yes—QR or short link opens WhatsApp; we capture party size and notes, then update position and ETA automatically."}},
+        {"@type":"Question","name":"How do preorders work?","acceptedAnswer":{"@type":"Answer","text":"We offer a curated set of items; guests pick in chat. Where supported, items sync to your POS/KDS to help the kitchen prep."}},
+        {"@type":"Question","name":"What if guests don’t show after the alert?","acceptedAnswer":{"@type":"Answer","text":"Grace rules hold the table for N minutes; after that we auto-advance or requeue and notify the next party."}},
+        {"@type":"Question","name":"Do you integrate with our POS?","acceptedAnswer":{"@type":"Answer","text":"We can sync preorders to supported POS/KDS systems or export to Sheet/CSV for kitchen prep lists."}}
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12">
+    <div class="max-w-5xl mx-auto px-4 md:flex items-center justify-between">
       <div>
-        <h2 class="text-2xl font-bold dark:text-white">Speed up turns without rushing guests</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Start with Queue, or bundle it with other modules.</p>
+        <h2 class="text-2xl md:text-3xl font-bold">Ready to keep the line moving?</h2>
+        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+          Start with Queue. Add Reception or Stay for end-to-end guest journeys.
+        </p>
       </div>
       <div class="mt-6 md:mt-0 flex gap-3">
-        <a class="btn btn-primary" href="/contact/">Book a demo</a>
-        <a class="btn btn-secondary" href="/modules/">See all modules</a>
+        <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+        <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
       </div>
     </div>
   </section>
 </Layout>
+
