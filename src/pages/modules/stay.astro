@@ -4,65 +4,369 @@ import Layout from '~/layouts/PageLayout.astro';
 
 <Layout
   metadata={{
-    title: 'TapRebook Stay — Guest messaging for homestays & houseboats',
+    title: 'TapRebook Stay — WhatsApp guest messaging for homestays & houseboats',
     description:
-      'Pre-arrival info, check-in coordination, upsells, and post-stay reviews on WhatsApp—reduce phone calls and no-shows.',
+      'Pre-arrival guidance, check-in coordination, upsells, in-stay support, and post-stay reviews on WhatsApp—fewer calls, happier guests.',
   }}
 >
-  <section class="py-12 md:py-16">
-    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight dark:text-white">
-      Stay: WhatsApp guest messaging for homestays & houseboats
-    </h1>
-    <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-3xl">
-      Send directions, check-in times, and house rules automatically. Offer add-ons (meals, activities, airport pickup),
-      and collect reviews—without chasing guests on calls.
-    </p>
-    <div class="mt-6 flex gap-3">
-      <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
-      <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+  <!-- HERO -->
+  <section class="relative">
+    <div class="max-w-7xl mx-auto px-4 pt-16 pb-10 grid gap-8 lg:grid-cols-[1.2fr_.8fr] items-center">
+      <div>
+        <!-- Bigger chip -->
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 backdrop-blur px-3.5 py-1.5
+                 text-sm md:text-base font-semibold text-slate-800/90 shadow-sm">
+          WhatsApp guest messaging for homestays & houseboats
+        </span>
+
+        <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">
+          Fewer calls. Smoother arrivals. Higher guest satisfaction.
+        </h1>
+
+        <ul class="mt-4 space-y-2 text-slate-700/90 dark:text-slate-300/90">
+          <li>• Auto-send directions, ID collection, and ETA confirmations</li>
+          <li>• Smart check-in reminders and easy change of arrival time</li>
+          <li>• In-chat upsells: meals, activities, transport, cruises</li>
+          <li>• <strong>24/7 availability</strong> — instant replies even outside business hours</li>
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+          <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+        </div>
+      </div>
+
+      <!-- Right: Hero visual placeholder (replace with real image when ready) -->
+      <div class="rounded-2xl overflow-hidden bg-white/55 dark:bg-slate-900/25 ring-1 ring-white/40 dark:ring-slate-800/40 shadow-lg backdrop-blur-sm">
+        <div class="aspect-video grid place-items-center text-slate-600/90 dark:text-slate-400/90">
+          Stay hero visual (coming soon)
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="py-10 border-t border-slate-200/50 dark:border-slate-800/60">
-    <h2 class="text-2xl font-bold dark:text-white">What it helps with</h2>
-    <ul class="mt-4 grid gap-4 md:grid-cols-2">
-      <li class="card p-5">
-        <h3 class="font-semibold">Pre-arrival guidance</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          Auto-send directions, parking/jetty info, ID collection, and ETA confirmations.
-        </p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Check-in & reminders</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          Reduce no-shows and late arrivals with polite nudges and easy rescheduling.
-        </p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Upsells & requests</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          Offer meals, cruises, transport, or local activities—guests confirm in chat.
-        </p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Post-stay reviews</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          Collect feedback and ratings automatically; escalate issues to staff.
-        </p>
-      </li>
-    </ul>
+  <!-- KPIs -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4 grid gap-4 sm:grid-cols-4">
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 20–35%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Pre-arrival calls</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↑ 10–25%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Add-on conversions</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 15–30%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Late arrivals / no-shows</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">&lt; 1s</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Median first response</div>
+      </div>
+    </div>
   </section>
 
-  <section class="py-12 border-t border-slate-200/50 dark:border-slate-800/60">
-    <div class="md:flex items-center justify-between">
+  <!-- Trust bar (placeholder logos) -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="text-center text-sm text-slate-600/90 dark:text-slate-400/90">Trusted by early adopters and pilot hospitality partners</p>
+      <div class="mt-3 grid grid-cols-3 sm:grid-cols-6 gap-6 items-center opacity-80">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <svg viewBox="0 0 200 40" class="h-8 mx-auto" aria-hidden="true">
+            <rect width="200" height="40" rx="6" fill="rgba(255,255,255,0.6)"></rect>
+            <text x="100" y="26" text-anchor="middle" font-size="16" fill="rgb(71,85,105)">Stay Logo</text>
+          </svg>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">What you get</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Standardized WhatsApp workflows that reduce phone tag and lift guest satisfaction.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Pre-arrival guidance</h3>
+          <p class="mt-1 text-sm">Directions, parking/jetty info, ID collection, ETA confirmations.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Check-in coordination</h3>
+          <p class="mt-1 text-sm">Smart nudges; guests adjust arrival time in one tap.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Upsells & requests</h3>
+          <p class="mt-1 text-sm">Meals, cruises, transport, local activities—confirm in chat.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">In-stay support</h3>
+          <p class="mt-1 text-sm">House rules, Wi-Fi, assistance; escalate to staff when needed.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Local tips</h3>
+          <p class="mt-1 text-sm">Share curated guides and time-boxed suggestions (AM/PM).</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Post-stay reviews</h3>
+          <p class="mt-1 text-sm">Polite Google review prompts and feedback capture.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it integrates -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">How it integrates</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-4">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">WhatsApp Cloud API</h3>
+          <p class="mt-1 text-sm">Template approval and reliable delivery.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Interakt</h3>
+          <p class="mt-1 text-sm">Tags, routing, opt-ins, and audit trails.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Booking engine / PMS</h3>
+          <p class="mt-1 text-sm">Pull reservations, send updates, sync notes.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Maps & links</h3>
+          <p class="mt-1 text-sm">Google Maps, house rules, and activity menus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flows in detail (Stay-specific) -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Flows in detail</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Exactly how Stay handles each guest touchpoint.
+      </p>
+
+      <!-- 1) Pre-arrival -->
+      <details class="group mt-6 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">1) Pre-arrival guidance</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> Guests arrive prepared; fewer “how to find us” calls.</p>
+          <p><strong>When it fires:</strong> Immediately on booking + D-1 reminder (time-boxed).</p>
+          <p><strong>Experience:</strong> Directions, parking/jetty info, ID upload, ETA confirm in one tap.</p>
+          <p><strong>Tags:</strong> <em>pre_info_sent</em>, <em>id_ok</em>, <em>eta_ok</em>.</p>
+        </div>
+      </details>
+
+      <!-- 2) Check-in coordination -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">2) Check-in coordination & reminders</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Guests adjust arrival time; late arrival path offers alternate windows.</p>
+          <p>Tags: <em>checkin_nudge</em>, <em>late_flag</em>, <em>window_changed</em>.</p>
+        </div>
+      </details>
+
+      <!-- 3) Upsells -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">3) Upsells & add-ons</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Offer meals, cruises, airport pickup, or tours; guests confirm in chat (with headcount/time).</p>
+          <p>Tags: <em>upsell_offer</em>, <em>upsell_accept</em>, <em>upsell_decline</em>.</p>
+        </div>
+      </details>
+
+      <!-- 4) In-stay support -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">4) In-stay support & house rules</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Auto-share Wi-Fi, house rules, and quick help; escalate to staff on issues.</p>
+          <p>Tags: <em>rules_sent</em>, <em>support_req</em>, <em>support_resolved</em>.</p>
+        </div>
+      </details>
+
+      <!-- 5) Local tips -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">5) Local tips & micro-itineraries</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Time-boxed suggestions (AM/PM, rainy-day) with map links; optional reservations in chat.</p>
+          <p>Tags: <em>tips_sent</em>, <em>tip_saved</em>, <em>reservation_req</em>.</p>
+        </div>
+      </details>
+
+      <!-- 6) Post-stay reviews -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">6) Post-stay reviews & feedback</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Polite Google review prompts 2–6 hours after checkout; route issues to staff.</p>
+          <p>Tags: <em>review_sent</em>, <em>review_left</em>, <em>issue_flag</em>, <em>issue_resolved</em>.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-12 border-t border-white/20 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Pricing</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Simple plans by property size. Start with Stay—add other modules as you grow.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Single property -->
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+          <h3 class="font-semibold">Single property</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Homestay or houseboat</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Pre-arrival guidance & ID collection</li>
+            <li>• Check-in coordination & reminders</li>
+            <li>• Upsells (meals/activities) & in-stay support</li>
+            <li>• Basic reports & Interakt tags → Sheet</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Talk to us</a>
+          </div>
+        </div>
+
+        <!-- Multi-property -->
+        <div class="rounded-2xl p-6 ring-2 ring-blue-300/40 dark:ring-blue-300/30 bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-lg">
+          <h3 class="font-semibold">Multi-property</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">2–10 units</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Everything in Single</li>
+            <li>• Route by property & capacity windows</li>
+            <li>• Slot-bank for activity times & meals</li>
+            <li>• KPI dashboard (calls saved, upsell rate)</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Contact sales</a>
+          </div>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+          <h3 class="font-semibold">Enterprise</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Groups & operators</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Custom</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Everything in Multi-property</li>
+            <li>• PMS/booking & courier integrations</li>
+            <li>• Template governance & SSO</li>
+            <li>• Multi-location analytics & SLAs</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Request quote</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Risk reducer -->
+      <p class="mt-4 text-center text-xs text-slate-700/85 dark:text-slate-300/85">
+        Cancel anytime. No engineering required.
+      </p>
+
+      <p class="mt-2 text-center text-xs text-slate-600/80 dark:text-slate-400/80">
+        Pricing varies by message volume, properties, and integrations. We’ll share an exact quote after a short scoping call.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">FAQs</h2>
+
+      <details class="group mt-6 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Do you support late arrivals or rescheduling?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Yes—guests can adjust arrival windows in one tap; we nudge politely and notify staff if needed.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Can we upsell meals or local activities?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Yes—guests confirm in chat; we capture headcount/time and tag the request for staff.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Do you integrate with our booking engine?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          We pull reservations from your PMS/engine (or Sheet), then send updates and record outcomes via Interakt tags.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Is guest data secure?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Data stays in approved systems (WhatsApp/Interakt, your PMS/booking engine, Sheets/CRM). Role-based access and audit trails.
+        </div>
+      </details>
+    </div>
+
+    <!-- FAQPage JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Do you support late arrivals or rescheduling?","acceptedAnswer":{"@type":"Answer","text":"Yes—guests can adjust arrival windows in one tap; we nudge politely and notify staff if needed."}},
+        {"@type":"Question","name":"Can we upsell meals or local activities?","acceptedAnswer":{"@type":"Answer","text":"Yes—guests confirm in chat; we capture headcount/time and tag the request for staff."}},
+        {"@type":"Question","name":"Do you integrate with our booking engine?","acceptedAnswer":{"@type":"Answer","text":"We pull reservations from your PMS/engine (or Sheet), then send updates and record outcomes via Interakt tags."}},
+        {"@type":"Question","name":"Is guest data secure?","acceptedAnswer":{"@type":"Answer","text":"Data stays in approved systems (WhatsApp/Interakt, your PMS/booking engine, Sheets/CRM). Role-based access and audit trails."}}
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12">
+    <div class="max-w-5xl mx-auto px-4 md:flex items-center justify-between">
       <div>
-        <h2 class="text-2xl font-bold dark:text-white">Happier guests, fewer calls</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Start with Stay or bundle with other modules as you grow.</p>
+        <h2 class="text-2xl md:text-3xl font-bold">Ready to host with fewer calls?</h2>
+        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+          Start with Stay. Add Reception, Labs, or Pharma when you’re ready.
+        </p>
       </div>
       <div class="mt-6 md:mt-0 flex gap-3">
-        <a class="btn btn-primary" href="/contact/">Book a demo</a>
-        <a class="btn btn-secondary" href="/modules/">See all modules</a>
+        <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+        <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
       </div>
     </div>
   </section>
 </Layout>
+
