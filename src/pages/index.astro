@@ -10,7 +10,7 @@ import Layout from '~/layouts/PageLayout.astro';
     ignoreTitleTemplate: true,
   }}
 >
-  <!-- HERO (no image; right side is KPIs/trust so there’s no emptiness) -->
+  <!-- HERO (image restored on the right) -->
   <section class="relative">
     <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 grid gap-10 lg:grid-cols-[1.15fr_.85fr] items-center">
       <!-- LEFT: Headline + value + CTA -->
@@ -25,12 +25,12 @@ import Layout from '~/layouts/PageLayout.astro';
           Standardize every interaction on WhatsApp
         </h1>
 
-        <p class="mt-4 text-lg md:text-xl text-slate-700/90 dark:text-slate-200/90 max-w-2xl">
+        <p class="mt-4 text-lg md:text-xl text-slate-700/90 max-w-2xl">
           Booking, reminders, coordination, and updates—<strong>built to improve operational efficiency</strong> and keep teams in sync.
         </p>
 
         <!-- Always-on badge -->
-        <p class="mt-3 text-xs md:text-sm text-slate-600/90 dark:text-slate-400/90">
+        <p class="mt-3 text-xs md:text-sm text-slate-600/90">
           <span class="rounded-full px-2.5 py-0.5 ring-1 ring-white/30 bg-white/30 backdrop-blur">Always on</span>
           Responds instantly—day or night.
         </p>
@@ -42,79 +42,97 @@ import Layout from '~/layouts/PageLayout.astro';
 
         <!-- How it works: briefly, so hero feels complete -->
         <div class="mt-8 grid gap-3 sm:grid-cols-3">
-          <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/30 dark:bg-slate-900/20 backdrop-blur">
+          <div class="rounded-xl p-4 ring-1 ring-white/30 bg-white/30 backdrop-blur">
             <div class="font-semibold">1) Connect</div>
-            <p class="text-sm mt-1 text-slate-700/90 dark:text-slate-300/90">Use your WhatsApp Cloud API/Interakt. No app installs for users.</p>
+            <p class="text-sm mt-1 text-slate-700/90">Use your WhatsApp Cloud API/Interakt. No app installs for users.</p>
           </div>
-          <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/30 dark:bg-slate-900/20 backdrop-blur">
+          <div class="rounded-xl p-4 ring-1 ring-white/30 bg-white/30 backdrop-blur">
             <div class="font-semibold">2) Configure</div>
-            <p class="text-sm mt-1 text-slate-700/90 dark:text-slate-300/90">Pick a module, set windows &amp; rules, mirror copy in local languages.</p>
+            <p class="text-sm mt-1 text-slate-700/90">Pick a module, set windows &amp; rules, mirror copy in local languages.</p>
           </div>
-          <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/30 dark:bg-slate-900/20 backdrop-blur">
+          <div class="rounded-xl p-4 ring-1 ring-white/30 bg-white/30 backdrop-blur">
             <div class="font-semibold">3) Go live</div>
-            <p class="text-sm mt-1 text-slate-700/90 dark:text-slate-300/90">Measure completions, recover misses, escalate edge cases to staff.</p>
+            <p class="text-sm mt-1 text-slate-700/90">Measure completions, recover misses, escalate edge cases to staff.</p>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT: KPIs + trust chips (fills space where image used to be) -->
-      <div class="w-full">
-        <!-- KPI cards -->
-        <div class="grid gap-4 sm:grid-cols-2">
-          <div class="rounded-xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/40 dark:bg-slate-900/25 backdrop-blur text-center shadow-sm">
-            <div class="text-3xl font-extrabold tracking-tight">↓ 20–40%</div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">No-shows</div>
-          </div>
-          <div class="rounded-xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/40 dark:bg-slate-900/25 backdrop-blur text-center shadow-sm">
-            <div class="text-3xl font-extrabold tracking-tight">↑ 2–3×</div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Self-serve changes</div>
-          </div>
-          <div class="rounded-xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/40 dark:bg-slate-900/25 backdrop-blur text-center shadow-sm">
-            <div class="text-3xl font-extrabold tracking-tight">↓ 30–50%</div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Wait-time inquiry calls</div>
-          </div>
-          <div class="rounded-xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/40 dark:bg-slate-900/25 backdrop-blur text-center shadow-sm">
-            <div class="text-3xl font-extrabold tracking-tight">&lt; 5s</div>
-            <div class="text-sm text-slate-600 dark:text-slate-400">Median first response</div>
-          </div>
-        </div>
+      <!-- RIGHT: Hero image -->
+      <div class="relative rounded-2xl overflow-hidden bg-white/55 ring-1 ring-white/40 shadow-lg backdrop-blur-sm">
+        <img
+          src="/images/AI_homepage.png"
+          alt="AI handling bookings, reminders, and coordination on WhatsApp"
+          class="block w-full h-full object-cover"
+          width="1600"
+          height="1000"
+          loading="eager"
+          decoding="async"
+          sizes="(min-width: 1024px) 520px, 90vw"
+        />
+        <!-- soft edge so it never melts into the page -->
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/40 via-transparent to-transparent"></div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Trust bar -->
-        <div class="mt-6">
-          <p class="text-center text-xs text-slate-600/90 dark:text-slate-400/90">Trusted by early adopters in healthcare, hospitality, and education</p>
-          <div class="mt-3 grid grid-cols-3 sm:grid-cols-6 gap-4 items-center opacity-85">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <svg viewBox="0 0 200 40" class="h-8 mx-auto" aria-hidden="true">
-                <rect width="200" height="40" rx="6" fill="rgba(255,255,255,0.6)"></rect>
-                <text x="100" y="26" text-anchor="middle" font-size="16" fill="rgb(71,85,105)">Your Logo</text>
-              </svg>
-            ))}
-          </div>
+  <!-- KPIs + TRUST (moved out of hero so image has space) -->
+  <section class="py-8 pt-0 md:pt-4">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- KPI cards -->
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-xl p-5 ring-1 ring-white/30 bg-white/40 backdrop-blur text-center shadow-sm">
+          <div class="text-3xl font-extrabold tracking-tight">↓ 20–40%</div>
+          <div class="text-sm text-slate-600">No-shows</div>
+        </div>
+        <div class="rounded-xl p-5 ring-1 ring-white/30 bg-white/40 backdrop-blur text-center shadow-sm">
+          <div class="text-3xl font-extrabold tracking-tight">↑ 2–3×</div>
+          <div class="text-sm text-slate-600">Self-serve changes</div>
+        </div>
+        <div class="rounded-xl p-5 ring-1 ring-white/30 bg-white/40 backdrop-blur text-center shadow-sm">
+          <div class="text-3xl font-extrabold tracking-tight">↓ 30–50%</div>
+          <div class="text-sm text-slate-600">Wait-time inquiry calls</div>
+        </div>
+        <div class="rounded-xl p-5 ring-1 ring-white/30 bg-white/40 backdrop-blur text-center shadow-sm">
+          <div class="text-3xl font-extrabold tracking-tight">&lt; 5s</div>
+          <div class="text-sm text-slate-600">Median first response</div>
+        </div>
+      </div>
+
+      <!-- Trust bar -->
+      <div class="mt-6">
+        <p class="text-center text-xs text-slate-600">Trusted by early adopters in healthcare, hospitality, and education</p>
+        <div class="mt-3 grid grid-cols-3 sm:grid-cols-6 gap-4 items-center opacity-85">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <svg viewBox="0 0 200 40" class="h-8 mx-auto" aria-hidden="true">
+              <rect width="200" height="40" rx="6" fill="rgba(255,255,255,0.6)"></rect>
+              <text x="100" y="26" text-anchor="middle" font-size="16" fill="rgb(71,85,105)">Your Logo</text>
+            </svg>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- VALUE PROPS (unique order vs module pages) -->
-  <section class="py-12 border-t border-white/20 dark:border-slate-800/60">
+  <!-- VALUE PROPS -->
+  <section class="py-12 border-t border-white/20">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl md:text-3xl font-bold text-center">Why TapRebook</h2>
       <div class="mt-8 grid gap-6 md:grid-cols-3">
-        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 bg-white/25 backdrop-blur">
           <h3 class="font-semibold">One brand, many modules</h3>
-          <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+          <p class="mt-2 text-slate-700/90">
             Start with the module you need—Reception, Labs, Pharma, DentalLab, Stay, Campus, or Queue—and expand without rebuilding.
           </p>
         </div>
-        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 bg-white/25 backdrop-blur">
           <h3 class="font-semibold">WhatsApp-first UX</h3>
-          <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+          <p class="mt-2 text-slate-700/90">
             Conversations drive bookings, reminders, and updates—no app installs. <strong>24/7 availability</strong>.
           </p>
         </div>
-        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 bg-white/25 backdrop-blur">
           <h3 class="font-semibold">Measurable outcomes</h3>
-          <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+          <p class="mt-2 text-slate-700/90">
             See completions, drop-offs and exceptions; recover misses and escalate edge cases to staff.
           </p>
         </div>
@@ -122,43 +140,43 @@ import Layout from '~/layouts/PageLayout.astro';
     </div>
   </section>
 
-  <!-- MODULE TEASERS (concise; structurally different than their pages) -->
-  <section class="py-10 border-t border-white/20 dark:border-slate-800/60">
+  <!-- MODULE TEASERS -->
+  <section class="py-10 border-t border-white/20">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl md:text-3xl font-bold text-center">What can you standardize?</h2>
-      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+      <p class="mt-2 text-center text-slate-700/90">
         Pick a starting point—add more as you grow. Same brand, shared data.
       </p>
 
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur hover:opacity-90 transition" href="/modules/reception/">
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 bg-white/20 backdrop-blur hover:opacity-90 transition" href="/modules/reception/">
           <h3 class="font-semibold">Reception</h3>
           <p class="mt-1 text-sm">Confirmations, reminders, running-late, rescheduling, no-show recovery.</p>
         </a>
-        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur hover:opacity-90 transition" href="/modules/labs/">
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 bg-white/20 backdrop-blur hover:opacity-90 transition" href="/modules/labs/">
           <h3 class="font-semibold">Labs</h3>
           <p class="mt-1 text-sm">Prep instructions, nudges, status (sample/scan/report), results share.</p>
         </a>
-        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur hover:opacity-90 transition" href="/modules/pharma/">
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 bg-white/20 backdrop-blur hover:opacity-90 transition" href="/modules/pharma/">
           <h3 class="font-semibold">Pharma</h3>
           <p class="mt-1 text-sm">Refill nudges, chronic-care schedules, escalation to staff, audit.</p>
         </a>
-        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur hover:opacity-90 transition" href="/modules/dentallab/">
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 bg-white/20 backdrop-blur hover:opacity-90 transition" href="/modules/dentallab/">
           <h3 class="font-semibold">DentalLab</h3>
           <p class="mt-1 text-sm">Pickups, approvals, status, and exception notes between dentist & lab.</p>
         </a>
-        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur hover:opacity-90 transition" href="/modules/stay/">
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 bg-white/20 backdrop-blur hover:opacity-90 transition" href="/modules/stay/">
           <h3 class="font-semibold">Stay</h3>
           <p class="mt-1 text-sm">Pre-arrival info, check-in nudges, upsells, and post-stay reviews.</p>
         </a>
-        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur hover:opacity-90 transition" href="/modules/campus/">
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 bg-white/20 backdrop-blur hover:opacity-90 transition" href="/modules/campus/">
           <h3 class="font-semibold">Campus</h3>
           <p class="mt-1 text-sm">Notices, fees, attendance, events, and two-way updates with audit.</p>
         </a>
-        <a class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/20 dark:bg-slate-900/15 backdrop-blur hover:opacity-90 transition sm:col-span-2 lg:col-span-3" href="/modules/queue/">
+        <a class="rounded-2xl p-5 ring-1 ring-white/30 bg-white/20 backdrop-blur hover:opacity-90 transition sm:col-span-2 lg:col-span-3" href="/modules/queue/">
           <div class="flex items-baseline justify-between">
             <h3 class="font-semibold">Queue</h3>
-            <span class="text-xs uppercase tracking-wide text-slate-600/80 dark:text-slate-400/80">Hospitality</span>
+            <span class="text-xs uppercase tracking-wide text-slate-600/80">Hospitality</span>
           </div>
           <p class="mt-1 text-sm">Waitlists via WhatsApp, live position, preorders, and table-ready alerts.</p>
         </a>
@@ -166,25 +184,24 @@ import Layout from '~/layouts/PageLayout.astro';
     </div>
   </section>
 
-  <!-- SOCIAL PROOF (Google reviews placeholder) -->
-  <section class="py-10 border-t border-white/20 dark:border-slate-800/60">
+  <!-- SOCIAL PROOF -->
+  <section class="py-10 border-t border-white/20">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl md:text-3xl font-bold text-center">What customers say</h2>
-      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">Real feedback from pilots and early adopters.</p>
+      <p class="mt-2 text-center text-slate-700/90">Real feedback from pilots and early adopters.</p>
 
       <div class="mt-8 grid gap-4 md:grid-cols-3">
-        <!-- Placeholder Google-style cards; replace text when you have reviews -->
         {[
           {quote: 'Reminders + self-rescheduling cut our no-shows noticeably within weeks.', name: 'Clinic Admin'},
           {quote: 'Parents acknowledge notices quickly—calls to the office are way down.', name: 'School Coordinator'},
           {quote: 'Queue updates stopped the “how long now?” questions at the host stand.', name: 'Restaurant Manager'},
         ].map((r) => (
-          <figure class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <figure class="rounded-2xl p-5 ring-1 ring-white/30 bg-white/25 backdrop-blur">
             <div class="flex items-center gap-1 text-amber-500" aria-hidden="true">
               {Array.from({ length: 5 }).map(() => <span>★</span>)}
             </div>
-            <blockquote class="mt-2 text-sm text-slate-800/90 dark:text-slate-200/90">“{r.quote}”</blockquote>
-            <figcaption class="mt-2 text-xs text-slate-600/90 dark:text-slate-400/90">— {r.name}</figcaption>
+            <blockquote class="mt-2 text-sm text-slate-800/90">“{r.quote}”</blockquote>
+            <figcaption class="mt-2 text-xs text-slate-600/90">— {r.name}</figcaption>
           </figure>
         ))}
       </div>
@@ -196,7 +213,7 @@ import Layout from '~/layouts/PageLayout.astro';
     <div class="max-w-5xl mx-auto px-4 md:flex items-center justify-between">
       <div>
         <h2 class="text-2xl md:text-3xl font-bold">Not sure where to start?</h2>
-        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+        <p class="mt-2 text-slate-700/90">
           Tell us your goal; we’ll recommend a starting module in 10 minutes.
         </p>
       </div>
@@ -207,5 +224,3 @@ import Layout from '~/layouts/PageLayout.astro';
     </div>
   </section>
 </Layout>
-
-
