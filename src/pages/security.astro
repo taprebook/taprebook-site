@@ -1,106 +1,114 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-const lastUpdated = new Date().toLocaleDateString();
+
+const updated = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
 ---
 
 <Layout
   metadata={{
-    title: 'Application & Data Security',
-    description: 'How we protect your data: hosting, encryption, access controls, and operational practices.',
+    title: 'Application & Data Security — TapRebook',
+    description:
+      'How TapRebook protects data: hosting, encryption, access controls, backups, monitoring, incident response, and privacy posture.',
   }}
 >
-  <!-- Hero -->
-  <section class="py-12 md:py-16">
-    <div class="max-w-5xl mx-auto px-4">
-      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Application &amp; Data Security</h1>
-      <p class="mt-3 text-slate-600">Last updated: {lastUpdated}</p>
-      <p class="mt-4 text-lg text-slate-700 max-w-3xl">
-        Security is built into our product and operations. We combine platform controls with best practices to protect
-        customer data while delivering reliable, WhatsApp-first automation.
-      </p>
+  <section class="relative">
+    <div class="max-w-4xl mx-auto px-4 pt-16 pb-10">
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-black">Application &amp; Data Security</h1>
+      <p class="mt-2 text-sm text-slate-700">Last updated: {updated}</p>
     </div>
   </section>
 
-  <!-- Content -->
-  <section class="pb-16">
-    <div class="prose max-w-4xl px-4 mx-auto">
+  <section class="pb-20">
+    <div class="max-w-4xl mx-auto px-4 prose prose-neutral prose-headings:text-black prose-p:text-slate-900 prose-li:text-slate-900">
+
+      <p>
+        TapRebook is designed with a security-first mindset. We apply data minimization and least-privilege access,
+        and we align our practices to GDPR principles for customers that operate in or serve the EU/EEA.
+      </p>
+
+      <h2>Summary</h2>
+      <ul>
+        <li><strong>Hosting:</strong> Google Cloud Platform (GCP).</li>
+        <li><strong>Encryption:</strong> TLS for data in transit; provider-managed encryption for data at rest.</li>
+        <li><strong>Access control:</strong> role-based, least-privilege access for personnel.</li>
+        <li><strong>Backups:</strong> regular encrypted backups with defined retention.</li>
+        <li><strong>Monitoring:</strong> logging and alerting for availability and security-relevant events.</li>
+        <li><strong>Privacy:</strong> we do <strong>not</strong> sell contact data collected on your behalf.</li>
+      </ul>
+
       <h2>Hosting &amp; infrastructure</h2>
+      <p>
+        TapRebook runs on <strong>Google Cloud Platform (GCP)</strong>. We use managed services, network controls,
+        and standard hardening practices appropriate to our stack. For details on Google’s platform safeguards,
+        see the <a href="https://cloud.google.com/security" target="_blank" rel="noopener">GCP Security pages</a>.
+      </p>
+
+      <h2>Data ownership &amp; purpose</h2>
+      <p>
+        You retain ownership of your customer data. We process it solely to provide the Service—e.g., to send permitted
+        WhatsApp messages, manage templates/tags, and provide reporting. We do <strong>not</strong> sell your data.
+      </p>
+
+      <h2>Encryption</h2>
       <ul>
-        <li><strong>Reputable cloud providers</strong> with physical, network, and environmental safeguards.</li>
-        <li><strong>Segregated environments</strong> for development, staging, and production.</li>
-        <li><strong>Hardened defaults</strong>: least-privilege service accounts, locked-down inbound access.</li>
+        <li><strong>In transit:</strong> All client–service communication uses HTTPS (TLS).</li>
+        <li><strong>At rest:</strong> Provider-managed encryption for databases, storage, and backups.</li>
+        <li><strong>Secrets:</strong> API keys and credentials are stored in encrypted secret stores, not source code.</li>
       </ul>
 
-      <h2>Data protection</h2>
+      <h2>Access control</h2>
       <ul>
-        <li><strong>Encryption in transit</strong> via TLS for data moving between clients, services, and providers.</li>
-        <li><strong>Encryption at rest</strong> for stored data, including backups and logs where applicable.</li>
-        <li><strong>Key management</strong> handled by the underlying cloud KMS with rotation policies.</li>
-      </ul>
-
-      <h2>Access &amp; authentication</h2>
-      <ul>
-        <li><strong>MFA required</strong> for administrative access.</li>
-        <li><strong>Role-based access control (RBAC)</strong> with least-privilege permissions.</li>
-        <li><strong>Periodic reviews</strong> of access (joiner/mover/leaver process).</li>
-      </ul>
-
-      <h2>Application security</h2>
-      <ul>
-        <li><strong>Dependency management</strong> and automated vulnerability scanning.</li>
-        <li><strong>Change management</strong> with code review and CI/CD checks for critical paths.</li>
-        <li><strong>Secrets management</strong> via environment stores (no secrets committed to source).</li>
-      </ul>
-
-      <h2>Privacy &amp; compliance</h2>
-      <ul>
-        <li><strong>Data minimization</strong>—we process only what’s needed to operate your configured flows.</li>
-        <li><strong>Regional considerations</strong> and appropriate safeguards for international transfers.</li>
-        <li>See our <a href="/privacy/">Privacy Policy</a> for details on data types, rights, and retention.</li>
-      </ul>
-
-      <h2>Retention &amp; deletion</h2>
-      <ul>
-        <li><strong>Operational records</strong> retained only as long as needed for service delivery and legal obligations.</li>
-        <li><strong>Deletion on request</strong> available for applicable data subject requests.</li>
+        <li><strong>Least privilege:</strong> personnel receive only the access needed for their role.</li>
+        <li><strong>Review &amp; audit:</strong> administrative access is limited and periodically reviewed.</li>
+        <li><strong>Separation of duties:</strong> production access is restricted to designated staff.</li>
       </ul>
 
       <h2>Backups &amp; continuity</h2>
       <ul>
-        <li><strong>Regular backups</strong> for key data stores with restore testing.</li>
-        <li><strong>Disaster recovery</strong> procedures and runbooks for major incidents.</li>
+        <li>Regular encrypted backups are maintained with defined retention windows.</li>
+        <li>Restoration procedures are tested periodically.</li>
+      </ul>
+
+      <h2>Logging &amp; monitoring</h2>
+      <ul>
+        <li>Centralized logs and metrics for key services.</li>
+        <li>Alerting on anomalies and service health indicators.</li>
+        <li>Dependency updates and security patches applied in a timely manner.</li>
+      </ul>
+
+      <h2>Data retention &amp; deletion</h2>
+      <p>
+        We retain data for as long as necessary to operate the Service and meet legal or audit requirements. Upon request
+        (or account closure), we delete or export data within a reasonable timeframe, subject to lawful retention needs.
+      </p>
+
+      <h2>Compliance posture</h2>
+      <ul>
+        <li><strong>GDPR principles:</strong> lawfulness, fairness, transparency; purpose limitation; data minimization;
+          accuracy; storage limitation; integrity and confidentiality.</li>
+        <li><strong>DPA:</strong> If needed, a Data Processing Addendum is available upon request.</li>
       </ul>
 
       <h2>Incident response</h2>
-      <ul>
-        <li><strong>Documented IR plan</strong> with triage, containment, remediation, and post-incident review.</li>
-        <li><strong>Customer communication</strong> for incidents that materially affect your data or service.</li>
-      </ul>
-
-      <h2>Subprocessors</h2>
       <p>
-        We work with select service providers (e.g., WhatsApp BSPs, hosting, analytics) to deliver TapRebook. A current
-        list is available on request and will be published on our website as it evolves.
+        We maintain procedures for triage, containment, remediation, and communication. If we determine that an incident
+        has affected your data, we will notify you without undue delay, consistent with legal and contractual obligations.
       </p>
 
-      <h2>Responsible disclosure</h2>
+      <h2>Sub-processors</h2>
       <p>
-        We welcome reports from the security community. If you believe you’ve found a vulnerability, please email
-        <a href="mailto:security@taprebook.com">security@taprebook.com</a> with details and a way to reproduce. We’ll
-        investigate promptly and appreciate coordinated disclosure.
+        We use vetted sub-processors (e.g., cloud hosting, observability, WhatsApp BSPs) to deliver the Service.
+        A current list is available upon request.
       </p>
 
-      <h2>Contact</h2>
+      <h2>Questions</h2>
       <p>
-        For security questions or requests (including DPA and subprocessors), contact
-        <a href="mailto:security@taprebook.com">security@taprebook.com</a>.
-      </p>
-
-      <p class="text-xs opacity-80 mt-8">
-        This page is informational and will evolve as our controls mature. It does not constitute a warranty or legal advice.
+        For security questions, a DPA, or a sub-processor list, contact us via the
+        <a href="/contact/">Contact page</a> or email <a href="mailto:support@taprebook.com">support@taprebook.com</a>.
       </p>
     </div>
   </section>
 </Layout>
+
 
 
