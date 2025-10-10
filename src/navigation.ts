@@ -1,3 +1,4 @@
+// src/navigation.ts
 // Navigation for TapRebook
 
 export const headerData = {
@@ -14,8 +15,6 @@ export const headerData = {
         { text: 'Queue', href: '/modules/queue/' },
       ],
     },
-    { text: 'Modules', href: '/modules/' },
-    { text: 'Pricing', href: '/pricing/' },
     { text: 'About', href: '/about/' },
     { text: 'Contact', href: '/contact/' },
   ],
@@ -24,6 +23,7 @@ export const headerData = {
   ],
 };
 
+// (Footer can stay as-is unless you want to remove Modules/Pricing there too)
 export const footerData = {
   columns: [
     {
