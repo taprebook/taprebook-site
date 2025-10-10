@@ -1,4 +1,3 @@
-// src/navigation.ts
 // Navigation for TapRebook
 
 export const headerData = {
@@ -18,22 +17,23 @@ export const headerData = {
     { text: 'About', href: '/about/' },
     { text: 'Contact', href: '/contact/' },
   ],
-  actions: [
-    { text: 'Book a demo', href: '/contact/', target: '_self', variant: 'primary' },
-  ],
+  actions: [{ text: 'Book a demo', href: '/contact/', target: '_self', variant: 'primary' }],
 };
 
-// (Footer can stay as-is unless you want to remove Modules/Pricing there too)
-// src/navigation.ts
-
 export const footerData = {
-  columns: [
+  // small inline links under the site name (optional)
+  secondaryLinks: [
+    { text: 'Contact', href: '/contact/' },
+    { text: 'About', href: '/about/' },
+  ],
+
+  // main columns
+  links: [
     {
       title: 'TapRebook',
       links: [
-        { text: 'Contact', href: '/contact/' },
         { text: 'About', href: '/about/' },
-        { text: 'Modules', href: '/modules/' }, // keep or remove as you prefer
+        { text: 'Contact', href: '/contact/' },
       ],
     },
     {
@@ -54,14 +54,14 @@ export const footerData = {
         { text: 'Privacy Policy', href: '/privacy/' },
         { text: 'Terms of Service', href: '/terms/' },
         { text: 'Application & Data Security', href: '/security/' },
-        // { text: 'Subprocessors', href: '/subprocessors/' }, // optional later
-        // { text: 'Cookie Policy', href: '/cookies/' },       // optional later
       ],
     },
   ],
+
   socialLinks: [
     { ariaLabel: 'WhatsApp', icon: 'tabler:brand-whatsapp', href: 'https://wa.me/919539231117' },
   ],
-  footNote: `© ${new Date().getFullYear()} TapRebook. All rights reserved.`,
-};
 
+  footNote: `© ${new Date().getFullYear()} TapRebook. All rights reserved.`,
+  theme: 'light', // keep the footer styled for light mode
+};
