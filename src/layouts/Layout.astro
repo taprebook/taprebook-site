@@ -6,7 +6,7 @@ import { I18N } from 'astrowind:config';
 import CommonMeta from '~/components/common/CommonMeta.astro';
 import Favicons from '~/components/Favicons.astro';
 import CustomStyles from '~/components/CustomStyles.astro';
-// REMOVE: import ApplyColorMode from '~/components/common/ApplyColorMode.astro';
+// import ApplyColorMode from '~/components/common/ApplyColorMode.astro'; // REMOVE THIS
 import Metadata from '~/components/common/Metadata.astro';
 import SiteVerification from '~/components/common/SiteVerification.astro';
 import Analytics from '~/components/common/Analytics.astro';
@@ -14,7 +14,6 @@ import BasicScripts from '~/components/common/BasicScripts.astro';
 import { ClientRouter } from 'astro:transitions';
 import type { MetaData as MetaDataType } from '~/types';
 
-// Background (keep)
 import GlassTriBg from '~/components/visuals/GlassTriBg.astro';
 
 export interface Props { metadata?: MetaDataType }
@@ -23,40 +22,41 @@ const { language, textDirection } = I18N;
 ---
 
 <!doctype html>
-<html lang={language} dir={textDirection} class="light 2xl:text-[20px]">
+<html lang={language} dir={textDirection} class="light 2xl:text-[20px]" data-aw-theme="light">
   <head>
     <CommonMeta />
     <Favicons />
     <CustomStyles />
-    <!-- REMOVED ApplyColorMode -->
+    <!-- <ApplyColorMode />  REMOVE THIS LINE -->
     <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
     <ClientRouter fallback="swap" />
 
+    <!-- Force light color scheme for form controls & UA bits -->
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+    <!-- Clear any previously saved theme so Safari doesn’t flip it back -->
+    <script>
+      try {
+        localStorage.removeItem('aw-theme');
+        localStorage.removeItem('theme');
+        document.documentElement.classList.remove('dark');
+        document.documentElement.setAttribute('data-aw-theme','light');
+      } catch (e) {}
+    </script>
+
+    <!-- Keep page surface transparent so background is visible -->
     <style is:global>
-      /* Force the whole site into light mode */
-      :root { color-scheme: light; }
       html, body { background: transparent !important; }
-      /* Make “default” text dark everywhere */
-      body, .text-default, main, article, section, .prose {
-        color: #0f172a !important; /* slate-900 */
-      }
-      /* Common elements inside prose */
-      .prose :where(p, li, strong, em, a, h1, h2, h3, h4, h5, h6) {
-        color: #0f172a !important;
-      }
-      /* Kill any dark: variants that might slip through */
-      [class*="dark:"] { color: inherit; background-color: inherit; }
+      :root { color-scheme: light; }
     </style>
   </head>
 
-  <body class="antialiased tracking-tight">
-    <GlassTriBg primary="#0B4A8D" secondary="#69B2E8" density={1.35} />
-
+  <body class="antialiased text-default tracking-tight">
+    <GlassTriBg primary="#0B4A8F" secondary="#6AB3EA" density={1.4} />
     <slot />
-
     <BasicScripts />
   </body>
 </html>
-
