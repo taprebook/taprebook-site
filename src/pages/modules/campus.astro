@@ -37,13 +37,22 @@ import Layout from '~/layouts/PageLayout.astro';
         </div>
       </div>
 
-      <!-- Right: Hero visual placeholder -->
-      <div class="rounded-2xl overflow-hidden bg-white/55 dark:bg-slate-900/25 ring-1 ring-white/40 dark:ring-slate-800/40 shadow-lg backdrop-blur-sm">
-        <div class="aspect-video grid place-items-center text-slate-600/90 dark:text-slate-400/90">
-          Campus hero visual (coming soon)
-        </div>
-      </div>
-    </div>
+      <!-- Right: Hero image -->
+<div class="relative rounded-2xl overflow-hidden bg-white/55 ring-1 ring-white/40 shadow-lg backdrop-blur-sm">
+  <img
+    src="/images/AI_campus.png"
+    alt="AI-assisted school campus coordination on WhatsApp"
+    class="block w-full h-full object-cover"
+    width="1600"
+    height="1000"
+    loading="eager"
+    decoding="async"
+    sizes="(min-width: 1024px) 520px, 90vw"
+  />
+  <!-- soft edge so it never melts into the page -->
+  <div class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/40 via-transparent to-transparent"></div>
+</div>
+
   </section>
 
   <!-- KPIs -->
