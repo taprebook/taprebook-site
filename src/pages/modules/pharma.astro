@@ -4,65 +4,371 @@ import Layout from '~/layouts/PageLayout.astro';
 
 <Layout
   metadata={{
-    title: 'TapRebook Pharma — Refill & chronic-care reminders',
+    title: 'TapRebook Pharma — Refill & chronic-care reminders on WhatsApp',
     description:
-      'Automated refill nudges, chronic-care schedules, and smart follow-ups on WhatsApp with escalation to staff.',
+      'Reduce lapses with predictive refills, adherence check-ins, side-effect triage, and smart escalations—24/7 on WhatsApp.',
   }}
 >
-  <section class="py-12 md:py-16">
-    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight dark:text-white">
-      Pharma: refill & chronic-care reminders
-    </h1>
-    <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-3xl">
-      Reduce lapses in medication by sending timely reminders, dosage checks, and follow-ups—patients can confirm,
-      snooze, or chat with a human when needed.
-    </p>
-    <div class="mt-6 flex gap-3">
-      <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
-      <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+  <!-- HERO -->
+  <section class="relative">
+    <div class="max-w-7xl mx-auto px-4 pt-16 pb-10 grid gap-8 lg:grid-cols-[1.2fr_.8fr] items-center">
+      <div>
+        <!-- Bigger chip -->
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 backdrop-blur px-3.5 py-1.5
+                 text-sm md:text-base font-semibold text-slate-800/90 shadow-sm">
+          WhatsApp refills & chronic-care follow-ups
+        </span>
+
+        <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">
+          Fewer gaps in medication. Better adherence. Happier patients.
+        </h1>
+
+        <ul class="mt-4 space-y-2 text-slate-700/90 dark:text-slate-300/90">
+          <li>• Predictive refill nudges with one-tap Reorder / Snooze / Talk to us</li>
+          <li>• Chronic-care schedules with periodic adherence & side-effect check-ins</li>
+          <li>• Delivery / pickup coordination and prescription validity checks</li>
+          <li>• <strong>24/7 availability</strong> — instant replies even outside business hours</li>
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+          <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+        </div>
+      </div>
+
+      <!-- Right: Hero visual placeholder (replace with real image when ready) -->
+      <div class="rounded-2xl overflow-hidden bg-white/55 dark:bg-slate-900/25 ring-1 ring-white/40 dark:ring-slate-800/40 shadow-lg backdrop-blur-sm">
+        <div class="aspect-video grid place-items-center text-slate-600/90 dark:text-slate-400/90">
+          Pharma hero visual (coming soon)
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="py-10 border-t border-slate-200/50 dark:border-slate-800/60">
-    <h2 class="text-2xl font-bold dark:text-white">What it helps with</h2>
-    <ul class="mt-4 grid gap-4 md:grid-cols-2">
-      <li class="card p-5">
-        <h3 class="font-semibold">Refill nudges</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          Predictive reminders before stock runs out; confirm, reorder, or snooze in chat.
-        </p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Chronic-care schedules</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          Long-term regimens with periodic check-ins for adherence and side-effects.
-        </p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Escalation to staff</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          Route exceptions (new symptoms, dosage changes) to a human in one click.
-        </p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Audit & reports</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
-          Track reminder delivery, responses, opt-ins, and completion rates.
-        </p>
-      </li>
-    </ul>
+  <!-- KPIs -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4 grid gap-4 sm:grid-cols-4">
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 15–30%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Refill lapses</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↑ 1.5–2×</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Self-serve reorders</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 30–60 min/day</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Phone tag</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">&lt; 1s</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Median first response</div>
+      </div>
+    </div>
   </section>
 
-  <section class="py-12 border-t border-slate-200/50 dark:border-slate-800/60">
-    <div class="md:flex items-center justify-between">
+  <!-- Trust bar (placeholder logos) -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="text-center text-sm text-slate-600/90 dark:text-slate-400/90">Trusted by early adopters and pilot pharmacy programs</p>
+      <div class="mt-3 grid grid-cols-3 sm:grid-cols-6 gap-6 items-center opacity-80">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <svg viewBox="0 0 200 40" class="h-8 mx-auto" aria-hidden="true">
+            <rect width="200" height="40" rx="6" fill="rgba(255,255,255,0.6)"></rect>
+            <text x="100" y="26" text-anchor="middle" font-size="16" fill="rgb(71,85,105)">Pharma Logo</text>
+          </svg>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">What you get</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Predictive refills and chronic-care follow-ups that reduce gaps and simplify logistics.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Predictive refill reminders</h3>
+          <p class="mt-1 text-sm">Nudges before stock runs out; one-tap Reorder / Snooze / Skip.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Chronic-care schedules</h3>
+          <p class="mt-1 text-sm">Regimens with periodic adherence & side-effect prompts.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Delivery / pickup</h3>
+          <p class="mt-1 text-sm">Address confirm, delivery slot, or counter pickup with map link.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Substitutions & stockouts</h3>
+          <p class="mt-1 text-sm">Offer approved alternatives per policy; escalate if needed.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Escalation to staff</h3>
+          <p class="mt-1 text-sm">Route new symptoms or dosage changes to a human safely.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Reports & tags</h3>
+          <p class="mt-1 text-sm">Interakt tags → Sheets/CRM; adherence & refill KPIs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it integrates -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">How it integrates</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-4">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">WhatsApp Cloud API</h3>
+          <p class="mt-1 text-sm">Template approval and reliable delivery.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Interakt</h3>
+          <p class="mt-1 text-sm">Tags, opt-ins, routing, and audit trails.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Pharmacy POS / ERP</h3>
+          <p class="mt-1 text-sm">Inventory, substitutions, order & invoice sync.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">eRx / Sheets / CRM</h3>
+          <p class="mt-1 text-sm">Prescription validity & adherence dashboards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flows in detail (pharma-specific) -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Flows in detail</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Exactly how Pharma manages refills and long-term regimens.
+      </p>
+
+      <!-- 1) Predictive refills -->
+      <details class="group mt-6 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">1) Predictive refill reminders</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> Patients reorder on time; stock doesn’t lapse.</p>
+          <p><strong>When it fires:</strong> Based on last issue date & pack size (e.g., T-5d, T-2d).</p>
+          <p><strong>Patient experience:</strong> One-tap Reorder / Snooze (e.g., 3 days) / Skip this month.</p>
+          <p><strong>Ops:</strong> Tag <em>refill_due</em>, <em>reordered</em>, <em>snoozed</em>, <em>skipped</em>; optional staff ping on skips.</p>
+          <p><strong>KPIs:</strong> Refill on-time rate; lapse rate; reorder conversion.</p>
+        </div>
+      </details>
+
+      <!-- 2) Chronic-care adherence & side-effects -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">2) Chronic-care adherence & side-effects</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Periodic check-ins (weekly/fortnightly) with quick buttons: <em>Taken</em> / <em>Missed</em> / <em>Side-effects</em>.</p>
+          <p>Escalate side-effect reports to staff; never give medical advice—prompt a call-back.</p>
+          <p>Tags: <em>adherence_ok</em>, <em>missed</em>, <em>sidefx_flag</em>, <em>callback_done</em>.</p>
+        </div>
+      </details>
+
+      <!-- 3) Delivery / pickup coordination -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">3) Delivery / pickup coordination</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Confirm address → pick delivery slot or pickup. Share live link or counter map.</p>
+          <p>Tags: <em>addr_ok</em>, <em>delivery_slot</em>, <em>pickup</em>, <em>delivered</em>.</p>
+        </div>
+      </details>
+
+      <!-- 4) Substitutions & stockouts -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">4) Substitutions & stockouts</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Offer policy-approved alternatives (brand/generic) and capture consent; escalate if restricted.</p>
+          <p>Tags: <em>sub_offered</em>, <em>sub_ok</em>, <em>sub_declined</em>, <em>stockout_alert</em>.</p>
+        </div>
+      </details>
+
+      <!-- 5) Prescription validity & renewals -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">5) Prescription validity & renewals</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Notify when validity is near expiry; collect new eRx/upload or route to clinic for renewal.</p>
+          <p>Tags: <em>rx_expiring</em>, <em>rx_uploaded</em>, <em>renewal_requested</em>.</p>
+        </div>
+      </details>
+
+      <!-- 6) Escalation to pharmacist / support -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">6) Escalation to pharmacist / support</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>For dosage changes, contraindications, or complex questions—hand off to a human with an audit trail.</p>
+          <p>Tags: <em>handoff</em>, <em>resolved</em>.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-12 border-t border-white/20 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Pricing</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Simple plans by pharmacy size. Start with Pharma—add other modules as you grow.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Single pharmacy -->
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+          <h3 class="font-semibold">Single pharmacy</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Independent store</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Predictive refills & adherence prompts</li>
+            <li>• Delivery / pickup coordination</li>
+            <li>• Substitution handling (policy-based)</li>
+            <li>• Basic reports & Interakt tags → Sheet</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Talk to us</a>
+          </div>
+        </div>
+
+        <!-- Multi-branch -->
+        <div class="rounded-2xl p-6 ring-2 ring-blue-300/40 dark:ring-blue-300/30 bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-lg">
+          <h3 class="font-semibold">Multi-branch</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">2–10 branches</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Everything in Single</li>
+            <li>• Branch routing & capacity balancing</li>
+            <li>• Slot-bank for delivery windows</li>
+            <li>• KPI dashboard (adherence, lapses, TAT)</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Contact sales</a>
+          </div>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+          <h3 class="font-semibold">Enterprise</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Chains & programs</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Custom</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Everything in Multi-branch</li>
+            <li>• POS/ERP & eRx integrations, SSO</li>
+            <li>• Template governance & audit trails</li>
+            <li>• Multi-location analytics & SLAs</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Request quote</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Risk reducer -->
+      <p class="mt-4 text-center text-xs text-slate-700/85 dark:text-slate-300/85">
+        Cancel anytime. No engineering required.
+      </p>
+
+      <p class="mt-2 text-center text-xs text-slate-600/80 dark:text-slate-400/80">
+        Pricing varies by message volume, branches, and integrations. We’ll share an exact quote after a short scoping call.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">FAQs</h2>
+
+      <details class="group mt-6 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Do you support English + Malayalam?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Yes—bilingual templates with numeric dates/times and simple choices.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Can patients change dosage or ask medical questions in chat?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          The bot never gives medical advice. It routes dosage changes, contraindications, or side-effects to a pharmacist/staff member.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Do you handle prescription validity and renewals?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Yes—alerts before expiry and a simple path to upload a new eRx or request renewal from the clinic.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Is patient data secure?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Data stays in approved systems (WhatsApp/Interakt, your POS/ERP/eRx, Sheets/CRM). Role-based access and audit trails.
+        </div>
+      </details>
+    </div>
+
+    <!-- FAQPage JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Do you support English + Malayalam?","acceptedAnswer":{"@type":"Answer","text":"Yes—bilingual templates with numeric dates/times and simple choices."}},
+        {"@type":"Question","name":"Can patients change dosage or ask medical questions in chat?","acceptedAnswer":{"@type":"Answer","text":"The bot never gives medical advice. It routes dosage changes, contraindications, or side-effects to a pharmacist/staff member."}},
+        {"@type":"Question","name":"Do you handle prescription validity and renewals?","acceptedAnswer":{"@type":"Answer","text":"Yes—alerts before expiry and a simple path to upload a new eRx or request renewal from the clinic."}},
+        {"@type":"Question","name":"Is patient data secure?","acceptedAnswer":{"@type":"Answer","text":"Data stays in approved systems (WhatsApp/Interakt, your POS/ERP/eRx, Sheets/CRM). Role-based access and audit trails."}}
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12">
+    <div class="max-w-5xl mx-auto px-4 md:flex items-center justify-between">
       <div>
-        <h2 class="text-2xl font-bold dark:text-white">Keep patients on track, automatically</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Bundle Pharma with Reception for end-to-end continuity.</p>
+        <h2 class="text-2xl md:text-3xl font-bold">Ready to reduce lapses and improve adherence?</h2>
+        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+          Start with Pharma. Add Reception and Labs when you’re ready.
+        </p>
       </div>
       <div class="mt-6 md:mt-0 flex gap-3">
-        <a class="btn btn-primary" href="/contact/">Book a demo</a>
-        <a class="btn btn-secondary" href="/modules/">See all modules</a>
+        <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+        <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
       </div>
     </div>
   </section>
 </Layout>
+
