@@ -11,19 +11,34 @@ const { metadata } = Astro.props;
 ---
 
 <Layout metadata={metadata}>
-  <GlassTriBg primary="#0B4A8D" secondary="#69B2E8" />
+  <!-- Force light mode on every page render, including client-side transitions -->
+  <script>
+    (() => {
+      try {
+        const html = document.documentElement;
+        html.classList.remove('dark');
+        html.classList.add('light');                      // Tailwind defaults will use light
+        html.setAttribute('data-aw-theme', 'light');
+        localStorage.setItem('aw-theme', 'light');        // Astrowind
+        localStorage.setItem('theme', 'light');           // any other theme key
+      } catch {}
+    })();
+  </script>
 
-  <!-- optionally remove the announcement bar entirely -->
-  <!-- <slot name="announcement"><Announcement /></slot> -->
+  <!-- Dynamic background -->
+  <GlassTriBg primary="#0B4A8F" secondary="#6AB3EA" density={1.4} />
 
+  <slot name="announcement"><Announcement /></slot>
   <slot name="header">
-    <Header {...headerData} theme="light" showRssFeed={false} showToggleTheme={false} />
+    <!-- keep the toggle hidden -->
+    <Header {...headerData} showRssFeed={false} showToggleTheme={false} />
   </slot>
 
   <main><slot /></main>
 
   <slot name="footer"><Footer {...footerData} theme="light" /></slot>
 </Layout>
+
 
 
 
