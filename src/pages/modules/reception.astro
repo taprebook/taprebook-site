@@ -9,88 +9,302 @@ import Layout from '~/layouts/PageLayout.astro';
       'Cut no-shows by 20–40% with automated reminders, self-rescheduling, late-arrival handling, and post-visit follow-ups.',
   }}
 >
-  <section class="py-12 md:py-16">
-    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight dark:text-white">
-      WhatsApp AI receptionist for clinics
-    </h1>
-    <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-3xl">
-      TapRebook Reception reduces no-shows, speeds up scheduling & rescheduling, and frees your front desk from
-      routine messaging—so staff can focus on in-person care.
-    </p>
-    <div class="mt-6 flex gap-3">
-      <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
-      <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+  <!-- HERO -->
+  <section class="relative">
+    <div class="max-w-7xl mx-auto px-4 pt-16 pb-10 grid gap-8 lg:grid-cols-[1.2fr_.8fr] items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/30 backdrop-blur px-3 py-1 text-xs font-medium text-slate-700">
+          WhatsApp AI receptionist for clinics
+        </span>
+        <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">
+          Fewer no-shows. Less phone tag. Faster completions.
+        </h1>
+        <ul class="mt-4 space-y-2 text-slate-700/90 dark:text-slate-300/90">
+          <li>• Confirmations & reminders with one-tap actions</li>
+          <li>• Running-late handling with grace rules</li>
+          <li>• Self-serve rescheduling & no-show recovery</li>
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+          <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+        </div>
+      </div>
+
+      <!-- Optional right visual (replace image or remove this div) -->
+      <div class="rounded-2xl overflow-hidden bg-white/55 dark:bg-slate-900/25 ring-1 ring-white/40 dark:ring-slate-800/40 shadow-lg backdrop-blur-sm">
+        <img src="/images/reception-hero.png" alt="" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+      </div>
     </div>
   </section>
 
-  <section class="py-10 border-t border-slate-200/50 dark:border-slate-800/60">
-    <h2 class="text-2xl font-bold dark:text-white">Top outcomes</h2>
-    <ul class="mt-4 grid gap-4 md:grid-cols-3">
-      <li class="card p-5">
-        <h3 class="font-semibold">Fewer no-shows</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Smart reminders + self-rescheduling reduce missed visits by 20–40%.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Less front-desk load</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">AI handles routine chats; staff only manages exceptions.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Measurable ops</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">See completions, drop-offs, and outcomes in one place.</p>
-      </li>
-    </ul>
+  <!-- KPIs -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4 grid gap-4 sm:grid-cols-3">
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 20–40%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">No-shows</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center">
+        <div class="text-3xl font-extrabold tracking-tight">↑ 2–3×</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Self-serve changes</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 60–90 min/day</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Front-desk load</div>
+      </div>
+    </div>
   </section>
 
-  <section class="py-10 border-t border-slate-200/50 dark:border-slate-800/60">
-    <h2 class="text-2xl font-bold dark:text-white">How it works</h2>
-    <ol class="mt-4 grid gap-4 md:grid-cols-3">
-      <li class="card p-5">
-        <h3 class="font-semibold">1) Inquire</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Patient messages your WhatsApp number or taps a link/QR.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">2) Assist</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">AI guides booking, rescheduling, reminders, and FAQs.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">3) Complete</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Confirmations, follow-ups, and reviews—staff handle exceptions.</p>
-      </li>
-    </ol>
+  <!-- What you get -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">What you get</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Standardized flows that reduce back-and-forth and keep chairs filled.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Confirmations & reminders</h3>
+          <p class="mt-1 text-sm">One-tap Confirm / Reschedule / Cancel / Directions. EN + Malayalam.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Running-late triage</h3>
+          <p class="mt-1 text-sm">Grace windows and reroute options to save the day’s schedule.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Self-serve rescheduling</h3>
+          <p class="mt-1 text-sm">Link-out to booking or in-chat slots (2–3 options).</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">No-show recovery</h3>
+          <p class="mt-1 text-sm">Auto nudge with “next best” times to refill chair-time fast.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Reviews (optional)</h3>
+          <p class="mt-1 text-sm">Gentle Google review prompts—no incentives.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Reports & tags</h3>
+          <p class="mt-1 text-sm">Interakt tags → Sheets/CRM; outcomes you can act on.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section class="py-10 border-t border-slate-200/50 dark:border-slate-800/60">
-    <h2 class="text-2xl font-bold dark:text-white">What’s included</h2>
-    <ul class="mt-4 grid gap-4 md:grid-cols-2">
-      <li class="card p-5">
-        <h3 class="font-semibold">Smart reminders</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Confirmations, nudges, late-arrival handling, and auto follow-ups.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Self-service rescheduling</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Patients can change time slots without calling the clinic.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Escalation to staff</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">One click to hand off to a human for edge cases.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Reports & audit trail</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Track message templates, delivery, opt-ins, and outcomes.</p>
-      </li>
-    </ul>
+  <!-- Flows in detail -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Flows in detail</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">Exactly how Reception runs each touchpoint.</p>
+
+      <!-- 1) Confirmations & reminders -->
+      <details class="group mt-6 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">1) Appointment confirmations & reminders (EN/MAL)</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> Patients know their date/time, can change plans in one tap, and show up on time.</p>
+          <p><strong>When it fires:</strong> Confirmation immediately after booking; reminders D-1 and D-0 (e.g., T-3h). AU format: <em>Mon 14 Jul 2025, 1:00 pm</em>.</p>
+          <p><strong>Patient experience:</strong> WhatsApp with buttons: Confirm / Reschedule / Cancel / Directions. Bilingual (English first, Malayalam mirror); numeric date/time.</p>
+          <p><strong>Clinic ops:</strong> Interakt tags (confirmed, reminded_d-1, reminded_d0) update Sheet/CRM. Optional staff alert on Cancel.</p>
+          <p><strong>Setup inputs:</strong> Booking source; clinic address & Maps link; reminder windows & grace rules.</p>
+          <p><strong>KPIs:</strong> Delivery & read; confirm/reschedule clicks; kept appts ↑; late arrivals ↓.</p>
+          <p><strong>Compliance:</strong> Utility; links only to Maps/Calendar/Booking.</p>
+        </div>
+      </details>
+
+      <!-- 2) Running-late triage -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">2) Running-late triage</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> Fewer same-day no-shows; realistic expectations for both sides.</p>
+          <p><strong>When it fires:</strong> Patient taps “Running late” or types late/LATE/Y.</p>
+          <p><strong>Patient experience:</strong> Choose <em>Keep today</em> (show grace period, e.g., 15m) or <em>Move later</em> (route to reschedule).</p>
+          <p><strong>Clinic ops:</strong> Optional staff ping beyond grace; tag late and log minutes.</p>
+          <p><strong>Setup inputs:</strong> Grace minutes by service/provider; hold policy before offering new times.</p>
+          <p><strong>KPIs:</strong> Same-day saves; % moved vs kept; reduction in last-minute chaos.</p>
+          <p><strong>Compliance:</strong> Utility; neutral tone.</p>
+        </div>
+      </details>
+
+      <!-- 3) Self-serve rescheduling -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">3) Self-serve rescheduling</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> Patients move themselves to a better time without calling.</p>
+          <p><strong>When it fires:</strong> From Confirm/Reminder/Late/No-show flows when the patient taps Reschedule.</p>
+          <p><strong>Patient experience:</strong> <em>AUTO</em>: open booking link. <em>MANUAL</em>: choose Morning/Afternoon/Evening → bot offers 2–3 exact slots → tap to confirm.</p>
+          <p><strong>Clinic ops:</strong> Auto path handled by booking tool; manual path confirmed by staff → bot sends Reschedule Confirmation.</p>
+          <p><strong>Setup inputs:</strong> Booking link (Practo, Calendly, PMS, Google Appointments). If manual: windows + slot bank (Sheet).</p>
+          <p><strong>KPIs:</strong> Reschedule conversion; hours to refill released slots; staff time saved.</p>
+          <p><strong>Compliance:</strong> Utility; strictly appointment logistics.</p>
+        </div>
+      </details>
+
+      <!-- 4) No-show recovery -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">4) No-show recovery</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> Convert missed appointments into rebooks quickly.</p>
+          <p><strong>When it fires:</strong> Bot/staff marks No-show; trigger within 15–60 minutes (or day-end).</p>
+          <p><strong>Patient experience:</strong> “We missed you—choose a new time: {{slot A}} / {{slot B}} or See more times.” One-tap confirm.</p>
+          <p><strong>Clinic ops:</strong> On rebook → tag <em>rebooked</em> & send Reschedule Confirmation. Optional alert for high-value services.</p>
+          <p><strong>Setup inputs:</strong> Rules for “next best” slots; whether to hold or just suggest.</p>
+          <p><strong>KPIs:</strong> Rebooks captured; 72h recovery rate; fill of lost chair-time.</p>
+          <p><strong>Compliance:</strong> Utility if tied to missed slot; keep wording operational.</p>
+        </div>
+      </details>
+
+      <!-- 5) Post-visit reviews -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">5) Post-visit Google reviews (Marketing)</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> Steady flow of genuine reviews for SEO and trust.</p>
+          <p><strong>When it fires:</strong> 2–4 hours post-checkout; optional 5–7 day nudge if no review.</p>
+          <p><strong>Patient experience:</strong> Simple message with one “Leave a review” button.</p>
+          <p><strong>Clinic ops:</strong> Mark <em>review_left</em> when confirmed. No incentives.</p>
+          <p><strong>Setup inputs:</strong> GBP review URL; ideal send window by day/time.</p>
+          <p><strong>KPIs:</strong> Reviews per period; % of visits that become reviews; rating trend (indirect).</p>
+          <p><strong>Compliance:</strong> Marketing category—neutral copy, no rewards/discounts.</p>
+        </div>
+      </details>
+
+      <!-- 6) Recall / re-open -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">6) Recall / re-open (inactive patients, 3–6 months)</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> Bring back patients for periodic checks/cleanings.</p>
+          <p><strong>When it fires:</strong> 3–6 months based on last visit or service type.</p>
+          <p><strong>Patient experience:</strong> “Time for a check-up?” → Hold a slot / Share next week slots / Not now.</p>
+          <p><strong>Clinic ops:</strong> Cohort by service; track responses via tags.</p>
+          <p><strong>Setup inputs:</strong> Recall cadence; preferred days/times windows.</p>
+          <p><strong>KPIs:</strong> Recall response; reactivation yield; revenue from recall cohorts.</p>
+          <p><strong>Compliance:</strong> Marketing category; neutral, maintenance-oriented wording.</p>
+        </div>
+      </details>
+
+      <!-- 7) Treatment-plan follow-ups -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">7) Treatment-plan follow-ups</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> Convert estimates into bookings; answer quick questions.</p>
+          <p><strong>When it fires:</strong> 24–72 hours after sharing a plan/estimate (e.g., RCT, crowns, aligners).</p>
+          <p><strong>Patient experience:</strong> “Any questions? Want a 5-min call?” Buttons: Call me / Share slots / Later.</p>
+          <p><strong>Clinic ops:</strong> Route “Call me” to front desk; log outcomes. If “Share slots,” propose 2–3 times in chat and confirm.</p>
+          <p><strong>Setup inputs:</strong> Which treatments get follow-ups; after how many hours; who handles quick calls & SLA.</p>
+          <p><strong>KPIs:</strong> Acceptance rate; time from estimate → booking; common objections captured.</p>
+          <p><strong>Compliance:</strong> Usually Utility if tied to a requested plan; keep it supportive, not promotional.</p>
+        </div>
+      </details>
+    </div>
   </section>
 
-  <section class="py-12 border-t border-slate-200/50 dark:border-slate-800/60">
-    <div class="md:flex items-center justify-between">
+  <!-- Pricing -->
+  <section id="pricing" class="py-12 border-t border-white/20 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Pricing</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Simple plans by clinic size. Start with Reception—add modules as you grow.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Solo / Single-site -->
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+          <h3 class="font-semibold">Solo</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Single provider / small clinic</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Confirmations & reminders (EN + Malayalam)</li>
+            <li>• Running-late triage & self-serve rescheduling</li>
+            <li>• No-show recovery & post-visit reviews (opt-in)</li>
+            <li>• Basic reports & Interakt tags → Sheet</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Talk to us</a>
+          </div>
+        </div>
+
+        <!-- Clinic -->
+        <div class="rounded-2xl p-6 ring-2 ring-blue-300/40 dark:ring-blue-300/30 bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-lg">
+          <h3 class="font-semibold">Clinic</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">2–10 providers</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Everything in Solo</li>
+            <li>• Slot-bank for manual rescheduling</li>
+            <li>• Staff alerts for exceptions</li>
+            <li>• KPI dashboard (kept, late, recovery)</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Contact sales</a>
+          </div>
+        </div>
+
+        <!-- Multi-site / Enterprise -->
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+          <h3 class="font-semibold">Multi-site</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Groups & enterprises</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Custom</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Everything in Clinic</li>
+            <li>• Brand & template governance</li>
+            <li>• CRM/Sheet integrations & SSO</li>
+            <li>• Multi-location analytics & SLAs</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Request quote</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-6 text-center text-xs text-slate-600/80 dark:text-slate-400/80">
+        Pricing varies by message volume, provider count, and integrations. We’ll share an exact quote after a short scoping call.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12">
+    <div class="max-w-5xl mx-auto px-4 md:flex items-center justify-between">
       <div>
-        <h2 class="text-2xl font-bold dark:text-white">Ready to keep your schedule full?</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Start with Reception. Add Labs, Pharma and more later.</p>
+        <h2 class="text-2xl md:text-3xl font-bold">Ready to keep your schedule full?</h2>
+        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+          Start with Reception. Add Labs, Pharma and more later.
+        </p>
       </div>
       <div class="mt-6 md:mt-0 flex gap-3">
         <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
-        <a class="btn btn-secondary" href="/pricing/">See pricing</a>
+        <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
       </div>
     </div>
   </section>
 </Layout>
+
