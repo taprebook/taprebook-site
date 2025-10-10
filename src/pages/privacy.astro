@@ -1,55 +1,135 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-const lastUpdated = new Date().toLocaleDateString();
+
+const updated = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
 ---
 
 <Layout
   metadata={{
-    title: 'Privacy Policy',
-    description: 'How TapRebook collects, uses, and protects your data.',
+    title: 'Privacy Policy — TapRebook',
+    description:
+      'How TapRebook collects, uses, and protects personal data, including WhatsApp/BSP requirements and optional Google integrations.',
   }}
 >
-  <section class="py-12 md:py-16">
-    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Privacy Policy</h1>
-    <p class="mt-3 text-slate-600 dark:text-slate-300">Last updated: {lastUpdated}</p>
+  <section class="relative">
+    <div class="max-w-4xl mx-auto px-4 pt-16 pb-10">
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-black">Privacy Policy</h1>
+      <p class="mt-2 text-sm text-slate-700">Last updated: {updated}</p>
+    </div>
   </section>
 
-  <section class="prose prose-invert max-w-4xl">
-    <h2>Overview</h2>
-    <p>TapRebook helps organizations manage operational messaging on WhatsApp. This policy explains what data we collect, how we use it, and the choices you have.</p>
+  <section class="pb-20">
+    <div class="max-w-4xl mx-auto px-4 prose prose-neutral prose-headings:text-black prose-p:text-slate-900 prose-li:text-slate-900">
+      <p>
+        TapRebook (“we”, “us”, “our”) helps organizations standardize operational messaging on WhatsApp.
+        This Privacy Policy explains what personal data we collect, how we use it, who we share it with,
+        and the choices available to you.
+      </p>
 
-    <h2>Data we process</h2>
-    <ul>
-      <li><strong>Account &amp; billing</strong>: name, email, organization details.</li>
-      <li><strong>Operational messages</strong>: message metadata, template IDs, delivery events, tags.</li>
-      <li><strong>Integrations</strong>: identifiers/keys required to connect tools (e.g., WhatsApp BSP, Google Sheets).</li>
-      <li><strong>Product analytics</strong>: basic usage events to improve reliability and UX.</li>
-    </ul>
+      <h2>Scope</h2>
+      <ul>
+        <li>This Policy applies to our website, platform, and related services we operate.</li>
+        <li>It does <strong>not</strong> apply to third-party products or services that have their own privacy policies
+          (e.g., Meta/WhatsApp, your BSP, Google, calendars/booking tools).</li>
+        </ul>
 
-    <h2>How we use data</h2>
-    <ul>
-      <li>Provide and secure the service</li>
-      <li>Operate automated flows per your settings</li>
-      <li>Measure completion, drop-off, and exceptions</li>
-      <li>Support, troubleshooting, and legal compliance</li>
-    </ul>
+      <h2>Controller / Processor roles</h2>
+      <p>
+        For end-customer (e.g., patient/guest/parent) data you onboard, <strong>you</strong> act as the data
+        controller and TapRebook acts as your data processor, processing personal data only to provide the Service and
+        as described here. See also our <a href="/terms/">Terms of Service</a>.
+      </p>
 
-    <h2>Data retention</h2>
-    <p>We retain operational records only as long as needed to deliver the service and meet legal obligations. You may request deletion where applicable.</p>
+      <h2>Personal data we collect</h2>
+      <ul>
+        <li><strong>Account and business info:</strong> name, org name, role, email/phone, billing and support history.</li>
+        <li><strong>Operational data from your workflows:</strong> message templates and tags (e.g., <em>confirmed</em>,
+          <em>reminded_d-1</em>, <em>late</em>, <em>rebooked</em>), recipient identifiers (e.g., phone numbers),
+          timestamps, delivery/read signals, click actions, and configuration you provide. We do not need message
+          content except as necessary to template, deliver, and log the conversation.</li>
+        <li><strong>Device/usage data:</strong> IP address, device/browser metadata, pages visited, and product events
+          (for security and to improve the Service).</li>
+        <li><strong>Optional integrations:</strong> If you connect external systems (e.g., your BSP, Google Sheets,
+          Google Calendar, booking tools, CRM), we process the minimum data required to read/write the fields you
+          authorize (see “Google integrations” below).</li>
+      </ul>
 
-    <h2>International transfers</h2>
-    <p>Data may be processed in jurisdictions where we or our service providers operate, with appropriate safeguards in place.</p>
+      <h2>How we use personal data</h2>
+      <ul>
+        <li>Provide, operate, and secure the Service (including template management, delivery, opt-in/opt-out handling, logging, and audit).</li>
+        <li>Configure and support your workflows (reminders, rescheduling, late-triage, reviews, recalls, etc.).</li>
+        <li>Improve the Service (analytics, troubleshooting, quality, fraud/misuse prevention).</li>
+        <li>Communicate with you (onboarding, support, changes to terms/policies, product updates).</li>
+        <li>Comply with law and WhatsApp/BSP policy requirements.</li>
+      </ul>
 
-    <h2>Your rights</h2>
-    <p>Subject to local law, you may access, correct, export, or delete your personal data. Contact us at <a href="/contact/">Contact</a>.</p>
+      <h2>Legal bases</h2>
+      <p>
+        We process personal data based on one or more of the following: performance of a contract with you; legitimate interests
+        (to run, secure, and improve the Service); compliance with legal obligations; and consent where required
+        (e.g., end-customer opt-in for messaging).
+      </p>
 
-    <h2>Security</h2>
-    <p>See our <a href="/security/">Application &amp; Data Security</a> page for technical and organizational measures.</p>
+      <h2>Google integrations (Sheets/Calendar) &amp; Limited Use</h2>
+      <p>
+        If you choose to connect Google Sheets or Google Calendar, we will request the minimal OAuth scopes required to
+        perform the actions you enable (e.g., read/write specific Sheets ranges for slot banks/KPIs, create/view calendar
+        events for scheduling). We do <strong>not</strong> sell or transfer Google-derived data to third parties, and we do
+        <strong>not</strong> use Google-derived data to build generalized ML/AI models.
+      </p>
+      <p>
+        TapRebook’s use and transfer to any other app of information received from Google APIs will adhere to the
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>,
+        including the <strong>Limited Use</strong> requirements.
+      </p>
 
-    <h2>Contact</h2>
-    <p>For privacy inquiries, email <a href="mailto:privacy@taprebook.com">privacy@taprebook.com</a>.</p>
+      <h2>Where data is processed &amp; retention</h2>
+      <ul>
+        <li><strong>Hosting:</strong> We use reputable cloud providers. Primary processing is currently located in India (and/or regions you configure with integrated providers).</li>
+        <li><strong>Retention:</strong> We retain data for as long as needed to provide the Service and for legitimate business purposes (security, audit, legal),
+          then delete or de-identify it. You may request deletion as described below.</li>
+      </ul>
 
-    <p class="text-xs opacity-80 mt-8">This page is provided for informational purposes and does not constitute legal advice.</p>
+      <h2>Sharing of information</h2>
+      <ul>
+        <li><strong>Service providers / sub-processors:</strong> Infrastructure, analytics, support, BSPs, template delivery—only what’s necessary to operate the Service.</li>
+        <li><strong>Legal, safety, and policy compliance:</strong> If required by law or to protect rights, safety, and service integrity.</li>
+        <li><strong>Business transfers:</strong> In a merger, acquisition, financing, or sale, data may be transferred subject to this Policy or a successor policy with equal or stronger protections.</li>
+      </ul>
+
+      <h2>Security</h2>
+      <p>
+        We use reasonable technical and organizational measures (encryption in transit, access controls, logging, least privilege)
+        to protect personal data. No system is 100% secure; you are responsible for securing your own credentials and connected systems.
+        See <a href="/security/">Application &amp; Data Security</a> for an overview.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        Depending on your jurisdiction, you may have rights to access, correct, delete, port, restrict, or object to certain processing.
+        End-customers should contact the organization that controls their data; we will support controller requests to fulfill data-subject rights.
+        You can reach us via the <a href="/contact/">Contact page</a> or at <a href="mailto:support@taprebook.com">support@taprebook.com</a>.
+      </p>
+
+      <h2>Children</h2>
+      <p>
+        Our Service is not directed to children under the age where consent requires parental authorization under applicable law.
+        If you believe we have collected personal data from a child without proper authorization, contact us and we will take appropriate steps.
+      </p>
+
+      <h2>Changes to this Policy</h2>
+      <p>
+        We may update this Policy from time to time. Material changes will be posted on this page with a new “Last updated” date.
+        If you continue to use the Service after the effective date, you agree to the updated Policy.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about this Policy or our data practices? Contact us via the <a href="/contact/">Contact page</a> or email
+        <a href="mailto:support@taprebook.com">support@taprebook.com</a>.
+      </p>
+    </div>
   </section>
 </Layout>
+
 
