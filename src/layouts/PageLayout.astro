@@ -6,20 +6,32 @@ import Footer from '~/components/widgets/Footer.astro';
 import Announcement from '~/components/widgets/Announcement.astro';
 import { headerData, footerData } from '~/navigation';
 import type { MetaData } from '~/types';
+
 export interface Props { metadata?: MetaData }
 const { metadata } = Astro.props;
 ---
 
+<!-- Global light-mode enforcement -->
+<style is:global>
+  /* Tell browsers to render native UI (scrollbars, inputs) for light surfaces */
+  html { color-scheme: light; }
+</style>
+
 <Layout metadata={metadata}>
+  <!-- Keep your background as-is -->
   <GlassTriBg primary="#0E5BAF" secondary="#7EC3F2" />
 
   <slot name="announcement"><Announcement /></slot>
+
+  <!-- Remove the theme toggle -->
   <slot name="header">
-    <Header {...headerData} showRssFeed showToggleTheme />
+    <Header {...headerData} showRssFeed />
+    <!-- If Header requires an explicit prop, you can also pass: showToggleTheme={false} -->
   </slot>
 
   <main><slot /></main>
 
   <slot name="footer"><Footer {...footerData} /></slot>
 </Layout>
+
 
