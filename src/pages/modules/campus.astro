@@ -4,57 +4,358 @@ import Layout from '~/layouts/PageLayout.astro';
 
 <Layout
   metadata={{
-    title: 'TapRebook Campus — Parent communications for schools/coaching',
+    title: 'TapRebook Campus — Parent communications on WhatsApp',
     description:
       'Broadcast notices, fees, attendance, events, and two-way updates with escalation to staff — all on WhatsApp.',
   }}
 >
-  <section class="py-12 md:py-16">
-    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight dark:text-white">
-      Campus: parent communications on WhatsApp
-    </h1>
-    <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-3xl">
-      Send timely notices, fee reminders, attendance updates, and event info. Parents can acknowledge, ask questions, or
-      escalate to a staff member when needed.
-    </p>
-    <div class="mt-6 flex gap-3">
-      <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
-      <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+  <!-- HERO -->
+  <section class="relative">
+    <div class="max-w-7xl mx-auto px-4 pt-16 pb-10 grid gap-8 lg:grid-cols-[1.2fr_.8fr] items-center">
+      <div>
+        <!-- Bigger chip -->
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 backdrop-blur px-3.5 py-1.5
+                 text-sm md:text-base font-semibold text-slate-800/90 shadow-sm">
+          WhatsApp parent communications for schools & coaching
+        </span>
+
+        <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">
+          Fewer phone calls. Faster acknowledgements. Clear updates for parents.
+        </h1>
+
+        <ul class="mt-4 space-y-2 text-slate-700/90 dark:text-slate-300/90">
+          <li>• Notices, fee reminders, attendance & event updates in one place</li>
+          <li>• One-tap <em>Acknowledge</em>, <em>RSVP</em>, or <em>Request leave</em></li>
+          <li>• Class/section targeting with audit trail and read receipts</li>
+          <li>• <strong>24/7 availability</strong> — instant replies even outside office hours</li>
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+          <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
+        </div>
+      </div>
+
+      <!-- Right: Hero visual placeholder -->
+      <div class="rounded-2xl overflow-hidden bg-white/55 dark:bg-slate-900/25 ring-1 ring-white/40 dark:ring-slate-800/40 shadow-lg backdrop-blur-sm">
+        <div class="aspect-video grid place-items-center text-slate-600/90 dark:text-slate-400/90">
+          Campus hero visual (coming soon)
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="py-10 border-t border-slate-200/50 dark:border-slate-800/60">
-    <h2 class="text-2xl font-bold dark:text-white">What it helps with</h2>
-    <ul class="mt-4 grid gap-4 md:grid-cols-2">
-      <li class="card p-5">
-        <h3 class="font-semibold">Notices & circulars</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Instant broadcasts with read receipts and acknowledgements.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Fees & reminders</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Due dates, receipts, and gentle nudges—no phone tag.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Attendance & leaves</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Daily summaries and easy leave requests from parents.</p>
-      </li>
-      <li class="card p-5">
-        <h3 class="font-semibold">Events & trips</h3>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Collect RSVPs, share checklists, and send day-of updates.</p>
-      </li>
-    </ul>
+  <!-- KPIs -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4 grid gap-4 sm:grid-cols-4">
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↑ 80–95%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Notice reach (reads)</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 30–50%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Office phone calls</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↑ 2–3×</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">On-time fee payments</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">&lt; 1s</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Median first response</div>
+      </div>
+    </div>
   </section>
 
-  <section class="py-12 border-t border-slate-200/50 dark:border-slate-800/60">
-    <div class="md:flex items-center justify-between">
+  <!-- Trust bar (placeholder logos) -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="text-center text-sm text-slate-600/90 dark:text-slate-400/90">Trusted by early adopters and pilot campuses</p>
+      <div class="mt-3 grid grid-cols-3 sm:grid-cols-6 gap-6 items-center opacity-80">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <svg viewBox="0 0 200 40" class="h-8 mx-auto" aria-hidden="true">
+            <rect width="200" height="40" rx="6" fill="rgba(255,255,255,0.6)"></rect>
+            <text x="100" y="26" text-anchor="middle" font-size="16" fill="rgb(71,85,105)">Campus Logo</text>
+          </svg>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">What you get</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Standardized WhatsApp workflows that reduce phone tag and keep parents informed.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Notices & circulars</h3>
+          <p class="mt-1 text-sm">Broadcast to class/section; read receipts and acknowledgements.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Fees & reminders</h3>
+          <p class="mt-1 text-sm">Due dates, receipts, and nudges; link to your payment portal.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Attendance & leaves</h3>
+          <p class="mt-1 text-sm">Daily summaries; one-tap leave requests with reason codes.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Events & trips</h3>
+          <p class="mt-1 text-sm">Collect RSVPs; share checklists; day-of updates and maps.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Escalation to staff</h3>
+          <p class="mt-1 text-sm">Route questions or issues to the right teacher or office.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Reports & tags</h3>
+          <p class="mt-1 text-sm">Interakt tags → Sheets/ERP; audit trails and compliance logs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it integrates -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">How it integrates</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-4">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">WhatsApp Cloud API</h3>
+          <p class="mt-1 text-sm">Template approvals and reliable delivery.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Interakt</h3>
+          <p class="mt-1 text-sm">Tags, segmentation (class/section), opt-ins, audit trails.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">ERP / Sheets</h3>
+          <p class="mt-1 text-sm">Roster sync, fee status, attendance logs, and exports.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Maps & links</h3>
+          <p class="mt-1 text-sm">Event locations, trip checklists, payment portal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flows in detail (Campus-specific) -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Flows in detail</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Exactly how Campus handles each communication.
+      </p>
+
+      <!-- 1) Notices & circulars -->
+      <details class="group mt-6 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">1) Notices &amp; circulars</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> High read rates and quick acknowledgements.</p>
+          <p><strong>When it fires:</strong> On publish; optional reminder after 24–48h to non-acknowledgers.</p>
+          <p><strong>Experience:</strong> Parents tap <em>Acknowledge</em>; questions are routed to staff.</p>
+          <p><strong>Tags:</strong> <em>notice_sent</em>, <em>notice_read</em>, <em>notice_ack</em>, <em>notice_q</em>.</p>
+        </div>
+      </details>
+
+      <!-- 2) Fees -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">2) Fees &amp; reminders</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> More on-time payments with fewer calls.</p>
+          <p><strong>When it fires:</strong> Before due date + nudges at D-2, D-0.</p>
+          <p><strong>Experience:</strong> Pay link; auto receipt sharing; questions routed to accounts.</p>
+          <p><strong>Tags:</strong> <em>fee_due</em>, <em>fee_paid</em>, <em>fee_receipt</em>, <em>fee_query</em>.</p>
+        </div>
+      </details>
+
+      <!-- 3) Attendance & leaves -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">3) Attendance &amp; leaves</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Daily summary at a set time; parents can request leave with date/reason.</p>
+          <p>Tags: <em>attn_sent</em>, <em>leave_req</em>, <em>leave_ok</em>, <em>leave_denied</em>.</p>
+        </div>
+      </details>
+
+      <!-- 4) Events & trips -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">4) Events &amp; trips</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Create RSVP windows, share checklists, and send day-of location and timing updates.</p>
+          <p>Tags: <em>rsvp_open</em>, <em>rsvp_yes</em>, <em>rsvp_no</em>, <em>trip_update</em>.</p>
+        </div>
+      </details>
+
+      <!-- 5) Issues & escalation -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">5) Issues &amp; escalation</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Parents raise a concern in WhatsApp; Campus routes to the right teacher/office and tracks resolution.</p>
+          <p>Tags: <em>issue_open</em>, <em>issue_owner</em>, <em>issue_resolved</em>.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-12 border-t border-white/20 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Pricing</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Simple plans by school size. Start with Campus—add other modules as you grow.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Small -->
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+          <h3 class="font-semibold">Small</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Upto ~500 students</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Notices & circulars with acknowledgements</li>
+            <li>• Fee reminders & receipts (link to portal)</li>
+            <li>• Attendance summaries & leave requests</li>
+            <li>• Basic reports & Interakt tags → Sheet</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Talk to us</a>
+          </div>
+        </div>
+
+        <!-- Medium -->
+        <div class="rounded-2xl p-6 ring-2 ring-blue-300/40 dark:ring-blue-300/30 bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-lg">
+          <h3 class="font-semibold">Medium</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">~500–2000 students</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Everything in Small</li>
+            <li>• Class/section segmentation & audit logs</li>
+            <li>• Event/trip RSVPs with checklists</li>
+            <li>• KPI dashboard (reads, ack, payments)</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Contact sales</a>
+          </div>
+        </div>
+
+        <!-- Large / Network -->
+        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+          <h3 class="font-semibold">Large / Network</h3>
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">2000+ or multi-campus</p>
+          <div class="mt-4 text-3xl font-extrabold tracking-tight">Custom</div>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li>• Everything in Medium</li>
+            <li>• ERP/Sheet integrations & SSO</li>
+            <li>• Template governance & role-based access</li>
+            <li>• Multi-location analytics & SLAs</li>
+          </ul>
+          <div class="mt-6 flex gap-2">
+            <a class="btn btn-primary w-full" href="/contact/">Request quote</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Risk reducer -->
+      <p class="mt-4 text-center text-xs text-slate-700/85 dark:text-slate-300/85">
+        Cancel anytime. No engineering required.
+      </p>
+
+      <p class="mt-2 text-center text-xs text-slate-600/80 dark:text-slate-400/80">
+        Pricing varies by message volume, segmentation needs, and integrations. We’ll share an exact quote after a short scoping call.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">FAQs</h2>
+
+      <details class="group mt-6 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Can we send to specific classes or sections?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Yes—segment by class, section, or custom groups. Audit logs record who received and who acknowledged.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Can parents reply or ask questions?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Yes—parents can ask questions or request leave; we route the thread to the right staff member.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Do you support fee payments?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          We link to your payment portal and record <em>paid</em>/receipt status via tags; ERP/Sheet sync optional.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Is student/parent data secure?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Data stays in approved systems (WhatsApp/Interakt, your ERP/Sheets). Role-based access and audit trails.
+        </div>
+      </details>
+    </div>
+
+    <!-- FAQPage JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Can we send to specific classes or sections?","acceptedAnswer":{"@type":"Answer","text":"Yes—segment by class, section, or custom groups. Audit logs record who received and who acknowledged."}},
+        {"@type":"Question","name":"Can parents reply or ask questions?","acceptedAnswer":{"@type":"Answer","text":"Yes—parents can ask questions or request leave; we route the thread to the right staff member."}},
+        {"@type":"Question","name":"Do you support fee payments?","acceptedAnswer":{"@type":"Answer","text":"We link to your payment portal and record paid/receipt status via tags; ERP/Sheet sync optional."}},
+        {"@type":"Question","name":"Is student/parent data secure?","acceptedAnswer":{"@type":"Answer","text":"Data stays in approved systems (WhatsApp/Interakt, your ERP/Sheets). Role-based access and audit trails."}}
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12">
+    <div class="max-w-5xl mx-auto px-4 md:flex items-center justify-between">
       <div>
-        <h2 class="text-2xl font-bold dark:text-white">Simplify school–parent messaging</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Start with Campus or add it later—same brand, shared data.</p>
+        <h2 class="text-2xl md:text-3xl font-bold">Ready to simplify school–parent messaging?</h2>
+        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+          Start with Campus. Add Reception, Labs, or Pharma when you’re ready.
+        </p>
       </div>
       <div class="mt-6 md:mt-0 flex gap-3">
-        <a class="btn btn-primary" href="/contact/">Book a demo</a>
-        <a class="btn btn-secondary" href="/modules/">See all modules</a>
+        <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+        <a class="btn btn-secondary" href="https://wa.me/91XXXXXXXXXX">WhatsApp us</a>
       </div>
     </div>
   </section>
 </Layout>
+
