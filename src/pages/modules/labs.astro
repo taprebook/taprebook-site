@@ -256,7 +256,7 @@ import Layout from '~/layouts/PageLayout.astro';
     </div>
   </section>
 
-  <!-- Pricing (similar structure; labs specifics) -->
+  <!-- Pricing (Labs) -->
   <section id="pricing" class="py-12 border-t border-white/20 dark:border-slate-800/60">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-2xl md:text-3xl font-bold text-center">Pricing</h2>
@@ -265,63 +265,235 @@ import Layout from '~/layouts/PageLayout.astro';
       </p>
 
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Single center -->
+        <!-- Single Center -->
         <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
-          <h3 class="font-semibold">Single center</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Standalone diagnostics/radiology</p>
-          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
-          <ul class="mt-4 space-y-2 text-sm">
-            <li>• Prep instructions + reminders (EN + Malayalam)</li>
-            <li>• Confirmations, rescheduling, scan-day check-ins</li>
-            <li>• Results notifications (secure link / pickup)</li>
-            <li>• Basic reports &amp; Interakt tags → Sheet</li>
+          <div class="text-xs uppercase tracking-wide text-slate-600/90 dark:text-slate-400/90">Standalone diagnostics / radiology</div>
+          <h3 class="mt-1 font-extrabold text-2xl">Single Center</h3>
+          <div class="mt-1 text-sm text-slate-700/90 dark:text-slate-300/90">
+            <span class="font-semibold">From ₹4,999 / month</span>
+          </div>
+
+          <ul class="mt-4 space-y-2 text-slate-800/95 dark:text-slate-100/90">
+            <li>• Fasting/contrast prep with bilingual nudges (EN + MAL)</li>
+            <li>• One-tap Confirm / Reschedule / Directions</li>
+            <li>• Scan-day check-ins & late-running notices</li>
+            <li>• Results ready: secure link / pickup notifications</li>
           </ul>
-          <div class="mt-6 flex gap-2">
-            <a class="btn btn-primary w-full" href="/contact/">Talk to us</a>
+
+          <!-- Support -->
+          <p class="mt-4 text-sm rounded-lg px-3 py-2 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/55 dark:bg-slate-900/30">
+            <strong>Priority support</strong> via WhatsApp &amp; email — business-hours response.
+          </p>
+
+          <div class="mt-6">
+            <a class="btn btn-primary w-full md:w-auto" href="/contact/">Book a 10-min demo</a>
+          </div>
+
+          <!-- Details -->
+          <div class="mt-5 space-y-3">
+            <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+                <li>Interakt/WABA connection & template submission</li>
+                <li>Prep checklists (EN first, MAL mirror) & send windows</li>
+                <li>Maps/booking links, saved replies for staff</li>
+              </ul>
+            </details>
+            <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+                <li>Template maintenance & timing tweaks</li>
+                <li>KPI check (prep ack, TAT, show-ups) + light optimization</li>
+                <li>Deliverability & compliance guardrails</li>
+              </ul>
+            </details>
+            <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Limits &amp; notes</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+                <li>Up to <strong>600 messages / month</strong></li>
+                <li>1 location</li>
+                <li>Email snapshot reporting</li>
+                <li><strong>WhatsApp/Meta API &amp; conversation fees billed separately</strong> by your BSP/Meta</li>
+              </ul>
+            </details>
           </div>
         </div>
 
-        <!-- Multi-center -->
-        <div class="rounded-2xl p-6 ring-2 ring-blue-300/40 dark:ring-blue-300/30 bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-lg">
-          <h3 class="font-semibold">Multi-center</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">2–10 centers</p>
-          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
-          <ul class="mt-4 space-y-2 text-sm">
-            <li>• Everything in Single</li>
-            <li>• Multi-site routing &amp; capacity balancing</li>
-            <li>• Slot-bank for manual rescheduling</li>
-            <li>• KPI dashboard (prep, TAT, utilization)</li>
+        <!-- Network (Most popular) -->
+        <div class="group rounded-2xl p-6 md:p-7 ring-2 ring-blue-400/50 dark:ring-blue-300/40 bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-lg relative overflow-hidden">
+          <span class="absolute top-3 right-3 text-[11px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full ring-1 ring-black/10 bg-white/80 dark:bg-slate-800/80">
+            Most popular
+          </span>
+
+          <div class="text-xs uppercase tracking-wide text-slate-600/90 dark:text-slate-400/90">2–10 centers</div>
+          <h3 class="mt-1 font-extrabold text-2xl">Network</h3>
+          <div class="mt-1 text-sm text-slate-700/90 dark:text-slate-300/90">
+            <span class="font-semibold">From ₹9,999 / month</span>
+            <span class="mx-1">·</span>
+            Includes 2 centers
+            <span class="mx-1">·</span>
+            +₹1,000 / additional center
+          </div>
+
+          <ul class="mt-4 space-y-2 text-slate-800/95 dark:text-slate-100/90">
+            <li>• Everything in Single Center</li>
+            <li>• Multi-site routing & capacity balancing</li>
+            <li>• Slot-bank support for manual rescheduling</li>
+            <li>• Live KPIs: prep compliance, TAT, utilization</li>
           </ul>
-          <div class="mt-6 flex gap-2">
-            <a class="btn btn-primary w-full" href="/contact/">Contact sales</a>
+
+          <!-- Support -->
+          <p class="mt-4 text-sm rounded-lg px-3 py-2 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/65 dark:bg-slate-900/35">
+            <strong>Extended support</strong> via WhatsApp &amp; email — business-hours response,
+            with <strong>after-hours on-call</strong> for urgent deliverability/outage issues.
+            Proactive monitoring of template approvals &amp; link hygiene.
+            <em class="block mt-1 text-[12px] text-slate-600/90 dark:text-slate-400/90">24/7 coverage available on request.</em>
+          </p>
+
+          <!-- Proof chips -->
+          <div class="mt-3 flex flex-wrap gap-2 text-[11px] text-slate-600/90 dark:text-slate-400/90">
+            <span class="px-2 py-0.5 rounded-full ring-1 ring-black/10 bg-white/70 dark:bg-slate-800/60">↓ prep errors</span>
+            <span class="px-2 py-0.5 rounded-full ring-1 ring-black/10 bg-white/70 dark:bg-slate-800/60">↓ no-shows</span>
+            <span class="px-2 py-0.5 rounded-full ring-1 ring-black/10 bg-white/70 dark:bg-slate-800/60">↑ utilization</span>
+          </div>
+
+          <div class="mt-6">
+            <a class="btn btn-primary w-full md:w-auto" href="/contact/">Book a 10-min demo</a>
+          </div>
+
+          <div class="mt-5 space-y-3">
+            <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+                <li>Center library (addresses, hours) & routing rules</li>
+                <li>Prep templates mirrored EN↔MAL; contrast disclaimers</li>
+                <li>Go-live windows, grace rules, saved replies</li>
+              </ul>
+            </details>
+            <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+                <li>KPI review + one optimization/month</li>
+                <li>Template maintenance & compliance guardrails</li>
+                <li>Capacity balancing tweaks across centers</li>
+              </ul>
+            </details>
+            <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Limits &amp; notes</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+                <li>Up to <strong>2,000 messages / month</strong> (then ₹X / 100 messages)</li>
+                <li>Includes 2 centers; add more as needed</li>
+                <li><strong>WhatsApp/Meta API &amp; conversation fees billed separately</strong> by your BSP/Meta</li>
+              </ul>
+            </details>
           </div>
         </div>
 
         <!-- Enterprise -->
         <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
-          <h3 class="font-semibold">Enterprise</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Hospital groups &amp; networks</p>
-          <div class="mt-4 text-3xl font-extrabold tracking-tight">Custom</div>
-          <ul class="mt-4 space-y-2 text-sm">
-            <li>• Everything in Multi-center</li>
-            <li>• LIS/RIS/PACS integrations &amp; SSO</li>
-            <li>• Template governance &amp; audit trails</li>
-            <li>• Multi-location analytics &amp; SLAs</li>
+          <div class="text-xs uppercase tracking-wide text-slate-600/90 dark:text-slate-400/90">Hospital groups &amp; networks</div>
+          <h3 class="mt-1 font-extrabold text-2xl">Enterprise</h3>
+          <div class="mt-1 text-sm text-slate-700/90 dark:text-slate-300/90"><span class="font-semibold">Custom</span></div>
+
+          <ul class="mt-4 space-y-2 text-slate-800/95 dark:text-slate-100/90">
+            <li>• Everything in Network</li>
+            <li>• LIS/RIS/PACS integrations &amp; SSO (where applicable)</li>
+            <li>• Brand & template governance; audit trails</li>
+            <li>• Multi-location analytics, SLAs & executive roll-ups</li>
           </ul>
-          <div class="mt-6 flex gap-2">
-            <a class="btn btn-primary w-full" href="/contact/">Request quote</a>
+
+          <p class="mt-4 text-sm rounded-lg px-3 py-2 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/55 dark:bg-slate-900/30">
+            Dedicated success manager and quarterly optimization sprints.
+          </p>
+
+          <div class="mt-6">
+            <a class="btn btn-primary w-full md:w-auto" href="/contact/">Book a 10-min demo</a>
+          </div>
+
+          <div class="mt-5 space-y-3">
+            <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+                <li>Data model: centers, modalities, referring clinics</li>
+                <li>Shared template library with local overrides</li>
+                <li>Dashboards: per-center + roll-up executive view</li>
+                <!-- <li>Security review / SSO onboarding (Enterprise)</li> -->
+              </ul>
+            </details>
+
+            <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+                <li>Network benchmarking & rollout of winning changes</li>
+                <li>Template lifecycle & compliance management</li>
+                <li>SLAs & on-call for urgent deliverability/outage issues</li>
+              </ul>
+            </details>
+
+            <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Limits &amp; notes</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+                <li>Priced per center; total message cap sized to network volume</li>
+                <li>Central governance with selective local levers</li>
+                <li><strong>WhatsApp/Meta API &amp; conversation fees billed separately</strong> by your BSP/Meta</li>
+                <li>Volume & term discounts available</li>
+              </ul>
+            </details>
           </div>
         </div>
       </div>
 
-      <!-- Risk reducer -->
-      <p class="mt-4 text-center text-xs text-slate-700/85 dark:text-slate-300/85">
-        Cancel anytime. No engineering required.
-      </p>
+      <!-- Risk reducers (centered) -->
+      <div class="mt-8 max-w-3xl mx-auto text-center space-y-2">
+        <p class="text-sm text-slate-700/85 dark:text-slate-300/85">Cancel anytime. No engineering required.</p>
+        <p class="text-sm text-slate-700/85 dark:text-slate-300/85">
+          <strong>WhatsApp/Meta API &amp; conversation fees are billed separately</strong> by your BSP/Meta to your center.
+        </p>
+        <p class="text-sm text-slate-700/85 dark:text-slate-300/85">
+          Discounts available for quarterly/annual prepay. Founding &amp; volume-based pricing available—talk to us.
+        </p>
+        <p class="text-sm text-slate-700/85 dark:text-slate-300/85">
+          Pricing varies by message volume, center count, and integrations. We’ll share an exact quote after a short scoping call.
+        </p>
+      </div>
 
-      <p class="mt-2 text-center text-xs text-slate-600/80 dark:text-slate-400/80">
-        Pricing varies by message volume, centers, and integrations. We’ll share an exact quote after a short scoping call.
-      </p>
+      <!-- Pricing FAQ (Labs) -->
+      <div class="mt-10 max-w-4xl mx-auto">
+        <h3 class="text-xl font-bold text-center">Pricing FAQ</h3>
+        <div class="mt-4 space-y-3">
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Do you provide 24/7 support?</summary>
+            <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+              Single Center includes <strong>business-hours support</strong>. Network adds <strong>after-hours on-call</strong> for urgent deliverability/outage issues.
+              <strong>24/7 coverage</strong> is available on request.
+            </p>
+          </details>
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">How do center counts work?</summary>
+            <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+              Network pricing includes 2 centers, then <strong>+₹1,000 / additional center</strong> each month.
+            </p>
+          </details>
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">What happens if we exceed message caps?</summary>
+            <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+              We’ll notify you at 80% usage. Overages are billed at <strong>₹X / 100 messages</strong>, or we can right-size your plan.
+            </p>
+          </details>
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Are WhatsApp/Meta fees included?</summary>
+            <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+              No. <strong>API &amp; conversation fees are billed by your BSP/Meta</strong> directly to your center.
+            </p>
+          </details>
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Can we get discounts for longer commitments?</summary>
+            <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+              Yes—<strong>quarterly and annual prepay discounts</strong> are available. We also offer founding/volume-based pricing.
+            </p>
+          </details>
+        </div>
+      </div>
     </div>
   </section>
 
