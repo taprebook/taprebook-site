@@ -40,39 +40,40 @@ import Layout from '~/layouts/PageLayout.astro';
         modules standardize routine touchpoints—bookings, reminders, and coordination—so conversations
         run the same way every time, with less admin and fewer mistakes.
       </p>
-      <p class="mt-3 mb-4 text-slate-800 leading-relaxed">
+      <p class="mt-3 text-slate-800 leading-relaxed">
         The result is measurable efficiency: clearer updates, faster completions, and capacity gains
         without extra headcount. We keep the building blocks simple, adaptable, and brand-first—so you
         can start small, expand as needed, and maintain a consistent experience across every location.
       </p>
 
-      <!-- Signature + Founder block -->
-      <div class="mt-4">
-        <!-- Signature image -->
+      <!-- Signature + avatar (Option B: no visible name text, accessible only) -->
+      <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+        <!-- Signature image (no negative translate, sized to sit nicely with body copy) -->
         <img
           src="/images/sunil-signature.png"
-          alt="Signature of Sunil Kaimootil"
-          class="w-44 md:w-60 h-auto opacity-90 select-none pointer-events-none drop-shadow-sm"
+          alt=""
+          aria-hidden="true"
+          class="h-12 md:h-14 lg:h-16 w-auto opacity-90 select-none pointer-events-none drop-shadow-sm"
           loading="lazy"
           decoding="async"
         />
 
-        <!-- Founder media block -->
-        <div class="mt-4 flex items-center gap-4">
+        <!-- Headshot (picture element with fallbacks) -->
+        <picture class="shrink-0">
+          <source srcset="/images/headshot.avif" type="image/avif" />
+          <source srcset="/images/headshot.webp" type="image/webp" />
           <img
             src="/images/headshot.jpg"
-            alt="Portrait of Sunil Kaimootil"
-            class="h-14 w-14 md:h-16 md:w-16 rounded-full object-cover ring-1 ring-black/10"
+            alt="Sunil Kaimootil, Founder"
+            width="80" height="80"
+            class="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover ring-1 ring-black/10 shadow-sm"
             loading="lazy"
             decoding="async"
           />
-          <div>
-            <div class="text-base md:text-lg font-semibold text-slate-900">Sunil Kaimootil</div>
-            <div class="text-sm text-slate-600">Founder, TapRebook</div>
-            <!-- Optional: location or tiny note -->
-            <!-- <div class="text-xs text-slate-500 mt-0.5">Kerala, India</div> -->
-          </div>
-        </div>
+        </picture>
+
+        <!-- Accessible label only (keeps page clean, satisfies screen readers/SEO) -->
+        <span class="sr-only">Sunil Kaimootil — Founder, TapRebook</span>
       </div>
     </div>
   </section>
@@ -83,9 +84,9 @@ import Layout from '~/layouts/PageLayout.astro';
       <!-- Purpose -->
       <div class="rounded-2xl p-6 ring-1 ring-white/30 bg-white/40 backdrop-blur">
         <svg viewBox="0 0 24 24" class="w-10 h-10 mb-3 text-slate-800 opacity-90" aria-hidden="true">
-          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="12" cy="12" r="3.25" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <path d="M12 3v3M12 18v3M3 12h3M18 12h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          <circle cx="12" cy="12" r="3.25" fill="none" stroke="currentColor" stroke-width="1.5" />
         </svg>
         <h3 class="font-semibold">Driven by purpose.</h3>
         <p class="mt-2 text-slate-700">
@@ -96,9 +97,9 @@ import Layout from '~/layouts/PageLayout.astro';
       <!-- Expert team -->
       <div class="rounded-2xl p-6 ring-1 ring-white/30 bg-white/40 backdrop-blur">
         <svg viewBox="0 0 24 24" class="w-10 h-10 mb-3 text-slate-800 opacity-90" aria-hidden="true">
-          <circle cx="8" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <circle cx="16" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M3.5 19a5.5 5.5 0 0 1 9-4.2M20.5 19a5.5 5.5 0 0 0-9-4.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="8" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <circle cx="16" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.5" />
+          <path d="M3.5 19a5.5 5.5 0 0 1 9-4.2M20.5 19a5.5 5.5 0 0 0-9-4.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
         </svg>
         <h3 class="font-semibold">Expert team.</h3>
         <p class="mt-2 text-slate-700">
@@ -109,12 +110,12 @@ import Layout from '~/layouts/PageLayout.astro';
       <!-- Real impact -->
       <div class="rounded-2xl p-6 ring-1 ring-white/30 bg-white/40 backdrop-blur">
         <svg viewBox="0 0 24 24" class="w-10 h-10 mb-3 text-slate-800 opacity-90" aria-hidden="true">
-          <path d="M4 20h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M5 14l4-4 3 3 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="5" cy="14" r="1" fill="currentColor"/>
-          <circle cx="9" cy="10" r="1" fill="currentColor"/>
-          <circle cx="12" cy="13" r="1" fill="currentColor"/>
-          <circle cx="18" cy="7" r="1" fill="currentColor"/>
+          <path d="M4 20h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          <path d="M5 14l4-4 3 3 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="5" cy="14" r="1" fill="currentColor" />
+          <circle cx="9" cy="10" r="1" fill="currentColor" />
+          <circle cx="12" cy="13" r="1" fill="currentColor" />
+          <circle cx="18" cy="7" r="1" fill="currentColor" />
         </svg>
         <h3 class="font-semibold">Real impact.</h3>
         <p class="mt-2 text-slate-700">
@@ -124,6 +125,3 @@ import Layout from '~/layouts/PageLayout.astro';
     </div>
   </section>
 </Layout>
-
-
-
