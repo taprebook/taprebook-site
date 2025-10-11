@@ -46,21 +46,21 @@ import Layout from '~/layouts/PageLayout.astro';
         can start small, expand as needed, and maintain a consistent experience across every location.
       </p>
 
-<!-- Signature (centered) -->
-<div class="mt-4 mb-0">
+<!-- Signature (left-aligned; same container padding as the paragraphs above) -->
+<div class="mt-8 mb-0">
   <img
     src="/images/sunil-signature.png"
     alt="Signature of Sunil Kaimootil"
-    class="mx-auto block w-48 md:w-64 lg:w-72 h-auto opacity-90 select-none pointer-events-none drop-shadow-sm"
+    class="block w-48 md:w-64 lg:w-72 h-auto opacity-90 select-none pointer-events-none drop-shadow-sm"
     loading="lazy"
     decoding="async"
   />
 </div>
 
-<!-- Headshot + founder line (centered under signature; tighten spacing with -mt-6/-mt-8) -->
-<div class="-mt-6 w-fit mx-auto flex items-center gap-3">
+<!-- Headshot + founder line (left-aligned under signature) -->
+<div class="-mt-6 flex items-center gap-3">
   <picture class="shrink-0">
-    <!-- If you add these files later, uncomment:
+    <!-- Optional modern formats (uncomment when available)
     <source srcset="/images/headshot.avif" type="image/avif" />
     <source srcset="/images/headshot.webp" type="image/webp" />
     -->
@@ -73,11 +73,13 @@ import Layout from '~/layouts/PageLayout.astro';
       decoding="async"
     />
   </picture>
+
   <div class="leading-tight">
     <div class="font-semibold text-slate-900">Sunil Kaimootil</div>
     <div class="text-sm text-slate-600">Founder, TapRebook</div>
   </div>
 </div>
+
 
   </section>
 
