@@ -59,7 +59,7 @@ export const footerData = {
   ],
 
   socialLinks: [
-    { ariaLabel: 'WhatsApp', icon: 'tabler:brand-whatsapp', href: 'https://wa.me/919539231117' },
+    { ariaLabel: 'WhatsApp', icon: 'tabler:brand-whatsapp', href: 'https://wa.me/15303018709' },
   ],
 
   footNote: `© ${new Date().getFullYear()} TapRebook. All rights reserved.`,
