@@ -319,7 +319,6 @@ import Layout from '~/layouts/PageLayout.astro';
       Simple plans by clinic size. Start with Reception—add other modules as you grow.
     </p>
 
-    <!-- Plans -->
     <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 
       <!-- SOLO -->
@@ -331,30 +330,27 @@ import Layout from '~/layouts/PageLayout.astro';
         </div>
 
         <ul class="mt-4 space-y-2 text-slate-800/95">
-          <li>• WhatsApp confirmations & reminders (EN; MAL add-on)</li>
+          <li>• Confirmations & reminders (EN; MAL add-on)</li>
           <li>• One-tap reschedule/cancel & running-late triage</li>
-          <li>• Basic no-show recovery (suggest next best slots)</li>
-          <li>• Post-visit review request (policy-safe)</li>
-          <li>• KPI snapshot email (Kept, Rebooks, Reviews)</li>
+          <li>• Basic no-show recovery + review request</li>
+          <li>• Monthly KPI snapshot (Kept, Rebooks, Reviews)</li>
         </ul>
 
         <!-- Support line -->
-        <p class="mt-4 text-sm rounded-lg px-3 py-2 ring-1 ring-white/30 bg-white/50">
-          <strong>Priority support</strong> via WhatsApp & email — business-hours response with
-          after-hours on-call for urgent deliverability or outage issues.
+        <p class="mt-4 text-sm rounded-lg px-3 py-2 ring-1 ring-white/30 bg-white/55">
+          <strong>Priority support</strong> via WhatsApp & email — business-hours response.
         </p>
 
         <div class="mt-6">
-          <a class="btn btn-primary w-full md:w-auto" href="/contact/">Talk to us</a>
+          <a class="btn btn-primary w-full md:w-auto" href="/contact/">Book a 10-min demo</a>
         </div>
 
-        <!-- Details -->
+        <!-- Collapsed details to reduce clutter -->
         <div class="mt-5 space-y-3">
           <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
             <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
             <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
-              <li>Interakt/WABA connection guidance</li>
-              <li>EN template pack submission (Utility + review)</li>
+              <li>Interakt/WABA guidance & template submission</li>
               <li>Booking link wiring & go-live windows</li>
               <li>Staff saved replies (/handoff, /offer, /confirm)</li>
             </ul>
@@ -363,7 +359,7 @@ import Layout from '~/layouts/PageLayout.astro';
             <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
             <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
               <li>Template maintenance & timing tweaks</li>
-              <li>Monthly KPI check & light optimization</li>
+              <li>KPI check & light optimization</li>
               <li>Deliverability & compliance guardrails</li>
             </ul>
           </details>
@@ -380,7 +376,6 @@ import Layout from '~/layouts/PageLayout.astro';
 
       <!-- CLINIC — MOST POPULAR -->
       <div class="group rounded-2xl p-6 md:p-7 ring-2 ring-blue-400/50 bg-white/40 backdrop-blur shadow-lg relative overflow-hidden">
-        <!-- Ribbon -->
         <span class="absolute top-3 right-3 text-[11px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full ring-1 ring-black/10 bg-white/80">
           Most popular
         </span>
@@ -396,17 +391,18 @@ import Layout from '~/layouts/PageLayout.astro';
         </div>
 
         <ul class="mt-4 space-y-2 text-slate-800/95">
-          <li>• <strong>Bilingual flows</strong> (EN + MAL) that patients reply to</li>
-          <li>• <strong>Reactivate</strong> with recall & treatment-plan follow-ups</li>
-          <li>• <strong>Smarter rebooks</strong> with time-windows & service rules</li>
-          <li>• <strong>Live KPIs</strong> (kept, late, recovery) you can act on</li>
+          <li>• Bilingual flows (EN + MAL)</li>
+          <li>• Recall & treatment-plan follow-ups</li>
+          <li>• Time-window & service rules for smarter rebooks</li>
+          <li>• Live KPIs (kept, late, recovery)</li>
         </ul>
 
-        <!-- Support line (hybrid wording) -->
-        <p class="mt-4 text-sm rounded-lg px-3 py-2 ring-1 ring-white/30 bg-white/60">
+        <!-- Support line (clear + honest, with optional 24/7) -->
+        <p class="mt-4 text-sm rounded-lg px-3 py-2 ring-1 ring-white/30 bg-white/65">
           <strong>Extended support</strong> via WhatsApp & email — business-hours response,
-          with <strong>after-hours on-call</strong> for urgent deliverability or outage issues.
+          with <strong>after-hours on-call</strong> for urgent deliverability/outage issues.
           Proactive monitoring of template approvals & link hygiene.
+          <em class="block mt-1 text-[12px] text-slate-600/90">24/7 coverage available on request.</em>
         </p>
 
         <!-- Proof chips -->
@@ -417,34 +413,32 @@ import Layout from '~/layouts/PageLayout.astro';
         </div>
 
         <div class="mt-6">
-          <a href="/contact/" class="btn btn-primary w-full md:w-auto">Contact sales</a>
+          <a href="/contact/" class="btn btn-primary w-full md:w-auto">Book a 10-min demo</a>
         </div>
 
-        <!-- Details -->
         <div class="mt-5 space-y-3">
           <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
             <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
             <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
-              <li>EN + MAL template mirror (Utility-safe)</li>
-              <li>Recall & treatment follow-up triggers</li>
-              <li>Tag map & staff saved replies; go-live windows</li>
-              <li>Time windows & grace rules configured</li>
+              <li>EN + MAL mirror of Utility templates</li>
+              <li>Recall/Tx follow-up triggers & tag map</li>
+              <li>Go-live windows, grace rules, saved replies</li>
             </ul>
           </details>
           <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
             <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
             <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
-              <li>KPI review + one optimization (cadence, copy, grace)</li>
+              <li>KPI review + one optimization/month</li>
               <li>Template maintenance & compliance guardrails</li>
-              <li>Saved-reply refinements & basic escalation rules</li>
+              <li>Escalation rules & saved-reply refinements</li>
             </ul>
           </details>
           <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
             <summary class="cursor-pointer font-semibold">Limits & notes</summary>
             <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
               <li>Up to <strong>1,000 messages / month</strong> (then ₹X / 100 messages)</li>
-              <li>One location in this tier (multi-branch in Plus)</li>
-              <li>WhatsApp/Meta conversation fees billed by Meta to the clinic</li>
+              <li>One location in this tier (multi-branch in Multi-site)</li>
+              <li><strong>WhatsApp/Meta API & conversation fees billed separately</strong> by your BSP/Meta</li>
             </ul>
           </details>
         </div>
@@ -458,39 +452,34 @@ import Layout from '~/layouts/PageLayout.astro';
 
         <ul class="mt-4 space-y-2 text-slate-800/95">
           <li>• Everything in Clinic</li>
-          <li>• Brand & template governance (shared with local overrides)</li>
+          <li>• Brand & template governance (shared + local overrides)</li>
           <li>• CRM/Sheet integrations; roll-up analytics & SLAs</li>
           <li>• Multi-location dashboards & executive summaries</li>
         </ul>
 
-        <p class="mt-4 text-sm rounded-lg px-3 py-2 ring-1 ring-white/30 bg-white/50">
-          Dedicated success manager & structured quarterly optimization sprints.
+        <p class="mt-4 text-sm rounded-lg px-3 py-2 ring-1 ring-white/30 bg-white/55">
+          Dedicated success manager and quarterly optimization sprints.
         </p>
 
         <div class="mt-6">
-          <a class="btn btn-primary w-full md:w-auto" href="/contact/">Request quote</a>
-        </div>
-
-        <div class="mt-5 space-y-3">
-          <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
-            <summary class="cursor-pointer font-semibold">What’s included</summary>
-            <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
-              <li>Branch roll-up reporting & benchmarking</li>
-              <li>Shared templates + local overrides (hours, tone)</li>
-              <li>Central review/booking links & governance SOP</li>
-            </ul>
-          </details>
+          <a class="btn btn-primary w-full md:w-auto" href="/contact/">Book a 10-min demo</a>
         </div>
       </div>
     </div>
 
-    <!-- Risk reducers -->
-    <p class="mt-5 text-center text-xs text-slate-700/85">
-      Cancel anytime. No engineering required.
-    </p>
-    <p class="mt-1 text-center text-xs text-slate-600/80">
-      Pricing varies by message volume, provider count, and integrations. We’ll share an exact quote after a short scoping call.
-    </p>
+    <!-- Risk reducers & policy notes -->
+    <div class="mt-5 space-y-1 text-center text-xs">
+      <p class="text-slate-700/90">Cancel anytime. No engineering required.</p>
+      <p class="text-slate-600/90">
+        <strong>WhatsApp/Meta API & conversation fees are billed separately</strong> by your BSP/Meta to your clinic.
+      </p>
+      <p class="text-slate-600/90">
+        Discounts available for quarterly/annual prepay. Founding & volume-based pricing available—talk to us.
+      </p>
+      <p class="text-slate-600/80">
+        Pricing varies by message volume, provider count, and integrations. We’ll share an exact quote after a short scoping call.
+      </p>
+    </div>
 
     <!-- FAQ -->
     <div class="mt-10 max-w-4xl mx-auto">
@@ -499,9 +488,8 @@ import Layout from '~/layouts/PageLayout.astro';
         <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
           <summary class="cursor-pointer font-semibold">Do you provide 24/7 support?</summary>
           <p class="mt-2 text-sm text-slate-700/90">
-            We offer <strong>extended support</strong>: business-hours response with
-            <strong> after-hours on-call</strong> for urgent deliverability or outage issues.
-            Multi-site plans include a success manager and structured escalation.
+            Solo includes <strong>business-hours support</strong>. Clinic includes <strong>business-hours + after-hours on-call</strong> for urgent
+            deliverability/outage issues. <strong>24/7 coverage</strong> is available on request.
           </p>
         </details>
         <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
@@ -514,27 +502,19 @@ import Layout from '~/layouts/PageLayout.astro';
         <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
           <summary class="cursor-pointer font-semibold">What happens if we exceed message caps?</summary>
           <p class="mt-2 text-sm text-slate-700/90">
-            We’ll notify you at 80% usage. Overages are billed at <strong>₹X / 100 messages</strong>, or we
-            can right-size the plan.
+            We’ll notify you at 80% usage. Overages are billed at <strong>₹X / 100 messages</strong>, or we can right-size your plan.
           </p>
         </details>
         <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
           <summary class="cursor-pointer font-semibold">Are WhatsApp/Meta fees included?</summary>
           <p class="mt-2 text-sm text-slate-700/90">
-            No. Meta conversation fees are billed by your BSP/Meta directly to the clinic.
+            No. <strong>API & conversation fees are billed by your BSP/Meta</strong> directly to your clinic.
           </p>
         </details>
         <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
-          <summary class="cursor-pointer font-semibold">Can we cancel anytime?</summary>
+          <summary class="cursor-pointer font-semibold">Can we get discounts for longer commitments?</summary>
           <p class="mt-2 text-sm text-slate-700/90">
-            Yes. Solo and Clinic are month-to-month. Multi-site has a short term for rollout and governance.
-          </p>
-        </details>
-        <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
-          <summary class="cursor-pointer font-semibold">How long does onboarding take?</summary>
-          <p class="mt-2 text-sm text-slate-700/90">
-            Solo/Clinic: ~3–7 business days after assets are shared (templates, links). Multi-site depends on
-            number of branches and governance scope.
+            Yes—<strong>quarterly and annual prepay discounts</strong> are available. We also offer founding/volume-based pricing.
           </p>
         </details>
       </div>
