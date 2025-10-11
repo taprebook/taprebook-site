@@ -46,19 +46,19 @@ import Layout from '~/layouts/PageLayout.astro';
         can start small, expand as needed, and maintain a consistent experience across every location.
       </p>
 
-      <!-- Signature + avatar (Option B: no visible name text, accessible only) -->
-      <div class="mt-6 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
-        <!-- Signature image (no negative translate, sized to sit nicely with body copy) -->
+      <!-- Signature (original size) -->
+      <div class="mt-4">
         <img
           src="/images/sunil-signature.png"
-          alt=""
-          aria-hidden="true"
-          class="h-12 md:h-14 lg:h-16 w-auto opacity-90 select-none pointer-events-none drop-shadow-sm"
+          alt="Signature of Sunil Kaimootil"
+          class="w-48 md:w-64 lg:w-72 h-auto opacity-90 select-none pointer-events-none drop-shadow-sm"
           loading="lazy"
           decoding="async"
         />
+      </div>
 
-        <!-- Headshot (picture element with fallbacks) -->
+      <!-- Headshot + founder line (tight spacing under signature) -->
+      <div class="mt-3 flex items-center gap-3">
         <picture class="shrink-0">
           <source srcset="/images/headshot.avif" type="image/avif" />
           <source srcset="/images/headshot.webp" type="image/webp" />
@@ -71,9 +71,10 @@ import Layout from '~/layouts/PageLayout.astro';
             decoding="async"
           />
         </picture>
-
-        <!-- Accessible label only (keeps page clean, satisfies screen readers/SEO) -->
-        <span class="sr-only">Sunil Kaimootil — Founder, TapRebook</span>
+        <div class="leading-tight">
+          <div class="font-semibold text-slate-900">Sunil Kaimootil</div>
+          <div class="text-sm text-slate-600">Founder, TapRebook</div>
+        </div>
       </div>
     </div>
   </section>
@@ -125,3 +126,4 @@ import Layout from '~/layouts/PageLayout.astro';
     </div>
   </section>
 </Layout>
+
