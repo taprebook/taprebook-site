@@ -445,28 +445,64 @@ import Layout from '~/layouts/PageLayout.astro';
         </div>
       </div>
 
-      <!-- MULTI-SITE -->
-      <div class="rounded-2xl p-6 ring-1 ring-white/30 bg-white/30 backdrop-blur">
-        <div class="text-xs uppercase tracking-wide text-slate-600/90">Groups & enterprises</div>
-        <h3 class="mt-1 font-extrabold text-2xl">Multi-site</h3>
-        <div class="mt-1 text-sm text-slate-700/90"><span class="font-semibold">Custom</span></div>
+<!-- MULTI-SITE -->
+<div class="rounded-2xl p-6 ring-1 ring-white/30 bg-white/30 backdrop-blur">
+  <div class="text-xs uppercase tracking-wide text-slate-600/90">Groups & enterprises</div>
+  <h3 class="mt-1 font-extrabold text-2xl">Multi-site</h3>
+  <div class="mt-1 text-sm text-slate-700/90"><span class="font-semibold">Custom</span></div>
 
-        <ul class="mt-4 space-y-2 text-slate-800/95">
-          <li>• Everything in Clinic</li>
-          <li>• Brand & template governance (shared + local overrides)</li>
-          <li>• CRM/Sheet integrations; roll-up analytics & SLAs</li>
-          <li>• Multi-location dashboards & executive summaries</li>
-        </ul>
+  <ul class="mt-4 space-y-2 text-slate-800/95">
+    <li>• Everything in Clinic</li>
+    <li>• Brand & template governance (shared library + local overrides)</li>
+    <li>• CRM/Sheet integrations; roll-up analytics & SLAs</li>
+    <li>• Multi-location dashboards & executive summaries</li>
+  </ul>
 
-        <p class="mt-4 text-sm rounded-lg px-3 py-2 ring-1 ring-white/30 bg-white/55">
-          Dedicated success manager and quarterly optimization sprints.
-        </p>
+  <p class="mt-4 text-sm rounded-lg px-3 py-2 ring-1 ring-white/30 bg-white/55">
+    Dedicated success manager and quarterly optimization sprints.
+  </p>
 
-        <div class="mt-6">
-          <a class="btn btn-primary w-full md:w-auto" href="/contact/">Book a 10-min demo</a>
-        </div>
-      </div>
-    </div>
+  <div class="mt-6">
+    <a class="btn btn-primary w-full md:w-auto" href="/contact/">Book a 10-min demo</a>
+  </div>
+
+  <!-- Collapsed details to keep the card clean -->
+  <div class="mt-5 space-y-3">
+    <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+      <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
+      <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+        <li>Branch data model (IDs, providers) & shared asset library</li>
+        <li>Template governance (utility vs marketing, brand guardrails)</li>
+        <li>Location onboarding playbook & change-management comms</li>
+        <li>Dashboards: branch + roll-up executive view</li>
+        <!-- optional/roadmap items—leave commented until ready -->
+        <!-- <li>SSO/SAML hookup (Enterprise)</li> -->
+        <!-- <li>External security review / pentest onboarding</li> -->
+      </ul>
+    </details>
+
+    <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+      <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
+      <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+        <li>Executive summary across branches (no-show %, rebook rate, reviews)</li>
+        <li>Benchmarking & rollout of winning changes network-wide</li>
+        <li>Template lifecycle & compliance management</li>
+        <li>SLAs & on-call for urgent deliverability/outage issues</li>
+      </ul>
+    </details>
+
+    <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+      <summary class="cursor-pointer font-semibold">Limits & notes</summary>
+      <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+        <li>Priced per branch; total message cap sized to network volume</li>
+        <li>Central brand governance with selective local overrides</li>
+        <li><strong>WhatsApp/Meta API & conversation fees billed separately</strong> by your BSP/Meta</li>
+        <li>Volume & term discounts available</li>
+      </ul>
+    </details>
+  </div>
+</div>
+
 
     <!-- Risk reducers & policy notes -->
     <div class="mt-5 space-y-1 text-center text-xs">
