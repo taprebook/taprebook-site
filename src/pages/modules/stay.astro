@@ -244,74 +244,221 @@ import Layout from '~/layouts/PageLayout.astro';
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section id="pricing" class="py-12 border-t border-white/20 dark:border-slate-800/60">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-center">Pricing</h2>
-      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
-        Simple plans by property size. Start with Stay—add other modules as you grow.
-      </p>
+<!-- Pricing (Stay) -->
+<section id="pricing" class="py-12 border-t border-white/20 dark:border-slate-800/60">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold text-center">Pricing</h2>
+    <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+      Simple plans by property count. Start with Stay—add other modules as you grow.
+    </p>
 
-      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Single property -->
-        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
-          <h3 class="font-semibold">Single property</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Homestay or houseboat</p>
-          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
-          <ul class="mt-4 space-y-2 text-sm">
-            <li>• Pre-arrival guidance & ID collection</li>
-            <li>• Check-in coordination & reminders</li>
-            <li>• Upsells (meals/activities) & in-stay support</li>
-            <li>• Basic reports & Interakt tags → Sheet</li>
-          </ul>
-          <div class="mt-6 flex gap-2">
-            <a class="btn btn-primary w-full" href="/contact/">Talk to us</a>
-          </div>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Single property -->
+      <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+        <div class="text-xs uppercase tracking-wide text-slate-600/90">Independent hotel / guesthouse</div>
+        <h3 class="mt-1 font-extrabold text-2xl">Single property</h3>
+        <div class="mt-1 text-sm text-slate-700/90">
+          <span class="font-semibold">From ₹X,999 / month</span>
         </div>
 
-        <!-- Multi-property -->
-        <div class="rounded-2xl p-6 ring-2 ring-blue-300/40 dark:ring-blue-300/30 bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-lg">
-          <h3 class="font-semibold">Multi-property</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">2–10 units</p>
-          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
-          <ul class="mt-4 space-y-2 text-sm">
-            <li>• Everything in Single</li>
-            <li>• Route by property & capacity windows</li>
-            <li>• Slot-bank for activity times & meals</li>
-            <li>• KPI dashboard (calls saved, upsell rate)</li>
-          </ul>
-          <div class="mt-6 flex gap-2">
-            <a class="btn btn-primary w-full" href="/contact/">Contact sales</a>
-          </div>
-        </div>
+        <ul class="mt-4 space-y-2 text-slate-800/95">
+          <li>• Pre-arrival info &amp; reminders (maps, ID, check-in time)</li>
+          <li>• Check-in nudges &amp; late-arrival handling</li>
+          <li>• In-stay requests (housekeeping, amenities) with tags</li>
+          <li>• Post-stay review request (compliant, one touch)</li>
+        </ul>
 
-        <!-- Enterprise -->
-        <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
-          <h3 class="font-semibold">Enterprise</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Groups & operators</p>
-          <div class="mt-4 text-3xl font-extrabold tracking-tight">Custom</div>
-          <ul class="mt-4 space-y-2 text-sm">
-            <li>• Everything in Multi-property</li>
-            <li>• PMS/booking & courier integrations</li>
-            <li>• Template governance & SSO</li>
-            <li>• Multi-location analytics & SLAs</li>
-          </ul>
-          <div class="mt-6 flex gap-2">
-            <a class="btn btn-primary w-full" href="/contact/">Request quote</a>
-          </div>
+        <!-- Collapsed details -->
+        <div class="mt-5 space-y-3">
+          <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+              <li>Interakt/WABA connection &amp; template submission</li>
+              <li>Pre-arrival checklist (ID, ETA, parking, directions)</li>
+              <li>Saved replies for front desk (/late, /upgrade, /policy)</li>
+            </ul>
+          </details>
+          <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+              <li>Template maintenance &amp; schedule tweaks (seasonality)</li>
+              <li>Monthly KPI email (on-time check-ins, requests SLA, reviews)</li>
+              <li>Deliverability &amp; compliance guardrails</li>
+            </ul>
+          </details>
+          <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Limits &amp; notes</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+              <li>Up to <strong>1,000 messages / month</strong></li>
+              <li>1 property</li>
+              <li><strong>WhatsApp/Meta API &amp; conversation fees billed separately</strong> by your BSP/Meta</li>
+            </ul>
+          </details>
         </div>
       </div>
 
-      <!-- Risk reducer -->
-      <p class="mt-4 text-center text-xs text-slate-700/85 dark:text-slate-300/85">
-        Cancel anytime. No engineering required.
-      </p>
+      <!-- Multi-property — MOST POPULAR -->
+      <div class="group rounded-2xl p-6 md:p-7 ring-2 ring-blue-400/50 bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-lg relative overflow-hidden">
+        <span class="absolute top-3 right-3 text-[11px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full ring-1 ring-black/10 bg-white/80">
+          Most popular
+        </span>
 
-      <p class="mt-2 text-center text-xs text-slate-600/80 dark:text-slate-400/80">
-        Pricing varies by message volume, properties, and integrations. We’ll share an exact quote after a short scoping call.
-      </p>
+        <div class="text-xs uppercase tracking-wide text-slate-600/90">2–10 properties</div>
+        <h3 class="mt-1 font-extrabold text-2xl">Multi-property</h3>
+        <div class="mt-1 text-sm text-slate-700/90">
+          <span class="font-semibold">From ₹Y,999 / month</span>
+          <span class="mx-1">·</span>
+          Includes 2 properties
+          <span class="mx-1">·</span>
+          +₹1,000 / additional property
+        </div>
+
+        <ul class="mt-4 space-y-2 text-slate-800/95">
+          <li>• Everything in Single</li>
+          <li>• Upsell catalog (early check-in, breakfast, late checkout)</li>
+          <li>• Property-aware routing &amp; request SLAs</li>
+          <li>• Live KPIs (check-in on-time %, request TTR, reviews)</li>
+        </ul>
+
+        <p class="mt-4 text-sm rounded-lg px-3 py-2 ring-1 ring-white/30 bg-white/65">
+          <strong>Extended support</strong> — business-hours response with <strong>after-hours on-call</strong> for urgent
+          deliverability/outage issues. Proactive monitoring of template approvals &amp; link hygiene.
+          <em class="block mt-1 text-[12px] text-slate-600/90">24/7 coverage available on request.</em>
+        </p>
+
+        <div class="mt-5 space-y-3">
+          <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+              <li>Shared template library + local overrides (house rules, timings)</li>
+              <li>Upsell items &amp; policies (pricing, cut-offs)</li>
+              <li>SLA matrix, request categories &amp; escalation rules</li>
+            </ul>
+          </details>
+          <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+              <li>KPI review + one optimization/month (cadence, copy, upsell placement)</li>
+              <li>Template lifecycle &amp; compliance management</li>
+              <li>Benchmarking across properties; rollout of winning changes</li>
+            </ul>
+          </details>
+          <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Limits &amp; notes</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+              <li>Up to <strong>3,000 messages / month</strong> (then ₹X / 100 messages)</li>
+              <li>Includes 2 properties; +₹1,000 / extra property</li>
+              <li><strong>WhatsApp/Meta fees billed separately</strong> by your BSP/Meta</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+
+      <!-- Enterprise -->
+      <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+        <div class="text-xs uppercase tracking-wide text-slate-600/90">Chains &amp; hospitality groups</div>
+        <h3 class="mt-1 font-extrabold text-2xl">Enterprise</h3>
+        <div class="mt-1 text-sm text-slate-700/90"><span class="font-semibold">Custom</span></div>
+
+        <ul class="mt-4 space-y-2 text-slate-800/95">
+          <li>• Everything in Multi-property</li>
+          <li>• PMS/CRM/Channel integrations &amp; SSO</li>
+          <li>• Brand &amp; template governance at scale</li>
+          <li>• Network analytics, SLAs &amp; executive roll-ups</li>
+        </ul>
+
+        <div class="mt-5 space-y-3">
+          <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+              <li>Network data model &amp; shared asset library</li>
+              <li>Onboarding playbook &amp; change management</li>
+              <li>Executive dashboards (property &amp; roll-up)</li>
+            </ul>
+          </details>
+          <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+              <li>Quarterly optimization sprints</li>
+              <li>SLAs &amp; on-call for urgent incidents</li>
+              <li>Template lifecycle &amp; compliance at scale</li>
+            </ul>
+          </details>
+          <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Limits &amp; notes</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+              <li>Priced per property; message caps sized to network volume</li>
+              <li>Central governance with selective local overrides</li>
+              <li><strong>WhatsApp/Meta fees billed separately</strong> by your BSP/Meta</li>
+            </ul>
+          </details>
+        </div>
+      </div>
     </div>
-  </section>
+
+    <!-- Single centered CTA -->
+    <div class="mt-8 flex justify-center">
+      <a href="/contact/" class="btn btn-primary">Book a 10-min demo</a>
+    </div>
+
+    <!-- Risk reducers (centered) -->
+    <div class="mt-6 max-w-3xl mx-auto text-center space-y-2">
+      <p class="text-sm text-slate-700/85 dark:text-slate-300/85">Cancel anytime. No engineering required.</p>
+      <p class="text-sm text-slate-700/85 dark:text-slate-300/85"><strong>WhatsApp/Meta API &amp; conversation fees are billed separately</strong> by your BSP/Meta to your property/group.</p>
+      <p class="text-sm text-slate-700/85 dark:text-slate-300/85">Discounts available for quarterly/annual prepay. Founding &amp; volume-based pricing—talk to us.</p>
+      <p class="text-sm text-slate-700/85 dark:text-slate-300/85">Pricing varies by message volume, properties, and integrations. We’ll share an exact quote after a short scoping call.</p>
+    </div>
+
+    <!-- Pricing FAQ -->
+    <div class="mt-10 max-w-4xl mx-auto">
+      <h3 class="text-xl font-bold text-center">Pricing FAQ</h3>
+      <div class="mt-4 space-y-3">
+        <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+          <summary class="cursor-pointer font-semibold">Do you provide 24/7 support?</summary>
+          <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+            Single property includes <strong>business-hours support</strong>. Multi-property includes <strong>business-hours + after-hours on-call</strong> for urgent deliverability/outage issues.
+            <strong>24/7 coverage</strong> is available on request for chains.
+          </p>
+        </details>
+
+        <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+          <summary class="cursor-pointer font-semibold">How do property counts affect pricing?</summary>
+          <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+            Multi-property pricing includes <strong>2 properties</strong>, then <strong>+₹1,000 / additional property</strong> each month. Enterprise is scoped for chains and hospitality groups.
+          </p>
+        </details>
+
+        <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+          <summary class="cursor-pointer font-semibold">What happens if we exceed message caps?</summary>
+          <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+            We’ll notify you at 80% usage. Overages are billed at <strong>₹X / 100 messages</strong>, or we can right-size your plan.
+          </p>
+        </details>
+
+        <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+          <summary class="cursor-pointer font-semibold">Are WhatsApp/Meta fees included?</summary>
+          <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+            No—<strong>API &amp; conversation fees are billed separately</strong> by your BSP/Meta directly to your property/group.
+          </p>
+        </details>
+
+        <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+          <summary class="cursor-pointer font-semibold">Can we get discounts for longer commitments?</summary>
+          <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+            Yes—<strong>quarterly/annual prepay discounts</strong> are available. We’re flexible for founding and volume-based pricing.
+          </p>
+        </details>
+
+        <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+          <summary class="cursor-pointer font-semibold">Do you integrate with our PMS/Channel Manager?</summary>
+          <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+            We work alongside your PMS/Channel tools; direct integrations can be scoped as <strong>paid projects</strong>. We always keep Utility vs Marketing templates policy-safe.
+          </p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- FAQs -->
   <section class="py-10">
