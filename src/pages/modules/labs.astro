@@ -256,70 +256,174 @@ import Layout from '~/layouts/PageLayout.astro';
     </div>
   </section>
 
-<!-- Pricing (Option B: one CTA under the grid) -->
-<section id="pricing" class="py-12 border-t border-white/20">
+<!-- Pricing (Labs) -->
+<section id="pricing" class="py-12 border-t border-white/20 dark:border-slate-800/60">
   <div class="max-w-6xl mx-auto px-4">
     <h2 class="text-2xl md:text-3xl font-bold text-center">Pricing</h2>
-    <p class="mt-2 text-center text-slate-700/90">
+    <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
       Simple plans by center size. Start with Labs—add other modules as you grow.
     </p>
 
     <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       <!-- Single center -->
-      <div class="rounded-2xl p-6 ring-1 ring-white/30 bg-white/30 backdrop-blur">
-        <h3 class="font-semibold">Single center</h3>
-        <p class="mt-1 text-sm text-slate-600">Standalone diagnostics/radiology</p>
-        <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
-        <ul class="mt-4 space-y-2 text-sm">
+      <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+        <div class="text-xs uppercase tracking-wide text-slate-600/90 dark:text-slate-400/90">Standalone diagnostics/radiology</div>
+        <h3 class="mt-1 font-extrabold text-2xl">Single center</h3>
+        <div class="mt-1 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <span class="font-semibold">Contact sales</span>
+        </div>
+
+        <ul class="mt-4 space-y-2 text-slate-800/95 dark:text-slate-200/95">
           <li>• Prep instructions + reminders (EN + Malayalam)</li>
           <li>• Confirmations, rescheduling, scan-day check-ins</li>
           <li>• Results notifications (secure link / pickup)</li>
           <li>• Basic reports &amp; Interakt tags → Sheet</li>
         </ul>
+
+        <!-- Collapsed details -->
+        <div class="mt-5 space-y-3">
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+              <li>WABA/Interakt guidance &amp; template submission</li>
+              <li>Bilingual prep templates (fasting/contrast)</li>
+              <li>Reminder windows &amp; clinic details (Maps, hours)</li>
+            </ul>
+          </details>
+
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+              <li>Template maintenance &amp; timing tweaks (prep nudges)</li>
+              <li>KPI check (prep ack, no-shows, TAT) + small tuning</li>
+              <li>Deliverability &amp; compliance guardrails</li>
+            </ul>
+          </details>
+
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Limits &amp; notes</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+              <li>Message caps sized to center volume</li>
+              <li>One location</li>
+              <li><strong>WhatsApp/Meta API &amp; conversation fees billed separately</strong> by your BSP/Meta</li>
+            </ul>
+          </details>
+        </div>
       </div>
 
       <!-- Multi-center (highlight) -->
-      <div class="rounded-2xl p-6 ring-2 ring-blue-300/40 bg-white/40 backdrop-blur shadow-lg">
-        <h3 class="font-semibold">Multi-center</h3>
-        <p class="mt-1 text-sm text-slate-600">2–10 centers</p>
-        <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
-        <ul class="mt-4 space-y-2 text-sm">
+      <div class="group rounded-2xl p-6 md:p-7 ring-2 ring-blue-400/50 dark:ring-blue-300/40 bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-lg relative overflow-hidden">
+        <span class="absolute top-3 right-3 text-[11px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full ring-1 ring-black/10 bg-white/80 dark:bg-slate-900/70">
+          Most popular
+        </span>
+
+        <div class="text-xs uppercase tracking-wide text-slate-600/90 dark:text-slate-400/90">2–10 centers</div>
+        <h3 class="mt-1 font-extrabold text-2xl">Multi-center</h3>
+        <div class="mt-1 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <span class="font-semibold">Contact sales</span>
+        </div>
+
+        <ul class="mt-4 space-y-2 text-slate-800/95 dark:text-slate-200/95">
           <li>• Everything in Single</li>
           <li>• Multi-site routing &amp; capacity balancing</li>
           <li>• Slot-bank for manual rescheduling</li>
           <li>• KPI dashboard (prep, TAT, utilization)</li>
         </ul>
+
+        <!-- Support / value line -->
+        <p class="mt-4 text-sm rounded-lg px-3 py-2 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/65 dark:bg-slate-900/30">
+          Extended support via WhatsApp &amp; email — business-hours response, with after-hours on-call for urgent deliverability or outage issues. Proactive monitoring of template approvals &amp; link hygiene.
+        </p>
+
+        <div class="mt-5 space-y-3">
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+              <li>Multi-site template set (shared + local details)</li>
+              <li>Routing rules &amp; slot-bank config</li>
+              <li>Prep/scan-day windows, grace &amp; escalation rules</li>
+            </ul>
+          </details>
+
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+              <li>Monthly KPI review + 1 optimization change</li>
+              <li>Template maintenance &amp; compliance watch</li>
+              <li>Roll-out of winning tweaks across centers</li>
+            </ul>
+          </details>
+
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Limits &amp; notes</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+              <li>Message caps sized to network volume</li>
+              <li>One brand; per-center specifics allowed</li>
+              <li><strong>WhatsApp/Meta API &amp; conversation fees billed separately</strong> by your BSP/Meta</li>
+            </ul>
+          </details>
+        </div>
       </div>
 
       <!-- Enterprise -->
-      <div class="rounded-2xl p-6 ring-1 ring-white/30 bg-white/30 backdrop-blur">
-        <h3 class="font-semibold">Enterprise</h3>
-        <p class="mt-1 text-sm text-slate-600">Hospital groups &amp; networks</p>
-        <div class="mt-4 text-3xl font-extrabold tracking-tight">Custom</div>
-        <ul class="mt-4 space-y-2 text-sm">
+      <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
+        <div class="text-xs uppercase tracking-wide text-slate-600/90 dark:text-slate-400/90">Hospital groups &amp; networks</div>
+        <h3 class="mt-1 font-extrabold text-2xl">Enterprise</h3>
+        <div class="mt-1 text-sm text-slate-700/90 dark:text-slate-300/90"><span class="font-semibold">Custom</span></div>
+
+        <ul class="mt-4 space-y-2 text-slate-800/95 dark:text-slate-200/95">
           <li>• Everything in Multi-center</li>
           <li>• LIS/RIS/PACS integrations &amp; SSO</li>
           <li>• Template governance &amp; audit trails</li>
           <li>• Multi-location analytics &amp; SLAs</li>
         </ul>
+
+        <div class="mt-5 space-y-3">
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+              <li>Enterprise data model &amp; shared asset library</li>
+              <li>Governance SOP (Utility vs Marketing, brand guardrails)</li>
+              <li>Dashboards: per-center + executive roll-up</li>
+            </ul>
+          </details>
+
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+              <li>Executive summary across centers (prep ack, TAT, no-shows)</li>
+              <li>Benchmarking &amp; quarterly optimization sprints</li>
+              <li>SLAs &amp; on-call for urgent deliverability/outages</li>
+            </ul>
+          </details>
+
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Limits &amp; notes</summary>
+            <ul class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90 list-disc pl-5 space-y-1">
+              <li>Priced per network scope &amp; volume</li>
+              <li>Central governance with selective local overrides</li>
+              <li><strong>WhatsApp/Meta API &amp; conversation fees billed separately</strong> by your BSP/Meta</li>
+            </ul>
+          </details>
+        </div>
       </div>
     </div>
 
-    <!-- Single, centered CTA for the pricing section -->
+    <!-- Single, centered CTA under the grid -->
     <div class="mt-6 text-center">
       <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
     </div>
 
     <!-- Risk reducers (centered) -->
     <div class="mt-6 max-w-3xl mx-auto text-center space-y-2">
-      <p class="text-xs text-slate-700/85">Cancel anytime. No engineering required.</p>
-      <p class="text-xs text-slate-700/85">
+      <p class="text-xs text-slate-700/85 dark:text-slate-300/85">Cancel anytime. No engineering required.</p>
+      <p class="text-xs text-slate-700/85 dark:text-slate-300/85">
         <strong>WhatsApp/Meta API &amp; conversation fees are billed separately</strong> by your BSP/Meta to your center.
       </p>
-      <p class="text-xs text-slate-700/85">
+      <p class="text-xs text-slate-700/85 dark:text-slate-300/85">
         Discounts available for quarterly/annual prepay. Founding &amp; volume-based pricing available—talk to us.
       </p>
-      <p class="text-xs text-slate-700/85">
+      <p class="text-xs text-slate-700/85 dark:text-slate-300/85">
         Pricing varies by message volume, centers, and integrations. We’ll share an exact quote after a short scoping call.
       </p>
     </div>
