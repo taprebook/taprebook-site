@@ -6,6 +6,7 @@ export const headerData = {
       text: 'Solutions',
       links: [
         { text: 'Reception', href: '/modules/reception/' },
+        { text: 'Reception (Dental)', href: '/modules/reception-dental/' }, // NEW
         { text: 'Labs', href: '/modules/labs/' },
         { text: 'Pharma', href: '/modules/pharma/' },
         { text: 'DentalLab', href: '/modules/dentallab/' },
@@ -40,6 +41,7 @@ export const footerData = {
       title: 'Solutions',
       links: [
         { text: 'Reception', href: '/modules/reception/' },
+        { text: 'Reception (Dental)', href: '/modules/reception-dental/' }, // NEW
         { text: 'Labs', href: '/modules/labs/' },
         { text: 'Pharma', href: '/modules/pharma/' },
         { text: 'DentalLab', href: '/modules/dentallab/' },
@@ -65,3 +67,4 @@ export const footerData = {
   footNote: `© ${new Date().getFullYear()} TapRebook. All rights reserved.`,
   theme: 'light', // keep the footer styled for light mode
 };
+
