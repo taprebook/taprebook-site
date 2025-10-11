@@ -38,21 +38,21 @@ import Layout from '~/layouts/PageLayout.astro';
       </div>
 
       <!-- Right: Hero image -->
-<div class="relative rounded-2xl overflow-hidden bg-white/55 ring-1 ring-white/40 shadow-lg backdrop-blur-sm">
-  <img
-    src="/images/AI_campus.png"
-    alt="AI-assisted school campus coordination on WhatsApp"
-    class="block w-full h-full object-cover"
-    width="1600"
-    height="1000"
-    loading="eager"
-    decoding="async"
-    sizes="(min-width: 1024px) 520px, 90vw"
-  />
-  <!-- soft edge so it never melts into the page -->
-  <div class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/40 via-transparent to-transparent"></div>
-</div>
-
+      <div class="relative rounded-2xl overflow-hidden bg-white/55 ring-1 ring-white/40 shadow-lg backdrop-blur-sm">
+        <img
+          src="/images/AI_campus.png"
+          alt="AI-assisted school campus coordination on WhatsApp"
+          class="block w-full h-full object-cover"
+          width="1600"
+          height="1000"
+          loading="eager"
+          decoding="async"
+          sizes="(min-width: 1024px) 520px, 90vw"
+        />
+        <!-- soft edge so it never melts into the page -->
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/40 via-transparent to-transparent"></div>
+      </div>
+    </div>
   </section>
 
   <!-- KPIs -->
@@ -102,19 +102,19 @@ import Layout from '~/layouts/PageLayout.astro';
 
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
-          <h3 class="font-semibold">Notices & circulars</h3>
+          <h3 class="font-semibold">Notices &amp; circulars</h3>
           <p class="mt-1 text-sm">Broadcast to class/section; read receipts and acknowledgements.</p>
         </div>
         <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
-          <h3 class="font-semibold">Fees & reminders</h3>
+          <h3 class="font-semibold">Fees &amp; reminders</h3>
           <p class="mt-1 text-sm">Due dates, receipts, and nudges; link to your payment portal.</p>
         </div>
         <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
-          <h3 class="font-semibold">Attendance & leaves</h3>
+          <h3 class="font-semibold">Attendance &amp; leaves</h3>
           <p class="mt-1 text-sm">Daily summaries; one-tap leave requests with reason codes.</p>
         </div>
         <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
-          <h3 class="font-semibold">Events & trips</h3>
+          <h3 class="font-semibold">Events &amp; trips</h3>
           <p class="mt-1 text-sm">Collect RSVPs; share checklists; day-of updates and maps.</p>
         </div>
         <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
@@ -122,7 +122,7 @@ import Layout from '~/layouts/PageLayout.astro';
           <p class="mt-1 text-sm">Route questions or issues to the right teacher or office.</p>
         </div>
         <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
-          <h3 class="font-semibold">Reports & tags</h3>
+          <h3 class="font-semibold">Reports &amp; tags</h3>
           <p class="mt-1 text-sm">Interakt tags → Sheets/ERP; audit trails and compliance logs.</p>
         </div>
       </div>
@@ -147,7 +147,7 @@ import Layout from '~/layouts/PageLayout.astro';
           <p class="mt-1 text-sm">Roster sync, fee status, attendance logs, and exports.</p>
         </div>
         <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
-          <h3 class="font-semibold">Maps & links</h3>
+          <h3 class="font-semibold">Maps &amp; links</h3>
           <p class="mt-1 text-sm">Event locations, trip checklists, payment portal.</p>
         </div>
       </div>
@@ -242,63 +242,205 @@ import Layout from '~/layouts/PageLayout.astro';
       </p>
 
       <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- Small -->
+
+        <!-- Small (Kochi-tuned) -->
         <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
-          <h3 class="font-semibold">Small</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Upto ~500 students</p>
-          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
-          <ul class="mt-4 space-y-2 text-sm">
+          <div class="text-xs uppercase tracking-wide text-slate-600/90">Up to ~500 students</div>
+          <h3 class="mt-1 font-extrabold text-2xl">Small</h3>
+          <div class="mt-1 text-sm text-slate-700/90">
+            <span class="font-semibold">From ₹3,999 / month</span>
+          </div>
+
+          <ul class="mt-4 space-y-2 text-slate-800/95">
             <li>• Notices & circulars with acknowledgements</li>
-            <li>• Fee reminders & receipts (link to portal)</li>
+            <li>• Fee reminders & receipts (portal link)</li>
             <li>• Attendance summaries & leave requests</li>
             <li>• Basic reports & Interakt tags → Sheet</li>
           </ul>
-          <div class="mt-6 flex gap-2">
-            <a class="btn btn-primary w-full" href="/contact/">Talk to us</a>
+
+          <!-- Collapsed details -->
+          <div class="mt-5 space-y-3">
+            <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+                <li>Interakt/WABA connection & template submission</li>
+                <li>Roster import (ERP/Sheet) & class/section mapping</li>
+                <li>Saved replies & escalation routing</li>
+              </ul>
+            </details>
+            <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+                <li>Template maintenance & timing tweaks</li>
+                <li>Monthly KPI snapshot (reads, acks, fee payments)</li>
+                <li>Deliverability & compliance guardrails</li>
+              </ul>
+            </details>
+            <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Limits & notes</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+                <li>Up to <strong>2,000 messages / month</strong></li>
+                <li>One campus</li>
+                <li><strong>WhatsApp/Meta API & conversation fees billed separately</strong> by your BSP/Meta</li>
+              </ul>
+            </details>
           </div>
         </div>
 
-        <!-- Medium -->
-        <div class="rounded-2xl p-6 ring-2 ring-blue-300/40 dark:ring-blue-300/30 bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-lg">
-          <h3 class="font-semibold">Medium</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">~500–2000 students</p>
-          <div class="mt-4 text-3xl font-extrabold tracking-tight">Contact sales</div>
-          <ul class="mt-4 space-y-2 text-sm">
+        <!-- Medium — MOST POPULAR -->
+        <div class="group rounded-2xl p-6 md:p-7 ring-2 ring-blue-400/50 bg-white/40 dark:bg-slate-900/30 backdrop-blur shadow-lg relative overflow-hidden">
+          <span class="absolute top-3 right-3 text-[11px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full ring-1 ring-black/10 bg-white/80">
+            Most popular
+          </span>
+
+          <div class="text-xs uppercase tracking-wide text-slate-600/90">~500–2,000 students</div>
+          <h3 class="mt-1 font-extrabold text-2xl">Medium</h3>
+          <div class="mt-1 text-sm text-slate-700/90">
+            <span class="font-semibold">From ₹8,499 / month</span>
+            <span class="mx-1">·</span>
+            Includes 1,500 students
+            <span class="mx-1">·</span>
+            +₹400 / additional 100 students
+          </div>
+
+          <ul class="mt-4 space-y-2 text-slate-800/95">
             <li>• Everything in Small</li>
             <li>• Class/section segmentation & audit logs</li>
             <li>• Event/trip RSVPs with checklists</li>
-            <li>• KPI dashboard (reads, ack, payments)</li>
+            <li>• KPI dashboard (reads, acks, payments)</li>
           </ul>
-          <div class="mt-6 flex gap-2">
-            <a class="btn btn-primary w-full" href="/contact/">Contact sales</a>
+
+          <p class="mt-4 text-sm rounded-lg px-3 py-2 ring-1 ring-white/30 bg-white/65">
+            <strong>Extended support</strong> via WhatsApp & email — business-hours response,
+            with <strong>after-hours on-call</strong> for urgent deliverability/outage issues.
+            Proactive monitoring of template approvals & link hygiene.
+            <em class="block mt-1 text-[12px] text-slate-600/90">24/7 coverage available on request.</em>
+          </p>
+
+          <div class="mt-5 space-y-3">
+            <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+                <li>Roster sync & class/section tags</li>
+                <li>Notice/fee templates (EN + optional MAL)</li>
+                <li>Escalation rules & saved replies</li>
+              </ul>
+            </details>
+            <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+                <li>KPI review + one optimization/month</li>
+                <li>Template maintenance & compliance guardrails</li>
+                <li>Staff enablement & saved-reply refinements</li>
+              </ul>
+            </details>
+            <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Limits & notes</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+                <li>Up to <strong>5,000 messages / month</strong> (then ₹150 / 100 messages)</li>
+                <li>Includes 1 campus; multi-campus in Network</li>
+                <li><strong>WhatsApp/Meta API & conversation fees billed separately</strong> by your BSP/Meta</li>
+              </ul>
+            </details>
           </div>
         </div>
 
         <!-- Large / Network -->
         <div class="rounded-2xl p-6 ring-1 ring-white/30 dark:ring-slate-800/60 bg-white/30 dark:bg-slate-900/25 backdrop-blur">
-          <h3 class="font-semibold">Large / Network</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">2000+ or multi-campus</p>
-          <div class="mt-4 text-3xl font-extrabold tracking-tight">Custom</div>
-          <ul class="mt-4 space-y-2 text-sm">
+          <div class="text-xs uppercase tracking-wide text-slate-600/90">2,000+ or multi-campus</div>
+          <h3 class="mt-1 font-extrabold text-2xl">Network</h3>
+          <div class="mt-1 text-sm text-slate-700/90"><span class="font-semibold">Custom</span></div>
+
+          <ul class="mt-4 space-y-2 text-slate-800/95">
             <li>• Everything in Medium</li>
             <li>• ERP/Sheet integrations & SSO</li>
             <li>• Template governance & role-based access</li>
-            <li>• Multi-location analytics & SLAs</li>
+            <li>• Multi-location analytics, SLAs & executive roll-ups</li>
           </ul>
-          <div class="mt-6 flex gap-2">
-            <a class="btn btn-primary w-full" href="/contact/">Request quote</a>
+
+          <div class="mt-5 space-y-3">
+            <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Setup (one-time)</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+                <li>Network data model & shared assets</li>
+                <li>Onboarding playbook & change management</li>
+                <li>Executive dashboards (campus & roll-up)</li>
+              </ul>
+            </details>
+            <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Ongoing monthly</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+                <li>Quarterly optimization sprints</li>
+                <li>SLAs & on-call for urgent incidents</li>
+                <li>Template lifecycle & compliance at scale</li>
+              </ul>
+            </details>
+            <details class="rounded-xl ring-1 ring-white/30 bg-white/25 p-4 [&_summary]:list-none">
+              <summary class="cursor-pointer font-semibold">Limits & notes</summary>
+              <ul class="mt-2 text-sm text-slate-700/90 list-disc pl-5 space-y-1">
+                <li>Priced per campus; message caps sized to network</li>
+                <li>Central governance with selective local overrides</li>
+                <li><strong>WhatsApp/Meta API & conversation fees billed separately</strong> by your BSP/Meta</li>
+              </ul>
+            </details>
           </div>
         </div>
       </div>
 
-      <!-- Risk reducer -->
-      <p class="mt-4 text-center text-xs text-slate-700/85 dark:text-slate-300/85">
-        Cancel anytime. No engineering required.
-      </p>
+      <!-- Single centered CTA -->
+      <div class="mt-8 flex justify-center">
+        <a href="/contact/" class="btn btn-primary">Book a 10-min demo</a>
+      </div>
 
-      <p class="mt-2 text-center text-xs text-slate-600/80 dark:text-slate-400/80">
-        Pricing varies by message volume, segmentation needs, and integrations. We’ll share an exact quote after a short scoping call.
-      </p>
+      <!-- Risk reducers (centered) -->
+      <div class="mt-6 max-w-3xl mx-auto text-center space-y-2">
+        <p class="text-sm text-slate-700/85 dark:text-slate-300/85">Cancel anytime. No engineering required.</p>
+        <p class="text-sm text-slate-700/85 dark:text-slate-300/85"><strong>WhatsApp/Meta API &amp; conversation fees are billed separately</strong> by your BSP/Meta to your school.</p>
+        <p class="text-sm text-slate-700/85 dark:text-slate-300/85">Discounts available for quarterly/annual prepay. Founding &amp; volume-based pricing—talk to us.</p>
+        <p class="text-sm text-slate-700/85 dark:text-slate-300/85">Pricing varies by message volume, student count, and integrations. We’ll share an exact quote after a short scoping call.</p>
+      </div>
+
+      <!-- Pricing FAQ -->
+      <div class="mt-10 max-w-4xl mx-auto">
+        <h3 class="text-xl font-bold text-center">Pricing FAQ</h3>
+        <div class="mt-4 space-y-3">
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Do you provide 24/7 support?</summary>
+            <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+              Small includes <strong>business-hours support</strong>. Medium adds <strong>business-hours + after-hours on-call</strong> for urgent deliverability/outage issues.
+              <strong>24/7 coverage</strong> is available on request for Network.
+            </p>
+          </details>
+
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">How do student counts affect pricing?</summary>
+            <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+              Medium pricing includes <strong>1,500 students</strong>, then <strong>+₹400 / additional 100 students</strong> each month. Network is scoped for multi-campus groups.
+            </p>
+          </details>
+
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">What happens if we exceed message caps?</summary>
+            <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+              We’ll notify you at 80% usage. Overages are billed at <strong>₹150 / 100 messages</strong>, or we can right-size your plan.
+            </p>
+          </details>
+
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Are WhatsApp/Meta fees included?</summary>
+            <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+              No—<strong>API &amp; conversation fees are billed separately</strong> by your BSP/Meta directly to your school.
+            </p>
+          </details>
+
+          <details class="rounded-xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 p-4 [&_summary]:list-none">
+            <summary class="cursor-pointer font-semibold">Can we get discounts for longer commitments?</summary>
+            <p class="mt-2 text-sm text-slate-700/90 dark:text-slate-300/90">
+              Yes—<strong>quarterly/annual prepay discounts</strong> are available. We’re flexible for founding and volume-based pricing.
+            </p>
+          </details>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -367,4 +509,5 @@ import Layout from '~/layouts/PageLayout.astro';
     </div>
   </section>
 </Layout>
+
 
