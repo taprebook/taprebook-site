@@ -46,40 +46,39 @@ import Layout from '~/layouts/PageLayout.astro';
         can start small, expand as needed, and maintain a consistent experience across every location.
       </p>
 
-      <!-- Signature (original size; slightly less margin below) -->
-      <div class="mt-12 mb-0">
-        <img
-          src="/images/sunil-signature.png"
-          alt="Signature of Sunil Kaimootil"
-          class="w-48 md:w-64 lg:w-72 h-auto opacity-90 select-none pointer-events-none drop-shadow-sm"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+<!-- Signature (centered) -->
+<div class="mt-4 mb-0">
+  <img
+    src="/images/sunil-signature.png"
+    alt="Signature of Sunil Kaimootil"
+    class="mx-auto block w-48 md:w-64 lg:w-72 h-auto opacity-90 select-none pointer-events-none drop-shadow-sm"
+    loading="lazy"
+    decoding="async"
+  />
+</div>
 
-      <!-- Headshot + founder line (tight to signature) -->
-      <div class="-mt-1 flex items-center gap-3">
-        <picture class="shrink-0">
-          {/*
-          Uncomment these two once you actually add the files:
-          <source srcset="/images/headshot.avif" type="image/avif" />
-          <source srcset="/images/headshot.webp" type="image/webp" />
-          */}
-          <img
-            src="/images/headshot.jpg"
-            alt="Sunil Kaimootil, Founder"
-            width="80" height="80"
-            class="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover ring-1 ring-black/10 shadow-sm block"
-            loading="lazy"
-            decoding="async"
-          />
-        </picture>
-        <div class="leading-tight">
-          <div class="font-semibold text-slate-900">Sunil Kaimootil</div>
-          <div class="text-sm text-slate-600">Founder, TapRebook</div>
-        </div>
-      </div>
-    </div>
+<!-- Headshot + founder line (centered under signature; tighten spacing with -mt-6/-mt-8) -->
+<div class="-mt-6 w-fit mx-auto flex items-center gap-3">
+  <picture class="shrink-0">
+    <!-- If you add these files later, uncomment:
+    <source srcset="/images/headshot.avif" type="image/avif" />
+    <source srcset="/images/headshot.webp" type="image/webp" />
+    -->
+    <img
+      src="/images/headshot.jpg"
+      alt="Sunil Kaimootil, Founder"
+      width="80" height="80"
+      class="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover ring-1 ring-black/10 shadow-sm block"
+      loading="lazy"
+      decoding="async"
+    />
+  </picture>
+  <div class="leading-tight">
+    <div class="font-semibold text-slate-900">Sunil Kaimootil</div>
+    <div class="text-sm text-slate-600">Founder, TapRebook</div>
+  </div>
+</div>
+
   </section>
 
   <!-- Three pillars (icon cards) -->
