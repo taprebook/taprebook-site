@@ -46,8 +46,8 @@ import Layout from '~/layouts/PageLayout.astro';
         can start small, expand as needed, and maintain a consistent experience across every location.
       </p>
 
-      <!-- Signature (original size) -->
-      <div class="mt-4">
+      <!-- Signature (original size; slightly less margin below) -->
+      <div class="mt-4 mb-2">
         <img
           src="/images/sunil-signature.png"
           alt="Signature of Sunil Kaimootil"
@@ -57,16 +57,19 @@ import Layout from '~/layouts/PageLayout.astro';
         />
       </div>
 
-      <!-- Headshot + founder line (tight spacing under signature) -->
-      <div class="mt-3 flex items-center gap-3">
+      <!-- Headshot + founder line (tight to signature) -->
+      <div class="-mt-1 flex items-center gap-3">
         <picture class="shrink-0">
+          {/*
+          Uncomment these two once you actually add the files:
           <source srcset="/images/headshot.avif" type="image/avif" />
           <source srcset="/images/headshot.webp" type="image/webp" />
+          */}
           <img
             src="/images/headshot.jpg"
             alt="Sunil Kaimootil, Founder"
             width="80" height="80"
-            class="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover ring-1 ring-black/10 shadow-sm"
+            class="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover ring-1 ring-black/10 shadow-sm block"
             loading="lazy"
             decoding="async"
           />
@@ -126,4 +129,3 @@ import Layout from '~/layouts/PageLayout.astro';
     </div>
   </section>
 </Layout>
-
