@@ -10,24 +10,17 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: TapRebook
-    template: '%s — TapRebook'
+    default: "TapRebook — WhatsApp coordination for businesses"
+    template: "%s • TapRebook"
   description: "Automate reminders, confirmations, queue updates, and follow-ups on WhatsApp."
-  robots:
-    index: true
-    follow: true
   openGraph:
-    site_name: TapRebook
     images:
-      - url: '~/images/taprebook-og.png'
+      - url: "/images/taprebook-og.png"
         width: 1200
-        height: 628
-    type: website
+        height: 630
   twitter:
-    handle:
-    site:
-    cardType: summary_large_image
-    image: '~/images/taprebook-og.png'
+    cardType: "summary_large_image"
+    image: "/images/taprebook-og.png"
 
 i18n:
   language: en
