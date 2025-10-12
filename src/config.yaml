@@ -12,14 +12,14 @@ metadata:
   title:
     default: TapRebook
     template: '%s — TapRebook'
-  description: "Automated WhatsApp reception that keeps schedules full—reduce no-shows, speed up scheduling/rescheduling, and streamline patient/customer messaging."
+  description: "Automate reminders, confirmations, queue updates, and follow-ups on WhatsApp."
   robots:
     index: true
     follow: true
   openGraph:
     site_name: TapRebook
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/images/taprebook-og.png'
         width: 1200
         height: 628
     type: website
@@ -27,6 +27,7 @@ metadata:
     handle:
     site:
     cardType: summary_large_image
+    image: '~/images/taprebook-og.png'
 
 i18n:
   language: en
