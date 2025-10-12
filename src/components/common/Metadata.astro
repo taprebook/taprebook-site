@@ -21,12 +21,16 @@ const {
   twitter = {},
 } = Astro.props;
 
-// Build merged SEO props (base -> defaults from config.yaml -> per-page overrides)
+// helper → make absolute using Astro.site
+const toAbs = (u?: string) =>
+  u && !u.startsWith('http') ? new URL(u, Astro.site).toString() : u;
+
+// Build merged SEO props
 const baseSeoProps: AstroSeoProps = merge(
   {
     title: '',
     titleTemplate: '%s',
-    canonical: canonical,
+    canonical,
     noindex: true,
     nofollow: true,
     description: undefined,
@@ -51,41 +55,49 @@ const baseSeoProps: AstroSeoProps = merge(
     twitter: METADATA?.twitter,
   },
   {
-    title: title,
+    title,
     titleTemplate: ignoreTitleTemplate ? '%s' : undefined,
-    canonical: canonical,
+    canonical,
     noindex: typeof robots?.index !== 'undefined' ? !robots.index : undefined,
     nofollow: typeof robots?.follow !== 'undefined' ? !robots.follow : undefined,
-    description: description,
+    description,
     openGraph: { url: canonical, ...openGraph },
-    twitter: twitter,
+    twitter,
   }
 );
 
-// Ensure a default Open Graph image + Twitter image if none present.
-// Put the file at /public/images/taprebook-og.png (1200x630).
-const DEFAULT_OG = '/images/taprebook-og.png';
+// Ensure default OG/Twitter images (absolute URLs)
+const DEFAULT_OG_REL = '/images/taprebook-og.png';
+const DEFAULT_OG = toAbs(DEFAULT_OG_REL);
+
 const hasOGImage =
   Array.isArray(baseSeoProps?.openGraph?.images) && baseSeoProps.openGraph.images.length > 0;
+
+const ogImages = (hasOGImage
+  ? baseSeoProps.openGraph.images
+  : [{ url: DEFAULT_OG!, width: 1200, height: 630 }]
+).map((img: any) => ({
+  ...img,
+  url: toAbs(img.url) || DEFAULT_OG!,
+}));
+
+const twitterImage =
+  (baseSeoProps as any)?.twitter?.image
+    ? toAbs((baseSeoProps as any).twitter.image)
+    : (ogImages[0] as any)?.url || DEFAULT_OG;
 
 const seoProps: AstroSeoProps = {
   ...baseSeoProps,
   openGraph: {
     ...baseSeoProps.openGraph,
-    images: hasOGImage
-      ? baseSeoProps.openGraph.images
-      : [{ url: DEFAULT_OG, width: 1200, height: 630 }],
+    images: ogImages,
   },
   twitter: {
     ...baseSeoProps.twitter,
     cardType: 'summary_large_image',
-    image:
-      (baseSeoProps as any)?.twitter?.image ??
-      (hasOGImage ? (baseSeoProps.openGraph.images?.[0] as any)?.url : DEFAULT_OG),
+    image: twitterImage,
   },
 };
 ---
 
 <AstroSeo {...seoProps} />
-
-
