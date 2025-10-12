@@ -6,7 +6,6 @@ import type { Props as AstroSeoProps } from '@astrolib/seo';
 import { SITE, METADATA, I18N } from 'astrowind:config';
 import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
-import { adaptOpenGraphImages } from '~/utils/images';
 
 export interface Props extends MetaData {
   dontUseTitleTemplate?: boolean;
@@ -22,9 +21,7 @@ const {
   twitter = {},
 } = Astro.props;
 
-/**
- * Build merged SEO props (base -> defaults from config.yaml -> per-page overrides)
- */
+// Build merged SEO props (base -> defaults from config.yaml -> per-page overrides)
 const baseSeoProps: AstroSeoProps = merge(
   {
     title: '',
@@ -65,10 +62,8 @@ const baseSeoProps: AstroSeoProps = merge(
   }
 );
 
-/**
- * Ensure a default Open Graph image + Twitter image if none present.
- * File must exist at /public/images/taprebook-og.png
- */
+// Ensure a default Open Graph image + Twitter image if none present.
+// Put the file at /public/images/taprebook-og.png (1200x630).
 const DEFAULT_OG = '/images/taprebook-og.png';
 const hasOGImage =
   Array.isArray(baseSeoProps?.openGraph?.images) && baseSeoProps.openGraph.images.length > 0;
@@ -91,11 +86,6 @@ const seoProps: AstroSeoProps = {
 };
 ---
 
-<AstroSeo
-  {...{
-    ...seoProps,
-    // keeps absolute URLs when needed
-    openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site),
-  }}
-/>
+<AstroSeo {...seoProps} />
+
 
