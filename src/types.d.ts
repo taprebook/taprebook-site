@@ -52,12 +52,12 @@ export interface Taxonomy {
 export interface MetaData {
   title?: string;
   ignoreTitleTemplate?: boolean;
-
   canonical?: string;
-
   robots?: MetaDataRobots;
-
   description?: string;
+
+  // ↓ Add this convenience field
+  image?: string;
 
   openGraph?: MetaDataOpenGraph;
   twitter?: MetaDataTwitter;
