@@ -1,13 +1,11 @@
 ---
 import merge from 'lodash.merge';
 import { AstroSeo } from '@astrolib/seo';
-
 import type { Props as AstroSeoProps } from '@astrolib/seo';
 
 import { SITE, METADATA, I18N } from 'astrowind:config';
 import type { MetaData } from '~/types';
 import { getCanonical } from '~/utils/permalinks';
-
 import { adaptOpenGraphImages } from '~/utils/images';
 
 export interface Props extends MetaData {
@@ -24,7 +22,8 @@ const {
   twitter = {},
 } = Astro.props;
 
-const seoProps: AstroSeoProps = merge(
+// 1) Build the merged SEO props (unchanged from your version)
+const baseSeoProps: AstroSeoProps = merge(
   {
     title: '',
     titleTemplate: '%s',
@@ -63,6 +62,34 @@ const seoProps: AstroSeoProps = merge(
     twitter: twitter,
   }
 );
+
+// 2) Ensure a default Open Graph image + Twitter image if none present
+const DEFAULT_OG = '/images/taprebook-og.png'; // put this file in /public/images/
+const hasOGImage = Array.isArray(baseSeoProps?.openGraph?.images) && baseSeoProps.openGraph.images.length > 0;
+
+const seoProps: AstroSeoProps = {
+  ...baseSeoProps,
+  openGraph: {
+    ...baseSeoProps.openGraph,
+    images: hasOGImage
+      ? baseSeoProps.openGraph.images
+      : [{ url: DEFAULT_OG, width: 1200, height: 630 }],
+  },
+  twitter: {
+    // Always prefer large image so WhatsApp/Twitter previews look right
+    cardType: 'summary_large_image',
+    // @astrolib/seo accepts `image` in twitter object
+    image:
+      (baseSeoProps as any)?.twitter?.image ??
+      (hasOGImage ? (baseSeoProps.openGraph.images?.[0] as any)?.url : DEFAULT_OG),
+    ...baseSeoProps.twitter,
+  },
+};
 ---
 
-<AstroSeo {...{ ...seoProps, openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site) }} />
+<AstroSeo
+  {...{
+    ...seoProps,
+    openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site),
+  }}
+/>
