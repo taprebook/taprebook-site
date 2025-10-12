@@ -14,12 +14,12 @@ metadata:
     follow: true
   openGraph:
     images:
-      - url: "https://taprebook.com/images/taprebook-og.png"
+      - url: "https://taprebook.com/images/taprebook-og-2.png"
         width: 1200
         height: 630
   twitter:
     cardType: "summary_large_image"
-    image: "https://taprebook.com/images/taprebook-og.png"
+    image: "https://taprebook.com/images/taprebook-og-2.png"
 
 i18n:
   language: en
