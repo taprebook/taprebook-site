@@ -22,7 +22,9 @@ const {
   twitter = {},
 } = Astro.props;
 
-// 1) Build the merged SEO props (unchanged from your version)
+/**
+ * Build merged SEO props (base -> defaults from config.yaml -> per-page overrides)
+ */
 const baseSeoProps: AstroSeoProps = merge(
   {
     title: '',
@@ -63,9 +65,13 @@ const baseSeoProps: AstroSeoProps = merge(
   }
 );
 
-// 2) Ensure a default Open Graph image + Twitter image if none present
-const DEFAULT_OG = '/images/taprebook-og.png'; // put this file in /public/images/
-const hasOGImage = Array.isArray(baseSeoProps?.openGraph?.images) && baseSeoProps.openGraph.images.length > 0;
+/**
+ * Ensure a default Open Graph image + Twitter image if none present.
+ * File must exist at /public/images/taprebook-og.png
+ */
+const DEFAULT_OG = '/images/taprebook-og.png';
+const hasOGImage =
+  Array.isArray(baseSeoProps?.openGraph?.images) && baseSeoProps.openGraph.images.length > 0;
 
 const seoProps: AstroSeoProps = {
   ...baseSeoProps,
@@ -76,13 +82,11 @@ const seoProps: AstroSeoProps = {
       : [{ url: DEFAULT_OG, width: 1200, height: 630 }],
   },
   twitter: {
-    // Always prefer large image so WhatsApp/Twitter previews look right
+    ...baseSeoProps.twitter,
     cardType: 'summary_large_image',
-    // @astrolib/seo accepts `image` in twitter object
     image:
       (baseSeoProps as any)?.twitter?.image ??
       (hasOGImage ? (baseSeoProps.openGraph.images?.[0] as any)?.url : DEFAULT_OG),
-    ...baseSeoProps.twitter,
   },
 };
 ---
@@ -90,6 +94,8 @@ const seoProps: AstroSeoProps = {
 <AstroSeo
   {...{
     ...seoProps,
+    // keeps absolute URLs when needed
     openGraph: await adaptOpenGraphImages(seoProps?.openGraph, Astro.site),
   }}
 />
+
