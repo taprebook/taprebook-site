@@ -26,9 +26,8 @@ i18n:
   language: en
   textDirection: ltr
 
-# ⬇️ Header / navigation
+# Header / navigation
 header:
-  # Main nav items
   nav:
     - text: Solutions
       ariaLabel: "TapRebook modules"
@@ -53,7 +52,6 @@ header:
       href: /about/
     - text: Contact
       href: /contact/
-  # Primary call-to-action button in the header
   cta:
     label: "Book a demo"
     href: /contact/
@@ -62,43 +60,38 @@ apps:
   blog:
     isEnabled: true
     postsPerPage: 6
-
     post:
       isEnabled: true
       permalink: '/%slug%'
       robots:
         index: true
-
     list:
       isEnabled: true
       pathname: 'blog'
       robots:
         index: true
-
     category:
       isEnabled: true
       pathname: 'category'
       robots:
         index: true
-
     tag:
       isEnabled: true
       pathname: 'tag'
       robots:
         index: false
-
     isRelatedPostsEnabled: true
     relatedPostsCount: 4
 
 analytics:
   vendors:
     googleAnalytics:
-      id: null # e.g., "G-XXXXXXXXXX" when you have one
+      id: null
 
 ui:
   theme: 'system' # "system" | "light" | "dark" | "light:only" | "dark:only"
 
-# ⬇️ Simple footer (edit later as you like)
+# Footer
 footer:
   message: "© {{2025}} TapRebook. All rights reserved."
   links:
@@ -112,3 +105,4 @@ footer:
   socials:
     - name: WhatsApp
       href: "https://wa.me/15303018709"
+
