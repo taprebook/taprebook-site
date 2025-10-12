@@ -4,29 +4,27 @@ site:
   base: '/'
   trailingSlash: false
 
-  # Add this only after Google Search Console gives you a value.
-  googleSiteVerificationId:
-
-# Default SEO metadata
 metadata:
   title:
     default: "TapRebook — WhatsApp coordination for businesses"
     template: "%s • TapRebook"
   description: "Automate reminders, confirmations, queue updates, and follow-ups on WhatsApp."
+  robots:
+    index: true
+    follow: true
   openGraph:
     images:
-      - url: "/images/taprebook-og.png"
+      - url: "https://taprebook.com/images/taprebook-og.png"
         width: 1200
         height: 630
   twitter:
     cardType: "summary_large_image"
-    image: "/images/taprebook-og.png"
+    image: "https://taprebook.com/images/taprebook-og.png"
 
 i18n:
   language: en
   textDirection: ltr
 
-# Header / navigation
 header:
   nav:
     - text: Solutions
@@ -89,9 +87,8 @@ analytics:
       id: null
 
 ui:
-  theme: 'system' # "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'system'
 
-# Footer
 footer:
   message: "© {{2025}} TapRebook. All rights reserved."
   links:
@@ -105,4 +102,3 @@ footer:
   socials:
     - name: WhatsApp
       href: "https://wa.me/15303018709"
-
