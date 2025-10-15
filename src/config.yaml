@@ -4,6 +4,9 @@ site:
   base: '/'
   trailingSlash: false
 
+company:
+  email: "hello@taprebook.com" 
+
 metadata:
   title:
     default: "TapRebook — WhatsApp coordination for businesses"
