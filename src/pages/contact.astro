@@ -1,6 +1,14 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-const FORM_ENDPOINT = 'https://formspree.io/f/xjkaeavd'; // <-- replace in Step 3
+import { SITE } from 'astrowind:config';
+
+const FORM_ENDPOINT = 'https://formspree.io/f/xjkaeavd'; // <-- replace in Step 3 if needed
+
+// Single source of truth for email (reads from src/config.yaml)
+const EMAIL =
+  SITE?.company?.email ||
+  SITE?.footer?.contact?.email ||
+  'hello@taprebook.com'; // fallback just in case
 ---
 
 <Layout
@@ -74,20 +82,21 @@ const FORM_ENDPOINT = 'https://formspree.io/f/xjkaeavd'; // <-- replace in Step 
       </p>
       <a class="btn btn-secondary" href={`https://wa.me/${import.meta.env.PUBLIC_WA_NUMBER}`}>WhatsApp us</a>
       <div class="mt-6 text-sm text-slate-500">
-        You can also email <a class="underline" href="mailto:hello@taprebook.com">hello@taprebook.com</a>.
+        You can also email
+        <a class="underline" href={`mailto:${EMAIL}`}>{EMAIL}</a>.
       </div>
     </aside>
   </section>
 
-<script is:inline>
-  // Prefill ?module=reception etc.
-  const params = new URLSearchParams(location.search);
-  const module = params.get('module');
-  if (module) {
-    const sel = document.querySelector('select[name="module"]');
-    if (sel) sel.value = module.charAt(0).toUpperCase() + module.slice(1);
-  }
-</script>
+  <script is:inline>
+    // Prefill ?module=reception etc.
+    const params = new URLSearchParams(location.search);
+    const module = params.get('module');
+    if (module) {
+      const sel = document.querySelector('select[name="module"]');
+      if (sel) sel.value = module.charAt(0).toUpperCase() + module.slice(1);
+    }
+  </script>
 
   <script is:inline>
     const form = document.getElementById('contactForm');
@@ -114,4 +123,5 @@ const FORM_ENDPOINT = 'https://formspree.io/f/xjkaeavd'; // <-- replace in Step 
     });
   </script>
 </Layout>
+
 
