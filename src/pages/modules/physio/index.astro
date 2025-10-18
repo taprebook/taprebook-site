@@ -1,0 +1,338 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+---
+
+<Layout
+  metadata={{
+    title: 'TapRebook Physio — Appointment follow-ups & plan adherence on WhatsApp',
+    description:
+      'Reduce no-shows and keep patients on plan with WhatsApp reminders, home-exercise prompts, progress check-ins, and smooth rescheduling.',
+  }}
+>
+  <!-- HERO -->
+  <section class="relative">
+    <div class="max-w-7xl mx-auto px-4 pt-16 pb-10 grid gap-8 lg:grid-cols-[1.2fr_.8fr] items-center">
+      <div>
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-white/50 bg-white/40 backdrop-blur px-3.5 py-1.5
+                 text-sm md:text-base font-semibold text-slate-800/90 shadow-sm">
+          WhatsApp follow-ups for physiotherapy clinics
+        </span>
+
+        <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">
+          Fewer no-shows. Better adherence. Happier patients & therapists.
+        </h1>
+
+        <ul class="mt-4 space-y-2 text-slate-700/90 dark:text-slate-300/90">
+          <li>• Smart reminders with one-tap <em>Confirm</em> / <em>Reschedule</em> / <em>Running late</em></li>
+          <li>• Home-exercise nudges, pain-score check-ins, and progress flags</li>
+          <li>• Waitlist fill & auto backfills when cancellations happen</li>
+          <li>• <strong>24/7 availability</strong> — instant replies even outside business hours</li>
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+          <a class="btn btn-secondary" href={`https://wa.me/${import.meta.env.PUBLIC_WA_NUMBER}`}>WhatsApp us</a>
+        </div>
+      </div>
+
+      <!-- Right: Hero image (swap file if you have a physio visual) -->
+      <div class="relative rounded-2xl overflow-hidden bg-white/55 ring-1 ring-white/40 shadow-lg backdrop-blur-sm">
+        <img
+          src="/images/AI_physio.png"
+          alt="AI-assisted physiotherapy coordination on WhatsApp"
+          class="block w-full h-full object-cover"
+          width="1600"
+          height="1000"
+          loading="eager"
+          decoding="async"
+          sizes="(min-width: 1024px) 520px, 90vw"
+        />
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/40 via-transparent to-transparent"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPIs -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4 grid gap-4 sm:grid-cols-4">
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 20–35%</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">No-show rate</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↑ 1.3–1.7×</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Plan adherence</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">↓ 30–60 min/day</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Phone tag</div>
+      </div>
+      <div class="rounded-xl p-4 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur text-center transition hover:-translate-y-0.5 hover:shadow-lg">
+        <div class="text-3xl font-extrabold tracking-tight">&lt; 5s</div>
+        <div class="text-sm text-slate-600 dark:text-slate-400">Median first response</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar (placeholder logos) -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="text-center text-sm text-slate-600/90 dark:text-slate-400/90">Trusted by early adopters and pilot physio clinics</p>
+      <div class="mt-3 grid grid-cols-3 sm:grid-cols-6 gap-6 items-center opacity-80">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <svg viewBox="0 0 200 40" class="h-8 mx-auto" aria-hidden="true">
+            <rect width="200" height="40" rx="6" fill="rgba(255,255,255,0.6)"></rect>
+            <text x="100" y="26" text-anchor="middle" font-size="16" fill="rgb(71,85,105)">Clinic Logo</text>
+          </svg>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why this matters (physio-specific 3-pillar block) -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Why this matters for physio</h2>
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Patients first</h3>
+          <p class="mt-1 text-sm">Life gets busy—WhatsApp reminders and simple buttons make it easy to show up, reschedule, or ask for help. Gentle nudges keep home exercises on track.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Front desk focus</h3>
+          <p class="mt-1 text-sm">Free reception from constant calls so they can greet patients, manage arrivals, and support therapists—while routine scheduling runs itself.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Data to improve</h3>
+          <p class="mt-1 text-sm">Track no-shows, late cancels, adherence, NPS/reviews, and recovery milestones. Use numbers—not guesses—to tune slots and staffing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">What you get</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Standardized WhatsApp workflows tailored for physiotherapy.
+      </p>
+
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Smart reminders</h3>
+          <p class="mt-1 text-sm">One-tap Confirm / Reschedule / Running late; auto-fill waitlist if a slot opens.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Home-exercise nudges</h3>
+          <p class="mt-1 text-sm">Daily/alternate-day prompts with quick “done/skip/hurt” buttons and safe notes.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Progress check-ins</h3>
+          <p class="mt-1 text-sm">Simple pain/mobility scales; flag regressions for therapist follow-up.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Post-visit reviews</h3>
+          <p class="mt-1 text-sm">Delight recovery wins and collect reviews; route issues to staff privately.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Cancellations & gaps</h3>
+          <p class="mt-1 text-sm">Auto offer freed slots to a targeted micro-waitlist; reduce idle time.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Reports & tags</h3>
+          <p class="mt-1 text-sm">Interakt tags → Sheets/CRM; adherence, no-show, review rate, and TAT.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it integrates -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">How it integrates</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-4">
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">WhatsApp Cloud API</h3>
+          <p class="mt-1 text-sm">Template approvals and reliable delivery.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Interakt</h3>
+          <p class="mt-1 text-sm">Tags, opt-ins, routing to front-desk or therapist, audit trails.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">EMR / Sheets / CRM</h3>
+          <p class="mt-1 text-sm">Slots, therapist rosters, adherence & review logs.</p>
+        </div>
+        <div class="rounded-2xl p-5 ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+          <h3 class="font-semibold">Maps & links</h3>
+          <p class="mt-1 text-sm">Directions, forms, exercise PDFs/videos where applicable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flows in detail (Physio) -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">Flows in detail</h2>
+      <p class="mt-2 text-center text-slate-700/90 dark:text-slate-200/80">
+        Exactly how Physio handles coordination, end to end.
+      </p>
+
+      <!-- 1) Appointment reminders -->
+      <details class="group mt-6 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">1) Smart reminders & rescheduling</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p><strong>Outcome:</strong> Fewer no-shows; fewer last-minute calls.</p>
+          <p><strong>When it fires:</strong> D-2 / D-1 / same-day; time-window nudges.</p>
+          <p><strong>Experience:</strong> One-tap Confirm / Reschedule / Running late; safe grace rules.</p>
+          <p><strong>Tags:</strong> <em>reminder_sent</em>, <em>confirmed</em>, <em>reschedule_req</em>, <em>late</em>.</p>
+        </div>
+      </details>
+
+      <!-- 2) Home exercise -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">2) Home-exercise nudges</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Quick “done/skip/hurt” capture; route pain flags to therapist for guidance (no medical advice in chat).</p>
+          <p>Tags: <em>hx_done</em>, <em>hx_skip</em>, <em>hx_flag</em>, <em>callback_done</em>.</p>
+        </div>
+      </details>
+
+      <!-- 3) Progress check-ins -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">3) Progress check-ins</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Weekly pain/mobility scale; celebrate improvements and flag regressions for follow-up.</p>
+          <p>Tags: <em>checkin_sent</em>, <em>improving</em>, <em>no_change</em>, <em>regressed</em>.</p>
+        </div>
+      </details>
+
+      <!-- 4) Cancellations & backfill -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">4) Cancellations & gap fill</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Auto-offer the freed slot to a micro-waitlist that matches therapist, time window, or proximity.</p>
+          <p>Tags: <em>cancel</em>, <em>gap_open</em>, <em>gap_offer</em>, <em>gap_filled</em>.</p>
+        </div>
+      </details>
+
+      <!-- 5) Reviews & service recovery -->
+      <details class="group mt-4 rounded-2xl ring-1 ring-white/30 dark:ring-slate-800/50 bg-white/25 dark:bg-slate-900/20 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 flex items-center justify-between">
+          <span class="font-semibold">5) Reviews & escalation</span>
+          <span class="text-sm text-slate-500 group-open:hidden">Show</span>
+          <span class="text-sm text-slate-500 hidden group-open:inline">Hide</span>
+        </summary>
+        <div class="px-5 pb-5 space-y-3 text-sm text-slate-700/90 dark:text-slate-300/90">
+          <p>Route issues to staff privately; send happy patients to public review links.</p>
+          <p>Tags: <em>review_req</em>, <em>nps_low</em>, <em>nps_high</em>, <em>recovery_done</em>.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Pricing note -->
+  <section id="pricing" class="py-6 border-t border-white/20 dark:border-slate-800/60">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold">Pricing</h2>
+      <p class="mt-2 text-slate-700/90 dark:text-slate-200/80">
+        Physio uses the same simple plans as Reception. See
+        <a class="underline" href="/modules/reception/#pricing">Reception pricing</a>
+        (or visit the <a class="underline" href="/pricing/">pricing page</a>).
+      </p>
+
+      <!-- Single centered CTA -->
+      <div class="mt-6 flex justify-center">
+        <a href="/contact/" class="btn btn-primary">Book a 10-min demo</a>
+      </div>
+
+      <p class="mt-4 text-xs text-slate-700/85 dark:text-slate-300/85">
+        WhatsApp/Meta API & conversation fees are billed separately by your BSP/Meta.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-center">FAQs</h2>
+
+      <details class="group mt-6 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Will this replace our front desk?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          No. It handles routine reminders, reschedules, and check-ins so reception can focus on arrivals and patient experience.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Do you give medical advice in chat?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Never. If a patient flags pain or issues, we route to a human for safe follow-up with an audit trail.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Can we tailor flows by therapist or case type?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Yes—per-therapist templates, time windows, and follow-up cadences. Quick edits after KPI reviews.
+        </div>
+      </details>
+
+      <details class="group mt-3 rounded-2xl ring-1 ring-white/30 bg-white/25 dark:bg-slate-900/20 dark:ring-slate-800/50 backdrop-blur">
+        <summary class="cursor-pointer list-none p-5 font-semibold">Is patient data secure?</summary>
+        <div class="px-5 pb-5 text-sm text-slate-700/90 dark:text-slate-300/90">
+          Data stays in approved systems (WhatsApp/Interakt, your EMR/Sheets/CRM). Role-based access and audit logs.
+        </div>
+      </details>
+    </div>
+
+    <!-- FAQ JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Will this replace our front desk?","acceptedAnswer":{"@type":"Answer","text":"No. It handles routine reminders, reschedules, and check-ins so reception can focus on arrivals and patient experience."}},
+        {"@type":"Question","name":"Do you give medical advice in chat?","acceptedAnswer":{"@type":"Answer","text":"Never. If a patient flags pain or issues, we route to a human for safe follow-up with an audit trail."}},
+        {"@type":"Question","name":"Can we tailor flows by therapist or case type?","acceptedAnswer":{"@type":"Answer","text":"Yes—per-therapist templates, time windows, and follow-up cadences. Quick edits after KPI reviews."}},
+        {"@type":"Question","name":"Is patient data secure?","acceptedAnswer":{"@type":"Answer","text":"Data stays in approved systems (WhatsApp/Interakt, your EMR/Sheets/CRM). Role-based access and audit logs."}}
+      ]
+    }
+    </script>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12">
+    <div class="max-w-5xl mx-auto px-4 md:flex items-center justify-between">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-bold">Ready to keep patients on plan?</h2>
+        <p class="mt-2 text-slate-700/90 dark:text-slate-300/90">
+          Start with Physio. Add Reception, DentalLab, or Pharma when you’re ready.
+        </p>
+      </div>
+      <div class="mt-6 md:mt-0 flex gap-3">
+        <a class="btn btn-primary" href="/contact/">Book a 10-min demo</a>
+        <a class="btn btn-secondary" href={`https://wa.me/${import.meta.env.PUBLIC_WA_NUMBER}`}>WhatsApp us</a>
+      </div>
+    </div>
+  </section>
+</Layout>
